@@ -54,7 +54,8 @@ See \code{CollectDataYoutube} and \code{CollectDataTwitter} to collect data sour
   apiKeyYoutube <- AuthenticateWithYoutubeAPI(apiKeyYoutube=myApiKey)
 
   # Generate a vector of YouTube video IDs to collect data from
-  # (or use the function `GetYoutubeVideoIDs` to automatically generate from a plain text file of video URLs)
+  # (or use the function `GetYoutubeVideoIDs` to automatically
+  # generate from a plain text file of video URLs)
   videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 
   # Collect the data using function `CollectDataYoutube`

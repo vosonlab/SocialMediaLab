@@ -8,7 +8,8 @@ Twitter API Authentication
 Oauth based authentication with the Twitter API
 }
 \usage{
-AuthenticateWithTwitterAPI(api_key, api_secret, access_token, access_token_secret, createToken)
+AuthenticateWithTwitterAPI(api_key, api_secret,
+  access_token, access_token_secret, createToken)
 }
 \arguments{
   \item{api_key}{
@@ -49,7 +50,8 @@ Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland <robert.ackland@anu.
   my_access_token <- "1234567890qwerty"
   my_access_token_secret <- "1234567890qwerty"
 
-  AuthenticateWithTwitterAPI(api_key=my_api_key, api_secret=my_api_secret, access_token=my_access_token, access_token_secret=my_access_token_secret)
+  AuthenticateWithTwitterAPI(api_key=my_api_key, api_secret=my_api_secret,
+    access_token=my_access_token, access_token_secret=my_access_token_secret)
 }
 }
 \keyword{ twitter }

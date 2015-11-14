@@ -44,7 +44,8 @@ Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland <robert.ackland@anu.
   app_secret <- "abc123abc123abc123abc123abc123ab"
 
   # Authenticate with the Instagram API using `AuthenticateWithInstagramAPI`
-  instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=app_id, appSecret=app_secret, useCachedToken=FALSE)
+  instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=app_id,
+    appSecret=app_secret, useCachedToken=FALSE)
   }
 }
 \keyword{ Instagram }

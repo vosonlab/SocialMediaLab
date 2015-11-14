@@ -59,7 +59,8 @@ Data generated using this function is *not* suitable for dynamic networks. Dynam
   my_access_token_secret <- "1234567890qwerty"
 
   # Authenticate with the Twitter API using \code{AuthenticateWithTwitterAPI}
-  AuthenticateWithTwitterAPI(api_key=my_api_key, api_secret=my_api_secret, access_token=my_access_token, access_token_secret=my_access_token_secret)
+  AuthenticateWithTwitterAPI(api_key=my_api_key, api_secret=my_api_secret,
+    access_token=my_access_token, access_token_secret=my_access_token_secret)
 
   # Collect tweets data using \code{myTwitterData}
   myTwitterData <- CollectDataTwitter(searchTerm="#auspol",

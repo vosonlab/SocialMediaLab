@@ -28,7 +28,8 @@ Use \code{CollectDataYoutube} for collecting YouTube comments data.
 }
 \examples{
 \dontrun{
-  ## This example shows how to use `GetYoutubeVideoIDs` to extract video IDs from YouTube video URLs, and then collect data using the function `CollectDataYoutube`
+  ## This example shows how to use `GetYoutubeVideoIDs` to extract video IDs from YouTube
+  ## video URLs, and then collect data using the function `CollectDataYoutube`
 
   # Use your own Google Developer API Key here:
   myApiKey <- "1234567890"
@@ -36,7 +37,8 @@ Use \code{CollectDataYoutube} for collecting YouTube comments data.
   # Authenticate with the Google API
   apiKeyYoutube <- AuthenticateWithYoutubeAPI(apiKeyYoutube=myApiKey)
 
-  # Use the function `GetYoutubeVideoIDs` to automatically generate vector of IDs from a plain text file of video URLs
+  # Use the function `GetYoutubeVideoIDs` to automatically generate vector of IDs from
+  # a plain text file of video URLs
   videoIDs <- GetYoutubeVideoIDs(file="youtube_to_scrape.txt")
 
   # Collect the data using function `CollectDataYoutube`

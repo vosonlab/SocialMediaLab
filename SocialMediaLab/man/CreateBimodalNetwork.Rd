@@ -55,10 +55,12 @@ See \code{CollectDataFacebook} and \code{CollectDataTwitter} to collect data for
   myAppSecret <- "abc123abc123abc123abc123abc123ab"
 
   # Authenticate with the Facebook API using `AuthenticateWithFacebookAPI`
-  fb_oauth <- AuthenticateWithFacebookAPI(appID=myAppID, appSecret=myAppSecret,extended_permissions=FALSE, useCachedToken=TRUE)
+  fb_oauth <- AuthenticateWithFacebookAPI(appID=myAppID, appSecret=myAppSecret,
+    extended_permissions=FALSE, useCachedToken=TRUE)
 
   # Run the `CollectDataFacebook` function and store the results in variable `myFacebookData`
-  myFacebookData <- CollectDataFacebook(pageName="StarWars", rangeFrom="2014-05-15",rangeTo="2014-06-03",writeToFile=FALSE,verbose=TRUE)
+  myFacebookData <- CollectDataFacebook(pageName="StarWars", rangeFrom="2014-05-15",
+  rangeTo="2014-06-03",writeToFile=FALSE,verbose=TRUE)
 
   # Create a 'bimodal' network using \code{CreateBimodalNetwork}
   g_bimodal_facebook <- CreateBimodalNetwork(myFacebookData)
