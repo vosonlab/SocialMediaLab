@@ -2,6 +2,8 @@ CollectDataFacebook <-
 function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,dynamic) {
 #with(list(pageName,rangeFrom,rangeTo,verbose,n,writeToFile), {
 
+postID=from=relationship=edgeWeight=NULL # to please the gods of R CMD CHECK
+
   # handle the arguments
   # if the user has specified dynamic==TRUE
   # then we will have to run an entirely different set of code (this may be fixed in future versions)
