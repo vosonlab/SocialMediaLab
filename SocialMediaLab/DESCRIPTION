@@ -1,0 +1,10 @@
+Package: SocialMediaLab
+Type: Package
+Title: Tools for collecting social media data and generating networks for analysis
+Imports: tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook,Hmisc,data.table,httpuv,instaR,methods,httr
+Version: 0.18.0
+Date: 2015-11-14
+Author: Tim Graham & Robert Ackland
+Maintainer: Tim Graham <timothy.graham3@uq.net.au>
+Description: A suite of tools for collecting and constructing networks from social media data. Provides easy-to-use functions for collecting data across popular platforms (Instagram, Facebook, Twitter, and YouTube) and generating different types of networks for analysis.
+License: GPL (>= 2)
