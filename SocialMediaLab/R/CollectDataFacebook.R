@@ -2,10 +2,10 @@ CollectDataFacebook <-
 function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,dynamic) {
 #with(list(pageName,rangeFrom,rangeTo,verbose,n,writeToFile), {
 
-      # handle the arguments
+  # handle the arguments
+  # if the user has specified dynamic==TRUE
+  # then we will have to run an entirely different set of code (this may be fixed in future versions)
 
-      # if the user has specified dynamic==TRUE
-      # then we will have to run an entirely different set of code
   if(!(exists("fb_oauth"))) {
     fb_oauth=NULL # to get rid of the note when doing R CMD CHECK
   }
@@ -165,7 +165,7 @@ if (dynamic==FALSE | dynamic =="FALSE" | dynamic=="false" | dynamic=="F") {
             commentText = "blah")
 
             # keyCols = c("postID","postName")
-            # setkey(tempDataTable,keyCols) # set the key value of the data table
+            # setkey(tempDataTable,postID) # set the key value of the data table
 
           # pre-declare vars for speed
 
@@ -250,13 +250,13 @@ if (dynamic==FALSE | dynamic =="FALSE" | dynamic=="false" | dynamic=="F") {
                 tempDataTable <- rbind(tempDataTable,tempDataTableLOOP)
 
                 # keyCols = c("postID","postName")
-                # setkey(tempDataTable,keyCols) # set the key value of the data table
+                setkey(tempDataTable,postID) # set the key value of the data table
 
             }
 
             # remove dummy first row
-            tempDataTable <- tempDataTable[-1,]
-
+            # tempDataTable <- tempDataTable[-1,] # OLD WAY
+            tempDataTable[postID != "foo"] # NEW DATA TABLE WAY
           }
 
           ##
@@ -293,19 +293,25 @@ if (dynamic==FALSE | dynamic =="FALSE" | dynamic=="false" | dynamic=="F") {
 
           dataCombined <- rbind(usersLikedPosts,usersCommentedPosts)
 
+          setkey(dataCombined,from) # set the key value of the data table
+
     # cat("\n ########## Removing 'fake' NA values...") # DEBUG
 
           # remove the "fake" NA values (these will occur due to the way the original data.table is structured, see above)
-          toRemove <- which(dataCombined$from=="NA")
-          dataCombined <- dataCombined[-toRemove,]
+            # toRemove <- which(dataCombined$from=="NA")
+            # dataCombined <- dataCombined[-toRemove,]
+          # do it the data.table way...
+          dataCombined <- dataCombined[!"NA"]
 
     # cat("\n ########## removing actual NA values...") # DEBUG
 
           # and then remove the "actual" NA values
-          toRemove <- which(is.na(dataCombined$from))
-          if (length(toRemove) != 0) {
-            dataCombined <- dataCombined[-toRemove,]
-          }
+              #toRemove <- which(is.na(dataCombined$from))
+              #if (length(toRemove) != 0) {
+              #  dataCombined <- dataCombined[-toRemove,]
+              #}
+          # do it the data.table way...
+          dataCombined <- na.omit(dataCombined)
 
     # cat("\n ########## Get unique pairs...") # DEBUG
 
@@ -319,6 +325,8 @@ if (dynamic==FALSE | dynamic =="FALSE" | dynamic=="false" | dynamic=="F") {
 
           dataCombinedUNIQUE <- unique(dataCombinedUNIQUE)
 
+          setkey(dataCombinedUNIQUE,from) # set the key value of the data table
+
     # cat("\n ########## calculating matches and weights...") # DEBUG
 
           for (i in 1:nrow(dataCombinedUNIQUE)) {
@@ -329,10 +337,16 @@ if (dynamic==FALSE | dynamic =="FALSE" | dynamic=="false" | dynamic=="F") {
             # Current approach means that if user i has LIKED *and* COMMENTED on post j,
             # then there will be multiple rows matched, and we will take the LAST match,
             # which results in the `relationship` defaulting to `User-Post Based on Comments`
-            dataCombinedUNIQUE$relationship[i] <- dataCombined$relationship[last(matchesTemp)]
+              # OLD WAY:
+              # dataCombinedUNIQUE$relationship[i] <- dataCombined$relationship[last(matchesTemp)]
+            # the data.table way...
+            dataCombinedUNIQUE[i, relationship := dataCombined$relationship[last(matchesTemp)]]
 
             # DO THE WEIGHTS THIS WAY (vectorised):
-            dataCombinedUNIQUE$edgeWeight[i] <- sum(dataCombined$from == dataCombinedUNIQUE$from[i] & dataCombined$to == dataCombinedUNIQUE$to[i])
+              # OLD WAY:
+              # dataCombinedUNIQUE$edgeWeight[i] <- sum(dataCombined$from == dataCombinedUNIQUE$from[i] & dataCombined$to == dataCombinedUNIQUE$to[i])
+            # NEW data table way:
+            dataCombinedUNIQUE[i, edgeWeight := dataCombinedUNIQUE[, sum(dataCombined$from == dataCombinedUNIQUE$from[i] & dataCombined$to == dataCombinedUNIQUE$to[i]) ]]
           }
 
           class(dataCombinedUNIQUE) <- append(class(dataCombinedUNIQUE),c("dataSource","facebook"))
@@ -348,7 +362,7 @@ if (dynamic==FALSE | dynamic =="FALSE" | dynamic=="false" | dynamic=="F") {
 
           return(dataCombinedUNIQUE)
 } ## <<<<< end of non-dynamic data collection
-
+##############################################################################################################
 ## <<<<< in this block of code we begin DYNAMIC DATA collection, if dynamic is TRUE
 if (dynamic=="TRUE" | verbose=="true" | verbose=="T" | verbose==TRUE) {
 
