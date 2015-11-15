@@ -47,7 +47,8 @@ Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland <robert.ackland@anu.
   myAppSecret <- "abc123abc123abc123abc123abc123ab"
 
   # Authenticate with the Facebook API using `AuthenticateWithFacebookAPI`
-  fb_oauth <- AuthenticateWithFacebookAPI(appID=myAppID, appSecret=myAppSecret,extended_permissions=FALSE, useCachedToken=TRUE)
+  fb_oauth <- AuthenticateWithFacebookAPI(appID=myAppID, appSecret=myAppSecret,
+    extended_permissions=FALSE, useCachedToken=TRUE)
   }
 }
 \keyword{ facebook }

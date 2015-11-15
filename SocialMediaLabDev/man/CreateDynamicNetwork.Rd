@@ -59,9 +59,11 @@ Kolaczyk, E. D., Csardi, G. (2014). Statistical analysis of network data with R.
   myAppSecret <- "abc123abc123abc123abc123abc123ab"
 
   # Authenticate with the Facebook API using `AuthenticateWithFacebookAPI`
-  fb_oauth <- AuthenticateWithFacebookAPI(appID=myAppID, appSecret=myAppSecret,extended_permissions=FALSE, useCachedToken=TRUE)
+  fb_oauth <- AuthenticateWithFacebookAPI(appID=myAppID, appSecret=myAppSecret,
+    extended_permissions=FALSE, useCachedToken=TRUE)
 
-  # Run the `CollectTemporalDataFacebook` function and store the results in variable `myTemporalFacebookData`
+  # Run the `CollectTemporalDataFacebook` function and
+  # store the results in variable `myTemporalFacebookData`
   myTemporalFacebookData <- CollectTemporalDataFacebook(pageName="StarWars",
     rangeFrom="2015-05-14",rangeTo="2015-06-04",verbose=FALSE,writeToFile=FALSE)
 

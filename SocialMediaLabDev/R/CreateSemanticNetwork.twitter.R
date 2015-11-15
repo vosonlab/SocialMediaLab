@@ -87,7 +87,7 @@ function(x,writeToFile,termFreq,hashtagFreq,removeTermsOrHashtags,stopwordsEngli
 
 ### delete hashtags that contain 'horizontal ellipses'
 
-      # delEllipses <- grep("…",hashtagsUsedTemp)
+      # delEllipses <- grep("\u2026",hashtagsUsedTemp)
       # cat(paste("\nNumber of hashtags with ellipses: ",length(delEllipses),"\n"))
       # cat(paste("\nThe offending hashtags:\n",hashtagsUsedTemp[delEllipses],"\n"))
       # cat("Original:\n")

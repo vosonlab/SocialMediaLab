@@ -7,7 +7,8 @@ Create semantic networks from social media data (semantic relationships between 
 This function creates a semantic network from social media data (i.e. from data frames of class \code{dataSource}, or for Twitter data it is also possible to provide a *list* of data frames). In such semantic networks, concepts are words/terms extracted from the text corpus of social media data (e.g. tweets on Twitter).
 }
 \usage{
-CreateSemanticNetwork(x, writeToFile, termFreq, hashtagFreq, removeTermsOrHashtags, stopwordsEnglish)
+CreateSemanticNetwork(x, writeToFile, termFreq, hashtagFreq,
+  removeTermsOrHashtags, stopwordsEnglish)
 }
 \arguments{
   \item{x}{
@@ -65,14 +66,16 @@ See \code{CollectDataTwitter} to collect data for creating semantic networks in 
   my_access_token_secret <- "1234567890qwerty"
 
   # Authenticate with the Twitter API using \code{AuthenticateWithTwitterAPI}
-  AuthenticateWithTwitterAPI(api_key=my_api_key, api_secret=my_api_secret, access_token=my_access_token, access_token_secret=my_access_token_secret)
+  AuthenticateWithTwitterAPI(api_key=my_api_key, api_secret=my_api_secret,
+    access_token=my_access_token, access_token_secret=my_access_token_secret)
 
   # Collect tweets data using \code{myTwitterData}
   myTwitterData <- CollectDataTwitter(searchTerm="#auspol",
     numTweets=200,writeToFile=FALSE,verbose=FALSE)
 
   # Create a 'semantic' network using \code{CreateSemanticNetwork}
-  g_semantic_twitter <- CreateSemanticNetwork(myTwitterData,writeToFile=FALSE,termFreq=20,hashtagFreq=80)
+  g_semantic_twitter <- CreateSemanticNetwork(myTwitterData,writeToFile=FALSE,
+    termFreq=20,hashtagFreq=80)
 }
 }
 \keyword{ SNA }
