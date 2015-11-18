@@ -18,7 +18,7 @@ The following networks were created in SocialMediaLab and visualised using the G
 
 ### Facebook bimodal network (Star Wars page)
 
-<img src="https://raw.githubusercontent.com/voson-lab/SocialMediaLab/master/miscellaneous/exported_graph_images/Facebook_bimodal_network_socialmedialab_Star_Wars.png?token=AKw5r_WagSdf1f9L-peOJfKZZqIkMYwCks5WVRxNwA%3D%3D" alt="Facebook bimodal network created with SocialMediaLab" width="200" height="200"/>
+<img src="https://raw.githubusercontent.com/voson-lab/SocialMediaLab/master/miscellaneous/exported_graph_images/Facebook_bimodal_network_socialmedialab_Star_Wars.png?token=AKw5r_WagSdf1f9L-peOJfKZZqIkMYwCks5WVRxNwA%3D%3D" alt="Facebook bimodal network created with SocialMediaLab" width="600" height="600"/>
 
 ### Instagram ego network (Obama)
 
