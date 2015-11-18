@@ -14,6 +14,8 @@ This package would not be possible without key packages by other authors in the 
 
 For detailed information and examples, please refer to the [SocialMediaLab documentation](https://github.com/voson-lab/SocialMediaLab/blob/master/SocialMediaLab.pdf).
 
+More soon...
+
 ## Example networks
 
 The following networks were created in SocialMediaLab and visualised using the [Gephi software](http://gephi.github.io/).
