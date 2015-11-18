@@ -29,7 +29,7 @@ CreateEgoNetwork(dataSource,username,userid,verbose,degreeEgoNet,writeToFile,wai
     Numeric, the 'order' or 'degree' of the ego-network to create (1 is default). 1 = ego + alters. 2 = ego + alters + alters of alters.
   }
   \item{waitForRateLimit}{
-    logical. If \code{TRUE} then it will try to observe the API rate limit by ensuring that no more than 5000 API calls are made per hour (the current rate limit). If more than 5000 calls are made within a 60 minute window, then all operates will suspend for 60 minutes, and resume afterwards.
+    logical. If \code{TRUE} then it will try to observe the API rate limit by ensuring that no more than 5000 API calls are made per hour (the current rate limit). If more than 5000 calls are made within a 60 minute window, then all operates will suspend for 60 minutes, and resume afterwards. Note: API calls are only tracked within the scope of this function.
     }
   \item{writeToFile}{
     logical. If \code{TRUE} then the network is saved to file in current working directory (GRAPHML format), with filename denoting the current date/time and the type of network.

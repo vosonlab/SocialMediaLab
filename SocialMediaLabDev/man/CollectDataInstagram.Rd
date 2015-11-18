@@ -46,7 +46,7 @@ numeric, Number of seconds between API calls (default is 0).
 logical. If \code{TRUE} then the data is saved to file in current working directory (CSV format), with filename denoting the current time/date.
 }
   \item{waitForRateLimit}{
-logical. If \code{TRUE} then it will try to observe the API rate limit by ensuring that no more than 5000 API calls are made per hour (the current rate limit). If more than 5000 calls are made within a 60 minute window, then all operates will suspend for 60 minutes, and resume afterwards.
+logical. If \code{TRUE} then it will try to observe the API rate limit by ensuring that no more than 5000 API calls are made per hour (the current rate limit). If more than 5000 calls are made within a 60 minute window, then all operates will suspend for 60 minutes, and resume afterwards. Note: API calls are only tracked within the scope of this function.
 }}
 \details{
 \code{CollectDataInstagram} collects public pictures and videos from Instagram, and also collects the maximum amount of comments and 'likes' for each post. It draws on and extends the `searchInstagram` function from the 'instaR' package.
