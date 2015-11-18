@@ -26,7 +26,7 @@ This network visualises two weeks of activity on the [Star Wars Facebook page](h
 
 ##### Instagram ego network
 
-This network visualises the social network of one user (the 'ego' node) on Instagram. The degree of the network is "2", meaning that it shows ego + alter ("followers of ego") and ego + alters + alters of alters "followers of followers of ego". 'Follows' data are also collected, so this network also shows "users who ego follows" and "users who follow users who follow ego".
+This network visualises the social network of one user (the 'ego' node) on Instagram. The degree of the network is "2", meaning that it shows *ego + alters* ("followers of ego") and *ego + alters* + *alters of alters of ego* "followers of followers of ego". 'Follows' data are also collected, so this network also shows "users who ego follows" and "users who followers of ego follow".
 
 <img src="https://raw.githubusercontent.com/voson-lab/SocialMediaLab/master/miscellaneous/exported_graph_images/Instagram_ego_network_socialmedialab_example.png?token=AKw5r99givdLgt47JH3rMaBA2ZBW9FIoks5WVTJ6wA%3D%3D" alt="Facebook bimodal network created with SocialMediaLab" width="600" height="600"/>
 
