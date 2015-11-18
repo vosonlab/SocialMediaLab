@@ -1,0 +1,28 @@
+AuthenticateWithFacebookAPI
+                        Facebook API Authentication
+AuthenticateWithInstagramAPI
+                        Instagram API Authentication
+AuthenticateWithTwitterAPI
+                        Twitter API Authentication
+AuthenticateWithYoutubeAPI
+                        YouTube API Authentication
+CollectDataFacebook     Collect data from Facebook pages for generating
+                        different types of networks
+CollectDataInstagram    Collect data from Instagram for generating
+                        different types of networks
+CollectDataTwitter      Collect data from Twitter for generating
+                        different types of networks
+CollectDataYoutube      Collect YouTube comments data for generating
+                        different types of networks
+CreateActorNetwork      Create 'actor' networks from social media data
+CreateBimodalNetwork    Create bimodal networks from social media data
+CreateDynamicNetwork    Create dynamic networks from social media data
+                        (networks that vary over time)
+CreateEgoNetwork        Create 'ego' networks from social media data
+CreateSemanticNetwork   Create semantic networks from social media data
+                        (semantic relationships between concepts)
+GetYoutubeVideoIDs      Extract/scrape the IDs from a set of YouTube
+                        video URLs
+SocialMediaLab-package
+                        Collection and network analysis of social media
+                        data

@@ -7,7 +7,8 @@ Create 'ego' networks from social media data
 This function creates 'ego' networks from social media data (currently only Instagram). The networks are igraph objects. The user provides a character vector of usernames, and the function collects data about the 'followers' of the users, with options to also collect data about who each user 'follows'. It also provides the ability to specify the 'degree' of the egonet (also sometimes known as the order), currently for 1-degree (ego + alters) or 2-degree (ego + alters + alters of alters of ego).
 }
 \usage{
-CreateEgoNetwork(dataSource,username,userid,verbose,degreeEgoNet,writeToFile,waitForRateLimit,getFollows)
+CreateEgoNetwork(dataSource,username,userid,verbose,degreeEgoNet,
+  writeToFile,waitForRateLimit,getFollows)
 }
 \arguments{
   \item{dataSource}{

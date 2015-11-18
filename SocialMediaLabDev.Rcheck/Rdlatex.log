@@ -1,0 +1,677 @@
+Hmm ... looks like a package
+
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(./Rd2.tex
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/bk10.clo))
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Rd.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.05, 2014/06/22 Text macros for Inconsolata (msharpe)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+No file Rd2.aux.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+Overfull \hbox (30.21837pt too wide) in paragraph at lines 23--24
+\T1/ptm/m/n/10 tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook,Hmis
+c,data.table,httpuv,instaR,methods,httr  
+(/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [1{/usr/local/texl
+ive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (16.78088pt too wide) in paragraph at lines 57--57
+ []\T1/zi4/m/n/10 AuthenticateWithFacebookAPI(appID, appSecret, extended_permis
+sions, useCachedToken)[] 
+
+Overfull \hbox (8.42542pt too wide) in paragraph at lines 81--82
+[]\T1/ptm/m/n/10 To get a Face-book 'app ID' and 'API se-cret', the ex-cel-lent
+ tu-to-rial at http://thinktostart.com/analyzing-
+[2] (/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (126.32372pt too wide) in paragraph at lines 146--147
+[]\T1/ptm/m/n/10 To get a In-sta-gram 'app ID' and 'API se-cret', please see th
+e In-sta-gram doc-u-ment at: https://instagram.com/developer/authentication/ 
+[3]
+Overfull \hbox (36.25967pt too wide) in paragraph at lines 160--161
+[]\T1/zi4/m/n/10 AuthenticateWithTwitterAPI \T1/ptm/m/n/10 and \T1/zi4/m/n/10 A
+uthenticateWithYouTubeAPI \T1/ptm/m/n/10 and \T1/zi4/m/n/10 AuthenticateWithFac
+ebookAPI
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [5]
+Overfull \hbox (74.45605pt too wide) in paragraph at lines 274--275
+\T1/ptm/m/n/10 Pro-gram-ming In-ter-face (API). Users can ob-tain a Google De-v
+el-oper API key at: https://console.developers.google.com 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (13.78088pt too wide) in paragraph at lines 317--317
+ []\T1/zi4/m/n/10 CollectDataFacebook(pageName, rangeFrom, rangeTo, verbose, n,
+ writeToFile, dynamic)[] 
+[6]
+Overfull \hbox (1.11737pt too wide) in paragraph at lines 327--328
+[]\T1/ptm/m/n/10 character string, spec-i-fy-ing a 'start date' for data col-le
+c-tion, in the for-mat YYYY-
+
+Overfull \hbox (3.88766pt too wide) in paragraph at lines 330--331
+[]\T1/ptm/m/n/10 character string, spec-i-fy-ing an 'end date' for data col-lec
+-tion, in the for-mat YYYY-
+
+Overfull \hbox (5.719pt too wide) in paragraph at lines 362--364
+[]\T1/ptm/m/n/10 - bi-modal net-works; \T1/zi4/m/n/10 CreateBimodalNetwork \T1/
+ptm/m/n/10 - dy-namic bi-modal net-works; \T1/zi4/m/n/10 CreateDynamicNetwork 
+[7]
+Overfull \hbox (52.16856pt too wide) in paragraph at lines 373--374
+[]\T1/zi4/m/n/10 AuthenticateWithFacebookAPI \T1/ptm/m/n/10 must be run first o
+r no data will be col-lected, \T1/zi4/m/n/10 collectTemporalDataFacebook
+
+Overfull \hbox (11.58096pt too wide) in paragraph at lines 387--387
+ []  \T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataFacebook\
+TS1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/z
+i4/m/n/9 `\T1/zi4/m/n/9 myFacebookData\TS1/zi4/m/n/9 `[] 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (11.78088pt too wide) in paragraph at lines 413--413
+ []\T1/zi4/m/n/10 CollectDataInstagram(tag, n, lat, lng, distance, folder, mind
+ate, maxdate, verbose,[] 
+[8]
+Overfull \hbox (69.60672pt too wide) in paragraph at lines 463--464
+\T1/ptm/m/n/10 and struc-tures these re-la-tion-ships into a for-mat suit-able 
+for cre-at-ing bi-modal net-works us-ing \T1/zi4/m/n/10 CreateBimodalNetwork\T1
+/ptm/m/n/10 . 
+
+Overfull \hbox (3.91833pt too wide) in paragraph at lines 467--468
+[]\T1/ptm/m/n/10 A data frame ob-ject of class \T1/zi4/m/n/10 dataSource.Instag
+ram \T1/ptm/m/n/10 that can be used with \T1/zi4/m/n/10 CreateBimodalNetwork\T1
+/ptm/m/n/10 . 
+[9]
+Overfull \hbox (2.5809pt too wide) in paragraph at lines 494--494
+ []\T1/zi4/m/n/9 instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=ap
+p_id, appSecret=app_secret,[] 
+
+Overfull \hbox (13.38095pt too wide) in paragraph at lines 499--499
+ []\T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataInstagram\T
+S1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/zi
+4/m/n/9 `\T1/zi4/m/n/9 myInstagramData\TS1/zi4/m/n/9 `[] 
+
+Overfull \hbox (13.38095pt too wide) in paragraph at lines 512--512
+ []\T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataInstagram\T
+S1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/zi
+4/m/n/9 `\T1/zi4/m/n/9 myInstagramData\TS1/zi4/m/n/9 `[] 
+
+Overfull \hbox (0.78091pt too wide) in paragraph at lines 514--514
+ []\T1/zi4/m/n/9 myInstagramData <- CollectDataInstagram(lat=-27.4701, lng=153.
+0220, distance=5000, n=100,[] 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [10]
+Overfull \hbox (17.84683pt too wide) in paragraph at lines 570--571
+\T1/zi4/m/n/10 language="en"\T1/ptm/m/n/10 . The full list of codes is avail-ab
+le here: https://en.wikipedia.org/wiki/List_of_ISO_639-
+[11] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (18.30962pt too wide) in paragraph at lines 640--641
+\T1/zi4/m/n/10 videoIDs=\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 W2GZFeYGU3s\TS1/zi4/m/n
+/10 '\T1/ptm/m/n/10 . For mul-ti-ple videos, the func-tion \T1/zi4/m/n/10 GetYo
+utubeVideoIDs
+[12] [13] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (6.96567pt too wide) in paragraph at lines 743--744
+\T1/ptm/m/n/10 sent re-la-tion-ships be-tween ver-tices of the same type (read:
+ 'ac-tors'), such as replies/retweets/mentions
+[14]
+Overfull \hbox (26.58022pt too wide) in paragraph at lines 760--761
+\T1/ptm/m/n/10 net-work from. For ex-am-ple, \T1/zi4/m/n/10 myList <- list(myTw
+itterData1, myTwitterData2, myTwitterData3)\T1/ptm/m/n/10 . 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [15]
+Overfull \hbox (13.63731pt too wide) in paragraph at lines 833--834
+[]\T1/ptm/m/n/10 This func-tion cre-ates a (di-rected and weighted) bi-modal ne
+t-work from a data frame of class \T1/zi4/m/n/10 dataSource
+[16]
+Overfull \hbox (46.47998pt too wide) in paragraph at lines 852--853
+\T1/ptm/m/n/10 ate a net-work from. For ex-am-ple, \T1/zi4/m/n/10 myList <- lis
+t(myTwitterData1, myTwitterData2, myTwitterData3)\T1/ptm/m/n/10 . 
+
+Overfull \hbox (11.58096pt too wide) in paragraph at lines 876--876
+ []  \T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataFacebook\
+TS1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/z
+i4/m/n/9 `\T1/zi4/m/n/9 myFacebookData\TS1/zi4/m/n/9 `[] 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [17] [18]
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [19] [20]
+Overfull \hbox (9.78091pt too wide) in paragraph at lines 1067--1067
+ []  \T1/zi4/m/n/9 instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=
+app_id, appSecret=app_secret,[] 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [21]
+Overfull \hbox (46.47998pt too wide) in paragraph at lines 1143--1144
+\T1/ptm/m/n/10 ate a net-work from. For ex-am-ple, \T1/zi4/m/n/10 myList <- lis
+t(myTwitterData1, myTwitterData2, myTwitterData3)\T1/ptm/m/n/10 . 
+[22] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (40.76834pt too wide) in paragraph at lines 1187--1188
+\T1/ptm/m/n/10 This func-tion can be used to cre-ate an ob-ject for the ar-gu-m
+ent \T1/zi4/m/n/10 videoIDs \T1/ptm/m/n/10 in the func-tion \T1/zi4/m/n/10 Coll
+ectDataYoutube\T1/ptm/m/n/10 ,
+[23]
+No file Rd2.ind.
+[24] (./Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information){/usr/local/texlive/2015/te
+xmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}{/usr/local/texlive/2015/texmf-
+dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/
+dvips/inconsolata/i4-t1-0.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
+/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (24 pages, 129497 bytes).
+Transcript written on Rd2.log.
+This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (84 entries accepted, 0 rejected).
+Sorting entries....done (533 comparisons).
+Generating output file Rd2.ind....done (119 lines written, 0 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(./Rd2.tex
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/bk10.clo))
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Rd.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.05, 2014/06/22 Text macros for Inconsolata (msharpe)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+(./Rd2.aux) (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./Rd2.out) (./Rd2.out)
+Overfull \hbox (30.21837pt too wide) in paragraph at lines 23--24
+\T1/ptm/m/n/10 tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook,Hmis
+c,data.table,httpuv,instaR,methods,httr  
+(/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [1{/usr/local/texl
+ive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (16.78088pt too wide) in paragraph at lines 57--57
+ []\T1/zi4/m/n/10 AuthenticateWithFacebookAPI(appID, appSecret, extended_permis
+sions, useCachedToken)[] 
+[2]
+Overfull \hbox (8.42542pt too wide) in paragraph at lines 81--82
+[]\T1/ptm/m/n/10 To get a Face-book 'app ID' and 'API se-cret', the ex-cel-lent
+ tu-to-rial at http://thinktostart.com/analyzing-
+(/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [3]
+Overfull \hbox (126.32372pt too wide) in paragraph at lines 146--147
+[]\T1/ptm/m/n/10 To get a In-sta-gram 'app ID' and 'API se-cret', please see th
+e In-sta-gram doc-u-ment at: https://instagram.com/developer/authentication/ 
+
+Overfull \hbox (36.25967pt too wide) in paragraph at lines 160--161
+[]\T1/zi4/m/n/10 AuthenticateWithTwitterAPI \T1/ptm/m/n/10 and \T1/zi4/m/n/10 A
+uthenticateWithYouTubeAPI \T1/ptm/m/n/10 and \T1/zi4/m/n/10 AuthenticateWithFac
+ebookAPI
+[4] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [5]
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (74.45605pt too wide) in paragraph at lines 274--275
+\T1/ptm/m/n/10 Pro-gram-ming In-ter-face (API). Users can ob-tain a Google De-v
+el-oper API key at: https://console.developers.google.com 
+[6] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (13.78088pt too wide) in paragraph at lines 317--317
+ []\T1/zi4/m/n/10 CollectDataFacebook(pageName, rangeFrom, rangeTo, verbose, n,
+ writeToFile, dynamic)[] 
+
+Overfull \hbox (1.11737pt too wide) in paragraph at lines 327--328
+[]\T1/ptm/m/n/10 character string, spec-i-fy-ing a 'start date' for data col-le
+c-tion, in the for-mat YYYY-
+
+Overfull \hbox (3.88766pt too wide) in paragraph at lines 330--331
+[]\T1/ptm/m/n/10 character string, spec-i-fy-ing an 'end date' for data col-lec
+-tion, in the for-mat YYYY-
+[7]
+Overfull \hbox (5.719pt too wide) in paragraph at lines 362--364
+[]\T1/ptm/m/n/10 - bi-modal net-works; \T1/zi4/m/n/10 CreateBimodalNetwork \T1/
+ptm/m/n/10 - dy-namic bi-modal net-works; \T1/zi4/m/n/10 CreateDynamicNetwork 
+
+Overfull \hbox (52.16856pt too wide) in paragraph at lines 373--374
+[]\T1/zi4/m/n/10 AuthenticateWithFacebookAPI \T1/ptm/m/n/10 must be run first o
+r no data will be col-lected, \T1/zi4/m/n/10 collectTemporalDataFacebook
+
+Overfull \hbox (11.58096pt too wide) in paragraph at lines 387--387
+ []  \T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataFacebook\
+TS1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/z
+i4/m/n/9 `\T1/zi4/m/n/9 myFacebookData\TS1/zi4/m/n/9 `[] 
+[8] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (11.78088pt too wide) in paragraph at lines 413--413
+ []\T1/zi4/m/n/10 CollectDataInstagram(tag, n, lat, lng, distance, folder, mind
+ate, maxdate, verbose,[] 
+
+Overfull \hbox (69.60672pt too wide) in paragraph at lines 463--464
+\T1/ptm/m/n/10 and struc-tures these re-la-tion-ships into a for-mat suit-able 
+for cre-at-ing bi-modal net-works us-ing \T1/zi4/m/n/10 CreateBimodalNetwork\T1
+/ptm/m/n/10 . 
+[9]
+Overfull \hbox (3.91833pt too wide) in paragraph at lines 467--468
+[]\T1/ptm/m/n/10 A data frame ob-ject of class \T1/zi4/m/n/10 dataSource.Instag
+ram \T1/ptm/m/n/10 that can be used with \T1/zi4/m/n/10 CreateBimodalNetwork\T1
+/ptm/m/n/10 . 
+
+Overfull \hbox (2.5809pt too wide) in paragraph at lines 494--494
+ []\T1/zi4/m/n/9 instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=ap
+p_id, appSecret=app_secret,[] 
+
+Overfull \hbox (13.38095pt too wide) in paragraph at lines 499--499
+ []\T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataInstagram\T
+S1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/zi
+4/m/n/9 `\T1/zi4/m/n/9 myInstagramData\TS1/zi4/m/n/9 `[] 
+[10]
+Overfull \hbox (13.38095pt too wide) in paragraph at lines 512--512
+ []\T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataInstagram\T
+S1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/zi
+4/m/n/9 `\T1/zi4/m/n/9 myInstagramData\TS1/zi4/m/n/9 `[] 
+
+Overfull \hbox (0.78091pt too wide) in paragraph at lines 514--514
+ []\T1/zi4/m/n/9 myInstagramData <- CollectDataInstagram(lat=-27.4701, lng=153.
+0220, distance=5000, n=100,[] 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (17.84683pt too wide) in paragraph at lines 570--571
+\T1/zi4/m/n/10 language="en"\T1/ptm/m/n/10 . The full list of codes is avail-ab
+le here: https://en.wikipedia.org/wiki/List_of_ISO_639-
+[11] [12] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (18.30962pt too wide) in paragraph at lines 640--641
+\T1/zi4/m/n/10 videoIDs=\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 W2GZFeYGU3s\TS1/zi4/m/n
+/10 '\T1/ptm/m/n/10 . For mul-ti-ple videos, the func-tion \T1/zi4/m/n/10 GetYo
+utubeVideoIDs
+[13] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [14]
+Overfull \hbox (6.96567pt too wide) in paragraph at lines 743--744
+\T1/ptm/m/n/10 sent re-la-tion-ships be-tween ver-tices of the same type (read:
+ 'ac-tors'), such as replies/retweets/mentions
+
+Overfull \hbox (26.58022pt too wide) in paragraph at lines 760--761
+\T1/ptm/m/n/10 net-work from. For ex-am-ple, \T1/zi4/m/n/10 myList <- list(myTw
+itterData1, myTwitterData2, myTwitterData3)\T1/ptm/m/n/10 . 
+[15] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [16]
+Overfull \hbox (13.63731pt too wide) in paragraph at lines 833--834
+[]\T1/ptm/m/n/10 This func-tion cre-ates a (di-rected and weighted) bi-modal ne
+t-work from a data frame of class \T1/zi4/m/n/10 dataSource
+
+Overfull \hbox (46.47998pt too wide) in paragraph at lines 852--853
+\T1/ptm/m/n/10 ate a net-work from. For ex-am-ple, \T1/zi4/m/n/10 myList <- lis
+t(myTwitterData1, myTwitterData2, myTwitterData3)\T1/ptm/m/n/10 . 
+[17]
+Overfull \hbox (11.58096pt too wide) in paragraph at lines 876--876
+ []  \T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataFacebook\
+TS1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/z
+i4/m/n/9 `\T1/zi4/m/n/9 myFacebookData\TS1/zi4/m/n/9 `[] 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [18] [19]
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [20]
+Overfull \hbox (9.78091pt too wide) in paragraph at lines 1067--1067
+ []  \T1/zi4/m/n/9 instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=
+app_id, appSecret=app_secret,[] 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [21] [22]
+Overfull \hbox (46.47998pt too wide) in paragraph at lines 1143--1144
+\T1/ptm/m/n/10 ate a net-work from. For ex-am-ple, \T1/zi4/m/n/10 myList <- lis
+t(myTwitterData1, myTwitterData2, myTwitterData3)\T1/ptm/m/n/10 . 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [23]
+Overfull \hbox (40.76834pt too wide) in paragraph at lines 1187--1188
+\T1/ptm/m/n/10 This func-tion can be used to cre-ate an ob-ject for the ar-gu-m
+ent \T1/zi4/m/n/10 videoIDs \T1/ptm/m/n/10 in the func-tion \T1/zi4/m/n/10 Coll
+ectDataYoutube\T1/ptm/m/n/10 ,
+[24] (./Rd2.ind [25] [26]
+
+LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
+(Font)              using `T1/zi4/m/n' instead on input line 115.
+
+[27]) (./Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(see the transcript file for additional information){/usr/local/texlive/2015/te
+xmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}{/usr/local/texlive/2015/texmf-
+dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/
+dvips/inconsolata/i4-t1-0.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/
+utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (27 pages, 144005 bytes).
+Transcript written on Rd2.log.
+This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (84 entries accepted, 0 rejected).
+Sorting entries....done (533 comparisons).
+Generating output file Rd2.ind....done (119 lines written, 0 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(./Rd2.tex
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/bk10.clo))
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/Rd.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.05, 2014/06/22 Text macros for Inconsolata (msharpe)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+(./Rd2.aux) (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./Rd2.out) (./Rd2.out)
+Overfull \hbox (30.21837pt too wide) in paragraph at lines 23--24
+\T1/ptm/m/n/10 tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook,Hmis
+c,data.table,httpuv,instaR,methods,httr  
+(/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [1{/usr/local/texl
+ive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (16.78088pt too wide) in paragraph at lines 57--57
+ []\T1/zi4/m/n/10 AuthenticateWithFacebookAPI(appID, appSecret, extended_permis
+sions, useCachedToken)[] 
+[2]
+Overfull \hbox (8.42542pt too wide) in paragraph at lines 81--82
+[]\T1/ptm/m/n/10 To get a Face-book 'app ID' and 'API se-cret', the ex-cel-lent
+ tu-to-rial at http://thinktostart.com/analyzing-
+(/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [3]
+Overfull \hbox (126.32372pt too wide) in paragraph at lines 146--147
+[]\T1/ptm/m/n/10 To get a In-sta-gram 'app ID' and 'API se-cret', please see th
+e In-sta-gram doc-u-ment at: https://instagram.com/developer/authentication/ 
+
+Overfull \hbox (36.25967pt too wide) in paragraph at lines 160--161
+[]\T1/zi4/m/n/10 AuthenticateWithTwitterAPI \T1/ptm/m/n/10 and \T1/zi4/m/n/10 A
+uthenticateWithYouTubeAPI \T1/ptm/m/n/10 and \T1/zi4/m/n/10 AuthenticateWithFac
+ebookAPI
+[4] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [5]
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (74.45605pt too wide) in paragraph at lines 274--275
+\T1/ptm/m/n/10 Pro-gram-ming In-ter-face (API). Users can ob-tain a Google De-v
+el-oper API key at: https://console.developers.google.com 
+[6] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (13.78088pt too wide) in paragraph at lines 317--317
+ []\T1/zi4/m/n/10 CollectDataFacebook(pageName, rangeFrom, rangeTo, verbose, n,
+ writeToFile, dynamic)[] 
+
+Overfull \hbox (1.11737pt too wide) in paragraph at lines 327--328
+[]\T1/ptm/m/n/10 character string, spec-i-fy-ing a 'start date' for data col-le
+c-tion, in the for-mat YYYY-
+
+Overfull \hbox (3.88766pt too wide) in paragraph at lines 330--331
+[]\T1/ptm/m/n/10 character string, spec-i-fy-ing an 'end date' for data col-lec
+-tion, in the for-mat YYYY-
+[7]
+Overfull \hbox (5.719pt too wide) in paragraph at lines 362--364
+[]\T1/ptm/m/n/10 - bi-modal net-works; \T1/zi4/m/n/10 CreateBimodalNetwork \T1/
+ptm/m/n/10 - dy-namic bi-modal net-works; \T1/zi4/m/n/10 CreateDynamicNetwork 
+
+Overfull \hbox (52.16856pt too wide) in paragraph at lines 373--374
+[]\T1/zi4/m/n/10 AuthenticateWithFacebookAPI \T1/ptm/m/n/10 must be run first o
+r no data will be col-lected, \T1/zi4/m/n/10 collectTemporalDataFacebook
+
+Overfull \hbox (11.58096pt too wide) in paragraph at lines 387--387
+ []  \T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataFacebook\
+TS1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/z
+i4/m/n/9 `\T1/zi4/m/n/9 myFacebookData\TS1/zi4/m/n/9 `[] 
+[8] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (11.78088pt too wide) in paragraph at lines 413--413
+ []\T1/zi4/m/n/10 CollectDataInstagram(tag, n, lat, lng, distance, folder, mind
+ate, maxdate, verbose,[] 
+
+Overfull \hbox (69.60672pt too wide) in paragraph at lines 463--464
+\T1/ptm/m/n/10 and struc-tures these re-la-tion-ships into a for-mat suit-able 
+for cre-at-ing bi-modal net-works us-ing \T1/zi4/m/n/10 CreateBimodalNetwork\T1
+/ptm/m/n/10 . 
+[9]
+Overfull \hbox (3.91833pt too wide) in paragraph at lines 467--468
+[]\T1/ptm/m/n/10 A data frame ob-ject of class \T1/zi4/m/n/10 dataSource.Instag
+ram \T1/ptm/m/n/10 that can be used with \T1/zi4/m/n/10 CreateBimodalNetwork\T1
+/ptm/m/n/10 . 
+
+Overfull \hbox (2.5809pt too wide) in paragraph at lines 494--494
+ []\T1/zi4/m/n/9 instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=ap
+p_id, appSecret=app_secret,[] 
+
+Overfull \hbox (13.38095pt too wide) in paragraph at lines 499--499
+ []\T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataInstagram\T
+S1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/zi
+4/m/n/9 `\T1/zi4/m/n/9 myInstagramData\TS1/zi4/m/n/9 `[] 
+[10]
+Overfull \hbox (13.38095pt too wide) in paragraph at lines 512--512
+ []\T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataInstagram\T
+S1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/zi
+4/m/n/9 `\T1/zi4/m/n/9 myInstagramData\TS1/zi4/m/n/9 `[] 
+
+Overfull \hbox (0.78091pt too wide) in paragraph at lines 514--514
+ []\T1/zi4/m/n/9 myInstagramData <- CollectDataInstagram(lat=-27.4701, lng=153.
+0220, distance=5000, n=100,[] 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (17.84683pt too wide) in paragraph at lines 570--571
+\T1/zi4/m/n/10 language="en"\T1/ptm/m/n/10 . The full list of codes is avail-ab
+le here: https://en.wikipedia.org/wiki/List_of_ISO_639-
+[11] [12] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (18.30962pt too wide) in paragraph at lines 640--641
+\T1/zi4/m/n/10 videoIDs=\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 W2GZFeYGU3s\TS1/zi4/m/n
+/10 '\T1/ptm/m/n/10 . For mul-ti-ple videos, the func-tion \T1/zi4/m/n/10 GetYo
+utubeVideoIDs
+[13] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [14]
+Overfull \hbox (6.96567pt too wide) in paragraph at lines 743--744
+\T1/ptm/m/n/10 sent re-la-tion-ships be-tween ver-tices of the same type (read:
+ 'ac-tors'), such as replies/retweets/mentions
+
+Overfull \hbox (26.58022pt too wide) in paragraph at lines 760--761
+\T1/ptm/m/n/10 net-work from. For ex-am-ple, \T1/zi4/m/n/10 myList <- list(myTw
+itterData1, myTwitterData2, myTwitterData3)\T1/ptm/m/n/10 . 
+[15] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [16]
+Overfull \hbox (13.63731pt too wide) in paragraph at lines 833--834
+[]\T1/ptm/m/n/10 This func-tion cre-ates a (di-rected and weighted) bi-modal ne
+t-work from a data frame of class \T1/zi4/m/n/10 dataSource
+
+Overfull \hbox (46.47998pt too wide) in paragraph at lines 852--853
+\T1/ptm/m/n/10 ate a net-work from. For ex-am-ple, \T1/zi4/m/n/10 myList <- lis
+t(myTwitterData1, myTwitterData2, myTwitterData3)\T1/ptm/m/n/10 . 
+[17]
+Overfull \hbox (11.58096pt too wide) in paragraph at lines 876--876
+ []  \T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataFacebook\
+TS1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/z
+i4/m/n/9 `\T1/zi4/m/n/9 myFacebookData\TS1/zi4/m/n/9 `[] 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [18] [19]
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [20]
+Overfull \hbox (9.78091pt too wide) in paragraph at lines 1067--1067
+ []  \T1/zi4/m/n/9 instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=
+app_id, appSecret=app_secret,[] 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [21] [22]
+Overfull \hbox (46.47998pt too wide) in paragraph at lines 1143--1144
+\T1/ptm/m/n/10 ate a net-work from. For ex-am-ple, \T1/zi4/m/n/10 myList <- lis
+t(myTwitterData1, myTwitterData2, myTwitterData3)\T1/ptm/m/n/10 . 
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [23]
+Overfull \hbox (40.76834pt too wide) in paragraph at lines 1187--1188
+\T1/ptm/m/n/10 This func-tion can be used to cre-ate an ob-ject for the ar-gu-m
+ent \T1/zi4/m/n/10 videoIDs \T1/ptm/m/n/10 in the func-tion \T1/zi4/m/n/10 Coll
+ectDataYoutube\T1/ptm/m/n/10 ,
+[24] (./Rd2.ind [25] [26]
+
+LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
+(Font)              using `T1/zi4/m/n' instead on input line 115.
+
+[27]) (./Rd2.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(see the transcript file for additional information){/usr/local/texlive/2015/te
+xmf-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}{/usr/local/texlive/2015/texmf-
+dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/
+dvips/inconsolata/i4-t1-0.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/
+utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (27 pages, 144434 bytes).
+Transcript written on Rd2.log.
+Saving output to 'SocialMediaLabDev-manual.pdf' ...
+Done
+You may want to clean up by 'rm -rf /var/folders/g2/66rks8xn1w5gmqn6y2t4bn2w0000gn/T//RtmpH2yiTN/Rd2pdf2194ca7933e'

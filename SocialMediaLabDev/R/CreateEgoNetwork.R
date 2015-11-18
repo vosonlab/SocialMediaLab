@@ -2,9 +2,12 @@ CreateEgoNetwork <-
 function(dataSource,username,userid,verbose,degreeEgoNet,writeToFile,waitForRateLimit,getFollows)
 {
 
-  #if(!(exists("instagram_oauth_token"))) {
-  #  instagram_oauth_token <- NULL
-  #}
+  egoName = profile_picture = full_name = id = . = NULL # appease the gods of R CMD CHECK --as-cran
+
+
+  if(!(exists("instagram_oauth_token"))) {
+    instagram_oauth_token <- NULL
+  }
 
   # if (missing(token)){
   #  cat("Please specify a valid API token (missing `token` argument in function call).\n")
@@ -67,7 +70,8 @@ function(dataSource,username,userid,verbose,degreeEgoNet,writeToFile,waitForRate
         cat(paste0("\nNumber of API calls used so far is: ",totalCallsToAPI,"\n"))
       }
 
-      if (waitForRateLimit & totalCallsToAPI==4999 & (proc.time() - rateLimitHourTimer)[3] < 3600) { # if we have hit the limit within one hour
+      # stop it at 4990, just shy of 5000 (margin of error)
+      if (waitForRateLimit & totalCallsToAPI==4990 & (proc.time() - rateLimitHourTimer)[3] < 3600) { # if we have hit the limit within one hour
         cat("\nThe rate limit has reached maximum capacity! Sleeping now for 60 minutes...\n")
         Sys.sleep(3600)
         #cat("\nThe rate limit has reached 60! Sleeping now for 2 minutes...\n") # DEBUG
@@ -125,7 +129,8 @@ function(dataSource,username,userid,verbose,degreeEgoNet,writeToFile,waitForRate
       cat(paste0("\nNumber of API calls used so far is: ",totalCallsToAPI,"\n"))
     }
 
-    if (waitForRateLimit & totalCallsToAPI==4999 & (proc.time() - rateLimitHourTimer)[3] < 3600) { # if we have hit the limit within one hour
+    # stop it at 4990, just shy of 5000 (margin of error)
+    if (waitForRateLimit & totalCallsToAPI==4990 & (proc.time() - rateLimitHourTimer)[3] < 3600) { # if we have hit the limit within one hour
       cat("\nThe rate limit has reached maximum capacity! Sleeping now for 60 minutes...\n")
       Sys.sleep(3600)
       #cat("\nThe rate limit has reached 60! Sleeping now for 2 minutes...\n") # DEBUG
@@ -185,7 +190,8 @@ function(dataSource,username,userid,verbose,degreeEgoNet,writeToFile,waitForRate
           cat(paste0("\nNumber of API calls used so far is: ",totalCallsToAPI,"\n"))
         }
 
-        if (waitForRateLimit & totalCallsToAPI==4999 & (proc.time() - rateLimitHourTimer)[3] < 3600) { # if we have hit the limit within one hour
+        # stop it at 4990, just shy of 5000 (margin of error)
+        if (waitForRateLimit & totalCallsToAPI==4990 & (proc.time() - rateLimitHourTimer)[3] < 3600) { # if we have hit the limit within one hour
           cat("\nThe rate limit has reached maximum capacity! Sleeping now for 60 minutes...\n")
           Sys.sleep(3600)
           #cat("\nThe rate limit has reached 60! Sleeping now for 2 minutes...\n") # DEBUG
@@ -254,7 +260,8 @@ function(dataSource,username,userid,verbose,degreeEgoNet,writeToFile,waitForRate
             cat(paste0("\nNumber of API calls used so far is: ",totalCallsToAPI,"\n"))
           }
 
-          if (waitForRateLimit & totalCallsToAPI==4999 & (proc.time() - rateLimitHourTimer)[3] < 3600) { # if we have hit the limit within one hour
+          # stop it at 4990, just shy of 5000 (margin of error)
+          if (waitForRateLimit & totalCallsToAPI==4990 & (proc.time() - rateLimitHourTimer)[3] < 3600) { # if we have hit the limit within one hour
             cat("\nThe rate limit has reached maximum capacity! Sleeping now for 60 minutes...\n")
             Sys.sleep(3600)
             #cat("\nThe rate limit has reached 60! Sleeping now for 2 minutes...\n") # DEBUG
