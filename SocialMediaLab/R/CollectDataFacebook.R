@@ -2,7 +2,7 @@ CollectDataFacebook <-
 function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,dynamic) {
 #with(list(pageName,rangeFrom,rangeTo,verbose,n,writeToFile), {
 
-postID=from=relationship=edgeWeight=NULL # to please the gods of R CMD CHECK
+postID=from=relationship=edgeWeight=to=NULL # to please the gods of R CMD CHECK
 
   # handle the arguments
   # if the user has specified dynamic==TRUE
@@ -327,13 +327,15 @@ if (dynamic==FALSE | dynamic =="FALSE" | dynamic=="false" | dynamic=="F") {
 
           dataCombinedUNIQUE <- unique(dataCombinedUNIQUE)
 
-          setkey(dataCombinedUNIQUE,from) # set the key value of the data table
+          setkey(dataCombinedUNIQUE,from,to) # set the key value of the data table
 
     # cat("\n ########## calculating matches and weights...") # DEBUG
 
           for (i in 1:nrow(dataCombinedUNIQUE)) {
 
             matchesTemp <- which(dataCombined$from == dataCombinedUNIQUE$from[i] & dataCombined$to == dataCombinedUNIQUE$to[i])
+            ## data table way:
+            # dataCombined[  , .I[dataCombinedUNIQUE$from[i],dataCombinedUNIQUE$to[i]]
 
             # !! Not sure about this.
             # Current approach means that if user i has LIKED *and* COMMENTED on post j,
@@ -349,6 +351,7 @@ if (dynamic==FALSE | dynamic =="FALSE" | dynamic=="false" | dynamic=="F") {
               # dataCombinedUNIQUE$edgeWeight[i] <- sum(dataCombined$from == dataCombinedUNIQUE$from[i] & dataCombined$to == dataCombinedUNIQUE$to[i])
             # NEW data table way:
             dataCombinedUNIQUE[i, edgeWeight := dataCombinedUNIQUE[, sum(dataCombined$from == dataCombinedUNIQUE$from[i] & dataCombined$to == dataCombinedUNIQUE$to[i]) ]]
+
           }
 
           class(dataCombinedUNIQUE) <- append(class(dataCombinedUNIQUE),c("dataSource","facebook"))
@@ -542,11 +545,13 @@ if (dynamic=="TRUE" | verbose=="true" | verbose=="T" | verbose==TRUE) {
 
               tempDataTable <- rbind(tempDataTable,tempDataTableLOOP)
 
+              setkey(tempDataTable,postID) # set the key value of the data table
+
           }
 
           # remove dummy first row
-          tempDataTable <- tempDataTable[-1,]
-
+          # tempDataTable <- tempDataTable[-1,]
+          tempDataTable[postID != "foo"] # NEW DATA TABLE WAY
         }
 
         #####################################################
@@ -569,18 +574,12 @@ if (dynamic=="TRUE" | verbose=="true" | verbose=="T" | verbose==TRUE) {
         # dataCombined <- rbind(usersLikedPosts,usersCommentedPosts)
         dataCombined <- usersCommentedPosts # because we aren't including likes
 
+        setkey(dataCombined,from) # set the key value of the data table
+
         # remove the "fake" NA values (these will occur due to the way the original data.table is structured, see above)
-
-        toRemove <- which(dataCombined$from=="NA")
-        if(length(toRemove) > 0) {
-          dataCombined <- dataCombined[-toRemove,]
-        }
-
-        # and then remove the "actual" NA values
-        toRemove <- which(is.na(dataCombined$from))
-        if(length(toRemove) > 0) {
-          dataCombined <- dataCombined[-toRemove,]
-        }
+        # the data table way:
+        dataCombined <- dataCombined[!"NA"]
+        dataCombined <- na.omit(dataCombined)
 
         dataCombinedUNIQUE <- dataCombined ## keep the var name, so code below works (we aren't using unique anymore)
 

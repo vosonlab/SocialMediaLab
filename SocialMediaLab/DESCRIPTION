@@ -1,6 +1,6 @@
 Package: SocialMediaLab
-Version: 0.18.0
-Date: 2015-11-15
+Version: 0.19.0
+Date: 2015-11-25
 Title: Tools for Collecting Social Media Data and Generating Networks for Analysis
 Description: A suite of tools for collecting and constructing networks from social media data. Provides easy-to-use functions for collecting data across popular platforms (Instagram, Facebook, Twitter, and YouTube) and generating different types of networks for analysis.
 Type: Package
