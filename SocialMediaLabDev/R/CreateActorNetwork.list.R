@@ -100,6 +100,13 @@ function(x,writeToFile)
       missingTemp <- c(missingTemp, which(missingActors[i] == unique_dfActorNetwork1$mentionedUsersTemp))
     }
 
+    ## remove NA values
+    toDel <- which(is.na(unique_dfActorNetwork1$mentionedUsersTemp) | is.na(unique_dfActorNetwork1$usersTemp))
+    # REMOVE the offendors:
+    if(length(toDel) > 0) {
+      unique_dfActorNetwork1 <- unique_dfActorNetwork1[-toDel,]
+    }
+
     # REMOVE the offendors:
     if(length(missingTemp) > 0) {
     unique_dfActorNetwork1 <- unique_dfActorNetwork1[-missingTemp,]
