@@ -14,7 +14,7 @@ This package would not be possible without key packages by other authors in the 
 
 For detailed information and examples, please refer to the [SocialMediaLab documentation](https://github.com/voson-lab/SocialMediaLab/blob/master/SocialMediaLab.pdf).
 
-More soon...
+The [SocialMediaLab page on the VOSON website](http://voson.anu.edu.au/SocialMediaLab) also has several "how to" guides, including an "Absolute Beginners Guide to SocialMediaLab" tutorial aimed at people with little or no programming experience.
 
 ## Example networks
 
