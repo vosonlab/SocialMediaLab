@@ -24,11 +24,11 @@ The following networks were created in SocialMediaLab and visualised using the [
 
 This network visualises two weeks of activity on the [Star Wars Facebook page](https://www.facebook.com/StarWarsAUNZ/?brand_redir=169299103121699). Nodes (vertices) represent either users or posts, and node ties (edges) represent either 'likes' or comments. Nodes are sized by out-degree and coloured by modularity cluster.
 
-<img src="https://raw.githubusercontent.com/voson-lab/SocialMediaLab/master/miscellaneous/exported_graph_images/Facebook_bimodal_network_socialmedialab_Star_Wars.png?token=AKw5r_WagSdf1f9L-peOJfKZZqIkMYwCks5WVRxNwA%3D%3D" alt="Facebook bimodal network created with SocialMediaLab" width="600" height="600"/>
+<img src="http://voson.anu.edu.au//papers/ACSPRIWinter2015/Facebook_bimodal_network_socialmedialab_Star_Wars.png" alt="Facebook bimodal network created with SocialMediaLab" width="600" height="600"/>
 
 ##### Instagram ego network
 
 This network visualises the social network of one user (the 'ego' node) on Instagram. The degree of the network is "2", meaning that it shows *ego + alters* ("followers of ego") and *ego + alters* + *alters of alters of ego* "followers of followers of ego". 'Follows' data are also collected, so this network also shows "users who ego follows" and "users who followers of ego follow".
 
-<img src="https://raw.githubusercontent.com/voson-lab/SocialMediaLab/master/miscellaneous/exported_graph_images/Instagram_ego_network_socialmedialab_example.png?token=AKw5r99givdLgt47JH3rMaBA2ZBW9FIoks5WVTJ6wA%3D%3D" alt="Facebook bimodal network created with SocialMediaLab" width="600" height="600"/>
+<img src="http://voson.anu.edu.au//papers/ACSPRIWinter2015/Instagram_ego_network_socialmedialab_example.png" alt="Facebook bimodal network created with SocialMediaLab" width="600" height="600"/>
 
