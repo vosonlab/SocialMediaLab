@@ -1,5 +1,29 @@
 # SocialMediaLab
 
+## Why I(Chung-hong Chan) think this package need to update the User Interface.
+
+The UI is currently so inconsistent and also rely too much on side effects in the authentication process.
+
+I think it should have a consistent UI so that we can create a social network out of social media data using a 3-step process.
+
+1. Authenticate
+2. Collect
+3. CreateNetwork
+
+With the magrittr pipe operator, it can be expressed as the following pipeline processes. (repackage from the original examples in the manuals)
+
+```{r}
+Authenticate("facebook", apiID = "12345", apiSecret = "mysecret") %>% Collect(pageName = "StarWars", range = c("2015-05-01", "2015-06-03")) %>% CreateNetwork("bimodal")
+
+Authenticate("instagram", apiID = "12345", apiSecret = "mysecret") %>% Collect(tag = "obama", distance = 5000, n = 100) %>% CreateNetwork("bimodal")
+
+Authenticate("twitter", apiKey = "12345", apiSecret = "mysecret", accessToken = "at", accessTokenSecret = "ats") %>% Collect(search = "#auspol", n = 150) %>% CreateNetwork("actor")
+
+Authenticate("youtube", apiSecret = "mysecret") %>% Collect(videoIDs = c("W2GZFeYGU3s", "mL27TAJGlWc")) %>% CreateNetwork("actor")
+```
+
+## original README
+
 Note: if you are getting the error `Error in check_twitter_oauth( )`, please find a [solution here](https://github.com/geoffjentry/twitteR/issues/90).
 
 `SocialMediaLab` is an R package that provides a suite of tools for collecting and constructing networks from social media data. It provides easy-to-use functions for collecting data across popular platforms (Instagram, Facebook, Twitter, and YouTube) and generating different types of networks for analysis.
