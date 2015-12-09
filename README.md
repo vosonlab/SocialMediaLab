@@ -1,56 +1,6 @@
 # SocialMediaLab
 
-## Why I(Chung-hong Chan) think this package need to update the User Interface.
-
-The UI is currently so inconsistent and also rely too much on side effects in the authentication process.
-
-I think it should have a consistent UI so that we can create a social network out of social media data using a 3-step process.
-
-1. Authenticate
-2. Collect
-3. Create
-
-With the magrittr pipe operator, it can be expressed as the following pipeline processes. (repackage from the original examples in the manuals)
-
-```{r}
-Authenticate("facebook", apiID = "12345", apiSecret = "mysecret") %>% Collect(pageName = "StarWars", range = c("2015-05-01", "2015-06-03")) %>% Create("bimodal")
-
-Authenticate("instagram", apiID = "12345", apiSecret = "mysecret") %>% Collect(tag = "obama", distance = 5000, n = 100) %>% Create("bimodal")
-
-Authenticate("twitter", apiKey = "12345", apiSecret = "mysecret", accessToken = "at", accessTokenSecret = "ats") %>% Collect(search = "#auspol", n = 150) %>% Create("actor")
-
-Authenticate("youtube", apiSecret = "mysecret") %>% Collect(videoIDs = c("W2GZFeYGU3s", "mL27TAJGlWc")) %>% Create("actor")
-```
-
-TODO improvements:
-
-1. Make the list of Authentication-related variables standard, currently there are:
-
-* facebook: appID, appSecret, extended_permissions, useCachedToken
-* twitter: api_key, api_secret, access_token, access_token_secret, createToken <- inconsistent?
-* youtube: apiKeyYoutube
-* instagram: appID, appSecret, useCachedToken
-
-The Authenticate() will use argument with camelCased variable names, i.e.
-
-* appID, appSecret, apiKey, apiSecret, accessToken, accessTokenSecret, useCachedToken, extendedPermissions, createToken
-
-Progress: 
-* Authenticate("youtube", ApiKey) has been implemented
-
-2. Make the authentication process side effect free
-
-Difficulty level:
-
-* Easy: ~~Youtube~~, Instagram
-* Medium: Facebook
-* Hard: Twitter
-
-3. Refactoring the CollectDataFrom* functions to make it unit-testable.
-
-4. Add unit tests
-
-## original README
+## README
 
 Note: if you are getting the error `Error in check_twitter_oauth( )`, please find a [solution here](https://github.com/geoffjentry/twitteR/issues/90).
 
@@ -67,6 +17,27 @@ This package would not be possible without key packages by other authors in the 
 For detailed information and examples, please refer to the [SocialMediaLab documentation](https://github.com/voson-lab/SocialMediaLab/blob/master/SocialMediaLab.pdf).
 
 The [SocialMediaLab page on the VOSON website](http://voson.anu.edu.au/SocialMediaLab) also has several "how to" guides, including an "Absolute Beginners Guide to SocialMediaLab" tutorial aimed at people with little or no programming experience.
+
+## Using the Magrittr's pipe interface
+
+The process of authentication, data collection and creating social network can be expressed with the 3 verb functions: Authenticate, Collect and Create. The following are some of the examples from the MAN page expressed with the pipe interface.
+
+The arguments for the Authenticate function is always camelCased, i.e. appID, appSecret, apiKey, apiSecret, accessToken, accessTokenSecret, useCachedToken, extendedPermissions, createToken.
+
+```{r}
+require(magrittr)
+# Authenticate with youtube, Collect data from youtube and Create an actor network
+Authenticate("youtube", apiKey= apiKey) %>% Collect(videoIDs = videoIDs) %>% Create("Actor")
+
+# Authenticate with facebook, archive the API credential, Collect data about Starwars Page and Create a bimodal network
+
+# You can use facebook, FaCebooK or Facebook in the datasource field
+
+Authenticate("Facebook", appID = appID, appSecret = appSecret) %>% SaveCredential("FBCredential.RDS") %>% Collect(pageName="StarWars", rangeFrom="2015-05-01",rangeTo="2015-06-03") %>% Create("Bimodal")
+
+# Authenticate with Twitter, Collect data about #auspol and Create a semantic network
+Authenticate("twitter", apiKey=myapikey, apiSecret=myapisecret,accessToken=myaccesstoken, accessTokenSecret=myaccesstokensecret) %>% %>% Collect(searchTerm="#auspol", numTweets=150) %>% Create("Semantic")
+```
 
 ## Example networks
 

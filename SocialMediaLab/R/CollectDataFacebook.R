@@ -1,16 +1,21 @@
 CollectDataFacebook <-
-function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,dynamic) {
+function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,dynamic, credential = NULL) {
 #with(list(pageName,rangeFrom,rangeTo,verbose,n,writeToFile), {
 
-postID=from=relationship=edgeWeight=to=NULL # to please the gods of R CMD CHECK
+    postID=from=relationship=edgeWeight=to=NULL # to please the gods of R CMD CHECK
 
   # handle the arguments
   # if the user has specified dynamic==TRUE
   # then we will have to run an entirely different set of code (this may be fixed in future versions)
 
-  if(!(exists("fb_oauth"))) {
-    fb_oauth=NULL # to get rid of the note when doing R CMD CHECK
-  }
+    ## use side effect
+    if (!(exists("fb_oauth")) & is.null(credential)) {
+        fb_oauth <- NULL # to get rid of the note when doing R CMD CHECK
+    }
+    ## not use side effect
+    if (!is.null(credential)) {
+        fb_oauth <- credential$auth
+    }
 
   if (missing(dynamic)) {
     dynamic <- FALSE # default to non-dynamic data
