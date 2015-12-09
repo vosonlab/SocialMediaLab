@@ -8,18 +8,26 @@
 ### instagram: appID, appSecret, useCachedToken
 
 ## Maybe make it consistent with only camel, as the rest of the package uses camel, not underscore. But hedleyverse packages usually use underscores:
-## Therefore:
+## Therefore, unified variable names:
 ## appID, appSecret, apiKey, apiSecret, accessToken, accessTokenSecret, useCachedToken, extendedPermissions, createToken
 
 Authenticate <- function(datasource, ...) {
-    auth <- switch(datasource,
-                   facebook = AuthenticateWithFacebookAPI(...),
-                   youtube = AuthenticateWithYoutubeAPI(...),
-                   twitter = AuthenticateWithTwitterAPI(...),
-                   instagram = AuthenticateWithInstagram(...)
-    )
+    authenticator <- switch(datasource,
+                            facebook = AuthenticateWithFacebookAPI,
+                            youtube = youtubeAuthenticator,
+                            twitter = AuthenticateWithTwitterAPI,
+                            instagram = AuthenticateWithInstagram,
+                            stop("Unknown datasource")
+                            )
+    auth <- authenticator(...)
     ## we can add more, such as youtube, twitter and instagram
     credential <- list(datasource = datasource, auth = auth)
     class(credential) <- append(class(credential), "credential")
     return(credential)
+}
+
+### *Authenicator functions should not be exported. It is just a bunch of helper functions to bridge the AuthenticateWith* functions with Authenticate(), but with datasource as the first argument and always return an auth object
+
+youtubeAuthenticator <- function(apiKey) {
+    return(AuthenticateWithYoutubeAPI(apiKey))
 }

@@ -8,19 +8,47 @@ I think it should have a consistent UI so that we can create a social network ou
 
 1. Authenticate
 2. Collect
-3. CreateNetwork
+3. Create
 
 With the magrittr pipe operator, it can be expressed as the following pipeline processes. (repackage from the original examples in the manuals)
 
 ```{r}
-Authenticate("facebook", apiID = "12345", apiSecret = "mysecret") %>% Collect(pageName = "StarWars", range = c("2015-05-01", "2015-06-03")) %>% CreateNetwork("bimodal")
+Authenticate("facebook", apiID = "12345", apiSecret = "mysecret") %>% Collect(pageName = "StarWars", range = c("2015-05-01", "2015-06-03")) %>% Create("bimodal")
 
-Authenticate("instagram", apiID = "12345", apiSecret = "mysecret") %>% Collect(tag = "obama", distance = 5000, n = 100) %>% CreateNetwork("bimodal")
+Authenticate("instagram", apiID = "12345", apiSecret = "mysecret") %>% Collect(tag = "obama", distance = 5000, n = 100) %>% Create("bimodal")
 
-Authenticate("twitter", apiKey = "12345", apiSecret = "mysecret", accessToken = "at", accessTokenSecret = "ats") %>% Collect(search = "#auspol", n = 150) %>% CreateNetwork("actor")
+Authenticate("twitter", apiKey = "12345", apiSecret = "mysecret", accessToken = "at", accessTokenSecret = "ats") %>% Collect(search = "#auspol", n = 150) %>% Create("actor")
 
-Authenticate("youtube", apiSecret = "mysecret") %>% Collect(videoIDs = c("W2GZFeYGU3s", "mL27TAJGlWc")) %>% CreateNetwork("actor")
+Authenticate("youtube", apiSecret = "mysecret") %>% Collect(videoIDs = c("W2GZFeYGU3s", "mL27TAJGlWc")) %>% Create("actor")
 ```
+
+TODO improvements:
+
+1. Make the list of Authentication-related variables standard, currently there are:
+
+* facebook: appID, appSecret, extended_permissions, useCachedToken
+* twitter: api_key, api_secret, access_token, access_token_secret, createToken <- inconsistent?
+* youtube: apiKeyYoutube
+* instagram: appID, appSecret, useCachedToken
+
+The Authenticate() will use argument with camelCased variable names, i.e.
+
+* appID, appSecret, apiKey, apiSecret, accessToken, accessTokenSecret, useCachedToken, extendedPermissions, createToken
+
+Progress: 
+* Authenticate("youtube", ApiKey) has been implemented
+
+2. Make the authentication process side effect free
+
+Difficulty level:
+
+* Easy: ~~Youtube~~, Instagram
+* Medium: Facebook
+* Hard: Twitter
+
+3. Refactoring the CollectDataFrom* functions to make it unit-testable.
+
+4. Add unit tests
 
 ## original README
 
