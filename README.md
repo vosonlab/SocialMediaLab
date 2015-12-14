@@ -8,6 +8,10 @@ Note: if you are getting the error `Error in check_twitter_oauth( )`, please fin
 
 SocialMediaLab was created by [Timothy Graham](http://uq.academia.edu/TimGraham) (who is also the maintainer of the package) and [Robert Ackland](https://researchers.anu.edu.au/researchers/ackland-rj).
 
+Contributors:
+
+* [Chung-hong Chan](https://github.com/chainsawriot)
+
 The latest 'official' version of the package can also be found on [CRAN](https://cran.r-project.org/web/packages/SocialMediaLab/index.html).
 
 This package would not be possible without key packages by other authors in the R community, particularly: [igraph](https://github.com/igraph/rigraph), [Rfacebook](https://github.com/pablobarbera/Rfacebook), [instaR](https://github.com/pablobarbera/instaR), [twitteR](https://github.com/geoffjentry/twitteR), [data.table](https://github.com/Rdatatable/data.table), [tm](https://cran.r-project.org/web/packages/tm/index.html), and [httr](https://github.com/hadley/httr).
@@ -20,9 +24,7 @@ The [SocialMediaLab page on the VOSON website](http://voson.anu.edu.au/SocialMed
 
 ## Using the Magrittr's pipe interface
 
-The process of authentication, data collection and creating social network can be expressed with the 3 verb functions: Authenticate, Collect and Create. The following are some of the examples from the MAN page expressed with the pipe interface.
-
-The arguments for the Authenticate function is always camelCased, i.e. appID, appSecret, apiKey, apiSecret, accessToken, accessTokenSecret, useCachedToken, extendedPermissions, createToken.
+The process of authentication, data collection and creating social network can be expressed with the 3 verb functions: *Authenticate*, *Collect* and *Create*. The following are some of the examples from the package documentation expressed with the pipe interface.
 
 ```{r}
 require(magrittr)
@@ -37,6 +39,10 @@ Authenticate("Facebook", appID = appID, appSecret = appSecret) %>% SaveCredentia
 
 # Authenticate with Twitter, Collect data about #auspol and Create a semantic network
 Authenticate("twitter", apiKey=myapikey, apiSecret=myapisecret,accessToken=myaccesstoken, accessTokenSecret=myaccesstokensecret) %>% %>% Collect(searchTerm="#auspol", numTweets=150) %>% Create("Semantic")
+
+# Create Instagram Ego Network
+myUsernames <- 
+Authenticate("instagram", appID = myAappId, appSecret = myAppSecret) %>% Collect(ego = TRUE, username = c("senjohnmccain","obama")) %>% Create
 ```
 
 ## Example networks

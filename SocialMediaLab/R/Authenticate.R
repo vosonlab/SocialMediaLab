@@ -11,16 +11,52 @@
 ## Therefore, unified variable names:
 ## appID, appSecret, apiKey, apiSecret, accessToken, accessTokenSecret, useCachedToken, extendedPermissions, createToken
 
-Authenticate <- function(datasource, ...) {
-    authenticator <- switch(tolower(datasource),
+#' Create credential to access social media APIs
+#'
+#' \code{Authenticate} creates a \code{credential} object that enables R to make authenticated calls to social media APIs. 
+#' A \code{credential} object is a S3 object with the authentication-related information such as access tokens and the information on the social media that grant authentication.
+#' \code{Authenticate} is the first step of the \code{Authenticate}, \code{Collect}, \code{Create} workflow.
+#' @param socialmedia character string, social media API to authenticate, currently supports "facebook", "youtube", "twitter" and "instagram"
+#' @param ... additional parameters for authentication
+#' 
+#' \code{facebook}: appID, appSecret
+#' 
+#' \code{youtube}: apiKey
+#'
+#' \code{twitter}: apiKey, apiSecret, accessToken, accessTokenSecret
+#' 
+#' \code{instagram}: appID, appSecret
+#' 
+#' @return credential object with authentication information
+#' @note Currently, \code{Authenticate} with socialmedia = "twitter" generates oauth information to be used in the current active session only (i.e. "side-effect") and no authentication-related information will be stored in the returned \code{credential} object.
+#' @author Chung-hong Chan <chainsawtiney@gmail.com>
+#' @examples
+#' \dontrun{
+#' require(magrittr)
+#' ## Instagram ego network example
+#' myAppID <- "123456789098765"
+#' myAppSecret <- "abc123abc123abc123abc123abc123ab"
+#' myUsernames <- c("senjohnmccain","obama")
+#' 
+#' Authenticate("instagram", appID = myAappId, appSecret = myAppSecret) %>% Collect(ego = TRUE, username = myUsernames) %>% Create
+#' 
+#' ## YouTube actor network example
+#' my_apiKeyYoutube <- "314159265358979qwerty"
+#' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
+#' 
+#' Authenticate("youtube", apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
+#' }
+#' @seealso \code{\link{AuthenticateWithFacebookAPI}}, \code{\link{AuthenticateWithInstagramAPI}}, \code{\link{AuthenticateWithYoutubeAPI}}, \code{\link{AuthenticateWithTwitterAPI}}, \code{\link{SaveCredential}}, \code{\link{LoadCredential}}
+Authenticate <- function(socialmedia, ...) {
+    authenticator <- switch(tolower(socialmedia),
                             facebook = facebookAuthenticator,
                             youtube = youtubeAuthenticator,
                             twitter = twitterAuthenticator,
                             instagram = instagramAuthenticator,
-                            stop("Unknown datasource")
+                            stop("Unknown socialmedia")
                             )
     auth <- authenticator(...)
-    credential <- list(datasource = tolower(datasource), auth = auth)
+    credential <- list(socialmedia = tolower(socialmedia), auth = auth)
     class(credential) <- append(class(credential), "credential")
     return(credential)
 }
@@ -30,8 +66,35 @@ Authenticate <- function(datasource, ...) {
 ### i.e. Authenticate %>% SaveCredential %>% Collect
 ### and then, LoadCredential %>% Collect
 
+
+### Docs for SaveCredential and LoadCredential
+
+#' @name SaveCredential
+#' @rdname SaveCredential
+#' @title Save and load credential information
+#' @description
+#' Functions to save and load credential informaion. Currently, credential informaion will be stored as a RDS file. \code{SaveCredential} will return the input \code{credential}, useful for working as a filter between the \code{Authenticate} and \code{Collect}.
+#' @param credential \code{credential} object
+#' @param filename character, filename to be save to or restore from
+#' @return \code{credential} object
+#' @note \code{credential} created from \code{Authenticate} with socialmedia = 'twitter' will not be save by SaveCredential
+#' @examples
+#' \dontrun{
+#' require(magrittr)
+#' myAppID <- "123456789098765"
+#' myAppSecret <- "abc123abc123abc123abc123abc123ab"
+#' myUsernames <- c("senjohnmccain","obama")
+#' 
+#' Authenticate("instagram", appID = myAappId, appSecret = myAppSecret) %>% SaveCredential("instagramCred.RDS") %>% Collect(ego = TRUE, username = myUsernames) %>% Create
+#'
+#' ## Load the previously saved credential information
+#' LoadCredential("instagramCred.RDS") %>% Collect(tag="obama", distance=5000, n=100) %>% Create("bimodal")
+#' }
+NULL
+
+#' @rdname SaveCredential
 SaveCredential <- function(credential, filename = "credential.RDS") {
-    if (credential$datasource == "twitter") {
+    if (credential$socialmedia == "twitter") {
         warning("Credential created for Twitter will not be saved.")
     } else {
         saveRDS(credential, filename)
@@ -39,6 +102,7 @@ SaveCredential <- function(credential, filename = "credential.RDS") {
     return(credential)
 }
 
+#' @rdname SaveCredential
 LoadCredential <- function(filename = "credential.RDS") {
     credential <- readRDS(filename)
     return(credential)
