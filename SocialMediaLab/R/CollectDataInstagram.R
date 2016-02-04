@@ -1,12 +1,15 @@
 CollectDataInstagram <-
-function(tag, n, lat, lng, distance, folder, mindate, maxdate, verbose, sleep, writeToFile, waitForRateLimit) {
+function(tag, n, lat, lng, distance, folder, mindate, maxdate, verbose, sleep, writeToFile, waitForRateLimit, credential = NULL) {
 
   from_userID = from_username = from_full_name = from_profile_picture = edge_type = to_post_id = post_created_time = post_type = post_longitude = post_latitude = post_location_name = post_location_id = post_link = post_image_URL = post_caption = post_username = post_user_ID = post_user_fullname = comment_created_time = comment_text = commentsData = likesData = NULL
 
-  if(!(exists("instagram_oauth_token"))) {
-    instagram_oauth_token <- NULL
+  if(!(exists("instagram_oauth_token")) & is.null(credential)) {
+      instagram_oauth_token <- NULL
   }
-
+  ## not using side effect
+  if (!is.null(credential)) {
+      instagram_oauth_token <- credential$auth
+  }
   # handle the arguments
 
   if (missing(verbose)) {
