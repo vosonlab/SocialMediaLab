@@ -22,7 +22,7 @@ For detailed information and examples, please refer to the [SocialMediaLab docum
 
 The [SocialMediaLab page on the VOSON website](http://voson.anu.edu.au/SocialMediaLab) also has several "how to" guides, including an "Absolute Beginners Guide to SocialMediaLab" tutorial aimed at people with little or no programming experience.
 
-## Using the Magrittr's pipe interface
+## Using Magrittr's pipe interface
 
 The process of authentication, data collection and creating social network can be expressed with the 3 verb functions: *Authenticate*, *Collect* and *Create*. The following are some of the examples from the package documentation expressed with the pipe interface.
 
