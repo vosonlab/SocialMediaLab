@@ -1,6 +1,6 @@
 #' Collect data from social media for generating networks
 #'
-#' This function collects data from social media API, and structures the data into a data frame of class \code{dataSource.*}, ready for creating networks for further analysis.
+#' This function provides a convenient UI wrapper to the core package functions, which collect data from social media API, and structure the data into a data frame of class \code{dataSource.*}, ready for creating networks for further analysis.
 #' \code{Collect} is the second step of the \code{Authenticate}, \code{Collect}, \code{Create} workflow.
 #' @param credential \code{credential} object generated from \code{Authenticate}
 #' @param ego logical, collecting ego network data. Currently only support Instagram.
