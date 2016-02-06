@@ -1,28 +1,57 @@
 #' Collect Instagram data for generating ego network
-#'
-#' This function collects data for creating a (weighted and directed) 'ego' network from a given set of seed users (the ego nodes). Note! The network size can become extremely large very quickly, depending on the arguments the user provides to this function. For example, specifying degreeEgoNet=2 and getFollows=TRUE can generate very large networks from just a small number of ego users (even just 3 or 4 ego nodes).
 #' 
-#' @param username character vector, specifying a set of usernames who will be the 'ego' nodes for the network generation.
-#' @param userid character vector, specifying a set of usernames who will be the 'ego' nodes for the network generation.
-#' @param getFollows Logical, if TRUE (default), also collect who each 'ego' node itself follows (i.e. not just the followers of ego), and integrate these data into the ego network.
-#' @param verbose logical. If TRUE then this function will output runtime information to the console as it computes. Useful diagnostic tool for long computations. Default is FALSE.
-#' @param degreeEgoNet Numeric, the 'order' or 'degree' of the ego-network to create (1 is default). 1 = ego + alters. 2 = ego + alters + alters of alters.
-#' @param waitForRateLimit logical. If TRUE then it will try to observe the API rate limit by ensuring that no more than 5000 API calls are made per hour (the current rate limit). If more than 5000 calls are made within a 60 minute window, then all operates will suspend for 60 minutes, and resume afterwards. Note: API calls are only tracked within the scope of this function.
-#' @param credential credential object. Credential information to be use with API calls. Default to NULL, meaning using the API credential information store in the current workspace.
-#' @return A data frame object of class \code{dataSource.instagram.ego} that can be used with \code{Create}.
-#' @author Timothy Graham <timothy.graham3@uq.net.au>, Robert Ackland<robert.ackland@anu.edu.au> & Chung-hong Chan <chainsawtiney@gmail.com>
+#' This function collects data for creating a (weighted and directed) 'ego'
+#' network from a given set of seed users (the ego nodes). Note! The network
+#' size can become extremely large very quickly, depending on the arguments the
+#' user provides to this function. For example, specifying degreeEgoNet=2 and
+#' getFollows=TRUE can generate very large networks from just a small number of
+#' ego users (even just 3 or 4 ego nodes).
+#' 
+#' 
+#' @param username character vector, specifying a set of usernames who will be
+#' the 'ego' nodes for the network generation.
+#' @param userid character vector, specifying a set of usernames who will be
+#' the 'ego' nodes for the network generation.
+#' @param verbose logical. If TRUE then this function will output runtime
+#' information to the console as it computes. Useful diagnostic tool for long
+#' computations. Default is FALSE.
+#' @param degreeEgoNet Numeric, the 'order' or 'degree' of the ego-network to
+#' create (1 is default). 1 = ego + alters. 2 = ego + alters + alters of
+#' alters.
+#' @param waitForRateLimit logical. If TRUE then it will try to observe the API
+#' rate limit by ensuring that no more than 5000 API calls are made per hour
+#' (the current rate limit). If more than 5000 calls are made within a 60
+#' minute window, then all operates will suspend for 60 minutes, and resume
+#' afterwards. Note: API calls are only tracked within the scope of this
+#' function.
+#' @param getFollows Logical, if TRUE (default), also collect who each 'ego'
+#' node itself follows (i.e. not just the followers of ego), and integrate
+#' these data into the ego network.
+#' @param credential credential object. Credential information to be use with
+#' API calls. Default to NULL, meaning using the API credential information
+#' store in the current workspace.
+#' @return A data frame object of class \code{dataSource.instagram.ego} that
+#' can be used with \code{Create}.
+#' @author Timothy Graham <timothy.graham3@@uq.net.au>, Robert
+#' Ackland<robert.ackland@@anu.edu.au> & Chung-hong Chan
+#' <chainsawtiney@@gmail.com>
 #' @examples
+#' 
 #' \dontrun{
 #' myAppID <- "123456789098765"
 #' myAppSecret <- "abc123abc123abc123abc123abc123ab"
 #' 
 #' # Authenticate with the Instagram API using `AuthenticateWithInstagramAPI`
-#' instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=myAppI, appSecret=myAppSecret, useCachedToken=TRUE)
-#'
+#' instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=myAppI,
+#' appSecret=myAppSecret, useCachedToken=TRUE)
+#' 
 #' myUsernames <- c("senjohnmccain","obama")
-#' instagramEgodata <- CollectEgoInstgram(username=myUsernames,verbose=TRUE,degreeEgoNet=1, waitForRateLimit=TRUE,getFollows=FALSE)
+#' instagramEgodata <- CollectEgoInstgram(username=myUsernames,
+#' verbose=TRUE,degreeEgoNet=1, waitForRateLimit=TRUE,
+#' getFollows=FALSE)
 #' Create(instagramEgodata)
 #' }
+#' @export
 CollectEgoInstagram <-
 function(username, userid, verbose, degreeEgoNet, waitForRateLimit, getFollows, credential = NULL)
 {

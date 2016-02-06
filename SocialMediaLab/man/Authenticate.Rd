@@ -7,7 +7,8 @@
 Authenticate(socialmedia, ...)
 }
 \arguments{
-\item{socialmedia}{character string, social media API to authenticate, currently supports "facebook", "youtube", "twitter" and "instagram"}
+\item{socialmedia}{character string, social media API to authenticate,
+currently supports "facebook", "youtube", "twitter" and "instagram"}
 
 \item{...}{additional parameters for authentication
 
@@ -23,14 +24,21 @@ Authenticate(socialmedia, ...)
 credential object with authentication information
 }
 \description{
-\code{Authenticate} creates a \code{credential} object that enables R to make authenticated calls to social media APIs. 
-A \code{credential} object is a S3 object with the authentication-related information such as access tokens and the information on the social media that grant authentication.
-\code{Authenticate} is the first step of the \code{Authenticate}, \code{Collect}, \code{Create} workflow.
+\code{Authenticate} creates a \code{credential} object that enables R to
+make authenticated calls to social media APIs.  A \code{credential} object
+is a S3 object with the authentication-related information such as access
+tokens and the information on the social media that grant authentication.
+\code{Authenticate} is the first step of the \code{Authenticate},
+\code{Collect}, \code{Create} workflow.
 }
 \note{
-Currently, \code{Authenticate} with socialmedia = "twitter" generates oauth information to be used in the current active session only (i.e. "side-effect") and no authentication-related information will be stored in the returned \code{credential} object.
+Currently, \code{Authenticate} with socialmedia = "twitter" generates
+oauth information to be used in the current active session only (i.e.
+"side-effect") and no authentication-related information will be stored in
+the returned \code{credential} object.
 }
 \examples{
+
 \dontrun{
 require(magrittr)
 ## Instagram ego network example
@@ -38,19 +46,27 @@ myAppID <- "123456789098765"
 myAppSecret <- "abc123abc123abc123abc123abc123ab"
 myUsernames <- c("senjohnmccain","obama")
 
-Authenticate("instagram", appID = myAappId, appSecret = myAppSecret) \%>\% Collect(ego = TRUE, username = myUsernames) \%>\% Create
+Authenticate("instagram",
+appID = myAappId,
+appSecret = myAppSecret) \%>\% Collect(ego = TRUE,
+username = myUsernames) \%>\% Create
 
 ## YouTube actor network example
 my_apiKeyYoutube <- "314159265358979qwerty"
 videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 
-Authenticate("youtube", apiKey = my_apiKeyYoutube) \%>\% Collect(videoIDs = videoIDs) \%>\% Create('actor')
+Authenticate("youtube",
+apiKey = my_apiKeyYoutube) \%>\% Collect(videoIDs = videoIDs) \%>\% Create('actor')
 }
 }
 \author{
 Chung-hong Chan <chainsawtiney@gmail.com>
 }
 \seealso{
-\code{\link{AuthenticateWithFacebookAPI}}, \code{\link{AuthenticateWithInstagramAPI}}, \code{\link{AuthenticateWithYoutubeAPI}}, \code{\link{AuthenticateWithTwitterAPI}}, \code{\link{SaveCredential}}, \code{\link{LoadCredential}}
+\code{\link{AuthenticateWithFacebookAPI}},
+\code{\link{AuthenticateWithInstagramAPI}},
+\code{\link{AuthenticateWithYoutubeAPI}},
+\code{\link{AuthenticateWithTwitterAPI}}, \code{\link{SaveCredential}},
+\code{\link{LoadCredential}}
 }
 

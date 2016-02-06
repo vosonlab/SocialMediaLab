@@ -1,3 +1,4 @@
+#' @export
 CreateActorNetwork.youtube <-
 function(x,writeToFile) {
 

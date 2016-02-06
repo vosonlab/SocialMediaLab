@@ -1,3 +1,4 @@
+#' @export
 CreateSemanticNetwork.twitter <-
 function(x,writeToFile,termFreq,hashtagFreq,removeTermsOrHashtags,stopwordsEnglish)
 {

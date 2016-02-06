@@ -1,3 +1,105 @@
+#' Collect data from Instagram for generating different types of networks
+#' 
+#' This function collects data from Instagram using either hashtag (e.g.
+#' #obama) or search coordinates (latitude and longitude), and structures the
+#' data into a data frame of class \code{dataSource.Instagram}, ready for
+#' creating networks for further analysis. This function draws heavily on the
+#' `searchInstagram` function (from the 'instaR' package) and includes all the
+#' arguments for collecting Instagram data using that function, as well as
+#' additional arguments listed below.
+#' 
+#' \code{CollectDataInstagram} collects public pictures and videos from
+#' Instagram, and also collects the maximum amount of comments and 'likes' for
+#' each post. It draws on and extends the `searchInstagram` function from the
+#' 'instaR' package.
+#' 
+#' As the 'instaR' documentation describes, it is only possible to apply one
+#' filter at a time: either search by hashtag OR search by coordinates. The
+#' 'mindate' and 'maxdata' search parameters only work when searching by
+#' location, not when searching by tag.
+#' 
+#' After the data are collected, the function finds and maps the relationships
+#' between users and posts, and structures these relationships into a format
+#' suitable for creating bimodal networks using \code{CreateBimodalNetwork}.
+#' 
+#' @param tag character string. Hashtag used to filter media. It is only
+#' possible for a single hashtag.
+#' @param n numeric. Maximum number of media to return.
+#' @param lat numeric. Latitude of the center search coordinate.
+#' @param lng numeric. Longitude of the center search coordinate.
+#' @param distance numeric. Default is 1km (distance=1000), max distance is
+#' 5km.
+#' @param folder character string. If different than \code{NULL}, will download
+#' all pictures to this folder.
+#' @param mindate character string. Minimum date for search period.
+#' @param maxdate character string. Maximum date for search period.
+#' @param verbose logical. If \code{TRUE} then this function will output
+#' runtime information to the console as it computes. Useful diagnostic tool
+#' for long computations. Default is \code{FALSE}.
+#' @param sleep numeric, Number of seconds between API calls (default is 0).
+#' @param writeToFile logical. If \code{TRUE} then the data is saved to file in
+#' current working directory (CSV format), with filename denoting the current
+#' time/date.
+#' @param waitForRateLimit logical. If \code{TRUE} then it will try to observe
+#' the API rate limit by ensuring that no more than 5000 API calls are made per
+#' hour (the current rate limit). If more than 5000 calls are made within a 60
+#' minute window, then all operates will suspend for 60 minutes, and resume
+#' afterwards. Note: API calls are only tracked within the scope of this
+#' function.
+#' @param credential Optional, a \code{credential} object created by \code{Authenticate}.
+#' @return A data frame object of class \code{dataSource.Instagram} that can be
+#' used with \code{CreateBimodalNetwork}.
+#' @note The current implementation only supports creating bimodal networks.
+#' Other network types will be added in the near future.
+#' 
+#' - bimodal networks; \code{CreateBimodalNetwork}
+#' 
+#' A bimodal (or two-mode) network means that there are two types of vertices
+#' present in the network (i.e. Instagram users and Instagram posts), with
+#' edges representing user i 'commenting' or 'liking' post j.
+#' @author Timothy Graham <timothy.graham3@@uq.net.au> & Robert Ackland
+#' <robert.ackland@@anu.edu.au>
+#' @seealso \code{AuthenticateWithInstagramAPI} must be run first or no data
+#' can be collected through the API.
+#' @keywords instagram data mining SNA
+#' @examples
+#' 
+#' \dontrun{
+#' ## Use your own values for myAppID and myAppSecret
+#' myAppID <- "123456789098765"
+#' myAppSecret <- "abc123abc123abc123abc123abc123ab"
+#' 
+#' # Authenticate with the Instagram API using `AuthenticateWithInstagramAPI`
+#' instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=app_id, appSecret=app_secret,
+#'   useCachedToken=TRUE)
+#' 
+#' # EXAMPLE 1
+#' 
+#' # Run the `CollectDataInstagram` function and store the results in variable `myInstagramData`
+#' # (searching by hashtag)
+#' myInstagramData <- CollectDataInstagram(tag="obama", distance=5000, n=100, folder=NULL,
+#' verbose=TRUE, waitForRateLimit=TRUE)
+#' 
+#' # Create a 'bimodal' network using \code{CreateBimodalNetwork}
+#' g_bimodal_instagram_obama <- CreateBimodalNetwork(myInstagramData,writeToFile=F)
+#' 
+#' # View descriptive information about the bimodal network
+#' g_bimodal_instagram_obama
+#' 
+#' # EXAMPLE 2
+#' 
+#' # Run the `CollectDataInstagram` function and store the results in variable `myInstagramData`
+#' # (searching by coordinates in Brisbane (Australia) with a radius of 5km)
+#' myInstagramData <- CollectDataInstagram(lat=-27.4701, lng=153.0220, distance=5000, n=100,
+#'   folder=NULL, verbose=TRUE, waitForRateLimit=TRUE)
+#' 
+#' # Create a 'bimodal' network using \code{CreateBimodalNetwork}
+#' g_bimodal_instagram_brisbane <- CreateBimodalNetwork(myInstagramData,writeToFile=F)
+#' 
+#' # View descriptive information about the bimodal network
+#' g_bimodal_instagram_brisbane
+#' }
+#' @export
 CollectDataInstagram <-
 function(tag, n, lat, lng, distance, folder, mindate, maxdate, verbose, sleep, writeToFile, waitForRateLimit, credential = NULL) {
 

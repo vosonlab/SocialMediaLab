@@ -18,22 +18,32 @@ LoadCredential(filename = "credential.RDS")
 \code{credential} object
 }
 \description{
-Functions to save and load credential informaion. Currently, credential informaion will be stored as a RDS file. \code{SaveCredential} will return the input \code{credential}, useful for working as a filter between the \code{Authenticate} and \code{Collect}.
+Functions to save and load credential informaion. Currently, credential
+informaion will be stored as a RDS file. \code{SaveCredential} will return
+the input \code{credential}, useful for working as a filter between the
+\code{Authenticate} and \code{Collect}.
 }
 \note{
-\code{credential} created from \code{Authenticate} with socialmedia = 'twitter' will not be save by SaveCredential
+\code{credential} created from \code{Authenticate} with socialmedia =
+'twitter' will not be save by SaveCredential
 }
 \examples{
+
 \dontrun{
 require(magrittr)
 myAppID <- "123456789098765"
 myAppSecret <- "abc123abc123abc123abc123abc123ab"
 myUsernames <- c("senjohnmccain","obama")
 
-Authenticate("instagram", appID = myAappId, appSecret = myAppSecret) \%>\% SaveCredential("instagramCred.RDS") \%>\% Collect(ego = TRUE, username = myUsernames) \%>\% Create
+Authenticate("instagram",
+appID = myAappId,
+appSecret = myAppSecret) \%>\% SaveCredential("instagramCred.RDS") \%>\% Collect(ego = TRUE,
+username = myUsernames) \%>\% Create
 
 ## Load the previously saved credential information
-LoadCredential("instagramCred.RDS") \%>\% Collect(tag="obama", distance=5000, n=100) \%>\% Create("bimodal")
+LoadCredential("instagramCred.RDS") \%>\% Collect(tag="obama",
+distance=5000, n=100) \%>\% Create("bimodal")
 }
+
 }
 

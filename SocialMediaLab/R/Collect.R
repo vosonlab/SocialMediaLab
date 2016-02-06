@@ -1,23 +1,39 @@
 #' Collect data from social media for generating networks
-#'
-#' This function provides a convenient UI wrapper to the core package functions, which collect data from social media API, and structure the data into a data frame of class \code{dataSource.*}, ready for creating networks for further analysis.
-#' \code{Collect} is the second step of the \code{Authenticate}, \code{Collect}, \code{Create} workflow.
-#' @param credential \code{credential} object generated from \code{Authenticate}
-#' @param ego logical, collecting ego network data. Currently only support Instagram.
-#' @param ... additional parameters for data collection (refer to CollectDataFrom* and CollectEgo* functions)
-#'  
-#' \code{facebook}: pageName, rangeFrom, rangeTo, verbose, n, writeToFile, dynamic
+#' 
+#' This function collects data from social media API, and structures the data
+#' into a data frame of class \code{dataSource.*}, ready for creating networks
+#' for further analysis. \code{Collect} is the second step of the
+#' \code{Authenticate}, \code{Collect}, \code{Create} workflow.
+#' 
+#' 
+#' @param credential \code{credential} object generated from
+#' \code{Authenticate}
+#' @param ego logical, collecting ego network data. Currently only support
+#' Instagram.
+#' @param ... additional parameters for data collection (refer to
+#' CollectDataFrom* and CollectEgo* functions)
+#' 
+#' \code{facebook}: pageName, rangeFrom, rangeTo, verbose, n, writeToFile,
+#' dynamic
 #' 
 #' \code{youtube}: videoIDs, verbose, writeToFile, maxComments
-#'
+#' 
 #' \code{twitter}: searchTerm, numTweets, verbose, writeToFile, language
 #' 
-#' \code{instagram}: credential, tag, n, lat, lng, distance, folder, mindate, maxdate, verbose, sleep, writeToFile, waitForRateLimit
-#'
-#' \code{instagram} with \code{ego} = TRUE: username, userid, verbose, degreeEgoNet, waitForRateLimit, getFollows
-#' @return A data.frame object of class \code{dataSource.*} that can be used with \code{Create}.
-#' @author Chung-hong Chan <chainsawtiney@gmail.com>
+#' \code{instagram}: credential, tag, n, lat, lng, distance, folder, mindate,
+#' maxdate, verbose, sleep, writeToFile, waitForRateLimit
+#' 
+#' \code{instagram} with \code{ego} = TRUE: username, userid, verbose,
+#' degreeEgoNet, waitForRateLimit, getFollows
+#' @return A data.frame object of class \code{dataSource.*} that can be used
+#' with \code{Create}.
+#' @author Chung-hong Chan <chainsawtiney@@gmail.com>
+#' @seealso \code{CollectDataFromFacebook},
+#' \code{CollectDataFromInstagram},
+#' \code{CollectDataFromYoutube}, \code{CollectDatFromTwitter},
+#' \code{CollectEgoInstagram}
 #' @examples
+#' 
 #' \dontrun{
 #' require(magrittr)
 #' ## Instagram ego network example
@@ -25,15 +41,19 @@
 #' myAppSecret <- "abc123abc123abc123abc123abc123ab"
 #' myUsernames <- c("senjohnmccain","obama")
 #' 
-#' Authenticate("instagram", appID = myAappId, appSecret = myAppSecret) %>% Collect(ego = TRUE, username = myUsernames) %>% Create
+#' Authenticate("instagram",
+#' appID = myAappId,
+#' appSecret = myAppSecret) %>% Collect(ego = TRUE,
+#' username = myUsernames) %>% Create
 #' 
 #' ## YouTube actor network example
 #' my_apiKeyYoutube <- "314159265358979qwerty"
 #' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 #' 
-#' Authenticate("youtube", apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
+#' Authenticate("youtube",
+#' apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
 #' }
-#' @seealso \code{\link{CollectDataFromFacebook}}, \code{\link{CollectDataFromInstagram}}, \code{\link{CollectDataFromYoutube}}, \code{\link{CollectDatFromTwitter}}, \code{\link{CollectEgoInstagram}}
+#' @export
 Collect <- function(credential, ego = FALSE, ...) {
     if (ego) {
         collector <- switch(credential$socialmedia,

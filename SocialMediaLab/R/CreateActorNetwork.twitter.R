@@ -1,3 +1,4 @@
+#' @export
 CreateActorNetwork.twitter <-
 function(x,writeToFile)
 {

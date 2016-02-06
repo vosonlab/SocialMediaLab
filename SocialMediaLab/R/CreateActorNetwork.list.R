@@ -1,3 +1,4 @@
+#' @export
 CreateActorNetwork.list <-
 function(x,writeToFile)
 {
