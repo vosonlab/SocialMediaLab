@@ -42,7 +42,7 @@ Authenticate("twitter", apiKey=myapikey, apiSecret=myapisecret,accessToken=myacc
 
 # Create Instagram Ego Network
 myUsernames <- 
-Authenticate("instagram", appID = myAappId, appSecret = myAppSecret) %>% Collect(ego = TRUE, username = c("senjohnmccain","obama")) %>% Create
+Authenticate("instagram", appID = myAppId, appSecret = myAppSecret) %>% Collect(ego = TRUE, username = c("senjohnmccain","obama")) %>% Create
 ```
 
 ## Example networks
