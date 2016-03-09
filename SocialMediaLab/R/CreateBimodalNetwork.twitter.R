@@ -1,3 +1,4 @@
+#' @export
 CreateBimodalNetwork.twitter <-
 function(x,writeToFile,removeTermsOrHashtags)
 {

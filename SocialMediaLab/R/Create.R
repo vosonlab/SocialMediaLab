@@ -1,12 +1,27 @@
 #' Create networks from social media data
-#'
-#' This function provides a convenient UI wrapper to the core package functions, providing the ability to construct networks from social media data (i.e. from data frames of class \code{dataSource} , or for Twitter data it is also possible to provide a *list* of data frames).\code{Create} is the final step of the \code{Authenticate}, \code{Collect}, \code{Create} workflow.
-#' @param dataSource a data frame of class \code{dataSource}. For Twitter data, it is also possible to provide a *list* of data frames (i.e. data frames that inherit class \code{dataSource} and \code{twitter}). Only lists of Twitter data frames are supported at this time. If a list of data frames is provided, then the function binds these row-wise and computes over the entire data set.
-#' @param type character, type of network to be created, currently supports "actor", "bimodal", "dynamic", "semantic" and "ego"
+#' 
+#' This function creates network from social media data (i.e. from data frames
+#' of class \code{dataSource} , or for Twitter data it is also possible to
+#' provide a *list* of data frames).\code{Create} is the final step of the
+#' \code{Authenticate}, \code{Collect}, \code{Create} workflow.
+#' 
+#' 
+#' @param dataSource a data frame of class \code{dataSource}. For Twitter data,
+#' it is also possible to provide a *list* of data frames (i.e. data frames
+#' that inherit class \code{dataSource} and \code{twitter}). Only lists of
+#' Twitter data frames are supported at this time. If a list of data frames is
+#' provided, then the function binds these row-wise and computes over the
+#' entire data set.
+#' @param type character, type of network to be created, currently supports
+#' "actor", "bimodal", "dynamic", "semantic" and "ego"
 #' @param ... additional parameters for Create*Network functions
 #' @return An igraph graph object
-#' @author Chung-hong Chan <chainsawtiney@gmail.com>
+#' @author Chung-hong Chan <chainsawtiney@@gmail.com>
+#' @seealso \code{\link{CreateActorNetwork}},
+#' \code{\link{CreateBimodalNetwork}}, \code{\link{CreateDynamicNetwork}},
+#' \code{\link{CreateSemanticNetwork}}, \code{\link{CreateEgoNetworkFromData}}
 #' @examples
+#' 
 #' \dontrun{
 #' require(magrittr)
 #' ## Instagram ego network example
@@ -14,15 +29,19 @@
 #' myAppSecret <- "abc123abc123abc123abc123abc123ab"
 #' myUsernames <- c("senjohnmccain","obama")
 #' 
-#' Authenticate("instagram", appID = myAappId, appSecret = myAppSecret) %>% Collect(ego = TRUE, username = myUsernames) %>% Create
+#' Authenticate("instagram",
+#' appID = myAappId,
+#' appSecret = myAppSecret) %>% Collect(ego = TRUE,
+#' username = myUsernames) %>% Create
 #' 
 #' ## YouTube actor network example
 #' my_apiKeyYoutube <- "314159265358979qwerty"
 #' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 #' 
-#' Authenticate("youtube", apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
+#' Authenticate("youtube",
+#' apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
 #' }
-#' @seealso \code{\link{CreateActorNetwork}}, \code{\link{CreateBimodalNetwork}}, \code{\link{CreateDynamicNetwork}}, \code{\link{CreateSemanticNetwork}}, \code{\link{CreateEgoNetworkFromData}}
+#' @export
 Create <- function(dataSource, type = "Actor", ...) {
     if (inherits(dataSource, "ego")) {
         return(CreateEgoNetworkFromData(dataSource)) ## you cannot create actor out of ego data

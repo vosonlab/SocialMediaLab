@@ -1,21 +1,35 @@
 #' Create 'ego' networks from social media data
-#'
-#' This function creates 'ego' networks from social media data as a data.frame of class \code{dataSource.*.ego}. The networks are igraph objects.
-#'
+#' 
+#' This function creates 'ego' networks from social media data as a data.frame
+#' of class \code{dataSource.*.ego}. The networks are igraph objects.
+#' 
+#' 
 #' @param x a data.frame of class \code{dataSource.*.ego}
-#' @param writeToFile logical. If \code{TRUE} then the network is saved to file in current working directory (GRAPHML format), with filename denoting the current date/time and the type of network.
-#' @note Similarly named function \code{CreateEgoNetwork} is a function of both collecting data from social media and creating ego network. The current function only creates ego network out of collected social media data.
-#' @author Timothy Graham <timothy.graham3@uq.net.au>, Robert Ackland<robert.ackland@anu.edu.au> & Chung-hong Chan <chainsawtiney@gmail.com>
+#' @param writeToFile logical. If \code{TRUE} then the network is saved to file
+#' in current working directory (GRAPHML format), with filename denoting the
+#' current date/time and the type of network.
 #' @return An igraph graph object, with directed and weighted edges.
+#' @note Similarly named function \code{CreateEgoNetwork} is a function of both
+#' collecting data from social media and creating ego network. The current
+#' function only creates ego network out of collected social media data.
+#' @author Timothy Graham <timothy.graham3@@uq.net.au>, Robert
+#' Ackland<robert.ackland@@anu.edu.au> & Chung-hong Chan
+#' <chainsawtiney@@gmail.com>
 #' @examples
+#' 
 #' \dontrun{
 #' myAppID <- "123456789098765"
 #' myAppSecret <- "abc123abc123abc123abc123abc123ab"
-#' instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=myAppID, appSecret=myAppSecret, useCachedToken=TRUE)
+#' instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=myAppID,
+#' appSecret=myAppSecret, useCachedToken=TRUE)
 #' myUsernames <- c("senjohnmccain","obama")
-#' instagramEgodata <- CollectEgoInstgram(username=myUsernames,verbose=TRUE,degreeEgoNet=1, waitForRateLimit=TRUE,getFollows=FALSE)
-#' CreateEgoNetoworkFromData(instagramEgodata) # the same as Create(instagramEgodata) or Create(instagramEgodata, "ego")
+#' instagramEgodata <- CollectEgoInstgram(username=myUsernames,
+#' verbose=TRUE,degreeEgoNet=1,
+#' waitForRateLimit=TRUE,getFollows=FALSE)
+#' CreateEgoNetoworkFromData(instagramEgodata)
+#' ## the same as Create(instagramEgodata) or Create(instagramEgodata, "ego")
 #' }
+#' 
 CreateEgoNetworkFromData <-
 function(x, writeToFile) {
     if (missing(writeToFile)) {
@@ -32,8 +46,9 @@ function(x, writeToFile) {
     cat("Error. Cannot operate on this data.\nUse the `CollectEgo` family of functions in the SocialMediaLabs package (or Collect(ego = TRUE) )to collect ego data for generating ego networks.\n")
 }
 
-
+#' @export
 CreateEgoNetworkFromData.instagram <- function(x, writeToFile) {
+    egoName = profile_picture = full_name = id = . = NULL # please the rcheck god
     if (missing(writeToFile)) {
         writeToFile <- FALSE # default = not write to file
     }

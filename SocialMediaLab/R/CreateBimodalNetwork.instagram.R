@@ -1,3 +1,4 @@
+#' @export
 CreateBimodalNetwork.instagram <-
 function(x,writeToFile, ...)
 {

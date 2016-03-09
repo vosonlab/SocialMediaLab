@@ -1,3 +1,4 @@
+#' @export
 CreateBimodalNetwork.facebook <-
 function(x,writeToFile,removeTermsOrHashtags, ...)
 {

@@ -1,3 +1,4 @@
+#' @export
 CreateSemanticNetwork.list <-
 function(x,writeToFile,termFreq,hashtagFreq,removeTermsOrHashtags,stopwordsEnglish)
 {

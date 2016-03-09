@@ -1,3 +1,4 @@
+#' @export
 CreateBimodalNetwork.list <-
 function(x,writeToFile,removeTermsOrHashtags)
 {
