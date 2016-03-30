@@ -754,7 +754,7 @@ Type 'q()' to quit R.
 > ##D myUsernames <- c("senjohnmccain","obama")
 > ##D 
 > ##D Authenticate("instagram",
-> ##D appID = myAappId,
+> ##D appID = myAppId,
 > ##D appSecret = myAppSecret) %>% SaveCredential("instagramCred.RDS") %>% Collect(ego = TRUE,
 > ##D username = myUsernames) %>% Create
 > ##D 
@@ -771,7 +771,7 @@ Type 'q()' to quit R.
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.893 0.036 0.934 0 0 
+Time elapsed:  0.878 0.034 0.918 0 0 
 > grDevices::dev.off()
 null device 
           1 

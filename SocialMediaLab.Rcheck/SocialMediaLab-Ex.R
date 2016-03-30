@@ -735,7 +735,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ##D myUsernames <- c("senjohnmccain","obama")
 ##D 
 ##D Authenticate("instagram",
-##D appID = myAappId,
+##D appID = myAppId,
 ##D appSecret = myAppSecret) %>% SaveCredential("instagramCred.RDS") %>% Collect(ego = TRUE,
 ##D username = myUsernames) %>% Create
 ##D 

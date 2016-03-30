@@ -5,7 +5,7 @@
 * using option ‘--as-cran’
 * checking for file ‘SocialMediaLab/DESCRIPTION’ ... OK
 * checking extension type ... Package
-* this is package ‘SocialMediaLab’ version ‘0.19.1’
+* this is package ‘SocialMediaLab’ version ‘0.20.0’
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Timothy Graham <timothy.graham3@uq.net.au>’
 
@@ -15,14 +15,7 @@ The Date field is over a month old.
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
-* checking for hidden files and directories ... NOTE
-Found the following hidden files and directories:
-  .DS_Store
-These were most likely included in error. See section ‘Package
-structure’ in the ‘Writing R Extensions’ manual.
-
-CRAN-pack does not know about
-  .DS_Store
+* checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking whether package ‘SocialMediaLab’ can be installed ... OK
@@ -59,4 +52,4 @@ CRAN-pack does not know about
 * checking examples ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 2 NOTEs
+Status: 1 NOTE

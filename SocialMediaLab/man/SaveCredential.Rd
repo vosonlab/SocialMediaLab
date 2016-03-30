@@ -35,7 +35,7 @@ myAppSecret <- "abc123abc123abc123abc123abc123ab"
 myUsernames <- c("senjohnmccain","obama")
 
 Authenticate("instagram",
-appID = myAappId,
+appID = myAppId,
 appSecret = myAppSecret) \%>\% SaveCredential("instagramCred.RDS") \%>\% Collect(ego = TRUE,
 username = myUsernames) \%>\% Create
 

@@ -224,7 +224,7 @@ s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (31 pages, 144849 bytes).
+Output written on Rd2.pdf (31 pages, 144848 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (102 entries accepted, 0 rejected).
@@ -464,7 +464,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts
 urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (34 pages, 160627 bytes).
+Output written on Rd2.pdf (34 pages, 160628 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (102 entries accepted, 0 rejected).
@@ -703,4 +703,4 @@ Output written on Rd2.pdf (34 pages, 161031 bytes).
 Transcript written on Rd2.log.
 Saving output to 'SocialMediaLab-manual.pdf' ...
 Done
-You may want to clean up by 'rm -rf /var/folders/g2/66rks8xn1w5gmqn6y2t4bn2w0000gn/T//RtmpqSBm3z/Rd2pdf120921d6b3818'
+You may want to clean up by 'rm -rf /var/folders/g2/66rks8xn1w5gmqn6y2t4bn2w0000gn/T//RtmpfbJDHP/Rd2pdf13f55605f0bd8'
