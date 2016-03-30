@@ -1,7 +1,7 @@
-## The AuthenticateWithTwitterAPI is not functional because it rely on Side Effect. It is a twitteR design problem
+## The AuthenticateWithTwitterAPI is not functional because it relies on a "side effect". It is a twitteR design problem.
 ## AuthenticateWithFacebookAPI can be fixed to make it functional.
 
-## TODO: Maybe need to unified the variable names, currently there are:
+## TODO: Maybe need to unify the variable names, currently there are:
 ### facebook: appID, appSecret, extended_permissions, useCachedToken
 ### twitter: api_key, api_secret, access_token, access_token_secret, createToken <- inconsistent?
 ### youtube: apiKeyYoutube <- inconsistent?
@@ -81,25 +81,25 @@ Authenticate <- function(socialmedia, ...) {
     return(credential)
 }
 
-### for the side effect of saving the credential into a file
-### useful to cache the Credential to a file and then re-use it in the future session
+### For the side effect of saving the credential into a file.
+### Useful to cache the Credential to a file and then re-use it in the future session.
 ### i.e. Authenticate %>% SaveCredential %>% Collect
 ### and then, LoadCredential %>% Collect
 
 #' Save and load credential information
 #' 
-#' Functions to save and load credential informaion. Currently, credential
-#' informaion will be stored as a RDS file. \code{SaveCredential} will return
+#' Functions to save and load credential information. Currently, credential
+#' information will be stored as a RDS file. \code{SaveCredential} will return
 #' the input \code{credential}, useful for working as a filter between the
 #' \code{Authenticate} and \code{Collect}.
 #' 
 #' 
 #' @aliases LoadCredential SaveCredential
 #' @param credential \code{credential} object
-#' @param filename character, filename to be save to or restore from
+#' @param filename character, filename to be saved to or restored from
 #' @return \code{credential} object
 #' @note \code{credential} created from \code{Authenticate} with socialmedia =
-#' 'twitter' will not be save by SaveCredential
+#' 'twitter' will not be saved by SaveCredential
 #' @examples
 #' 
 #' \dontrun{
