@@ -46,6 +46,13 @@ function(x,writeToFile,removeTermsOrHashtags, ...)
   # Make the node labels play nice with Gephi
   V(g)$label <- V(g)$name
 
+  # for some reason the dummy row is still generating the "foo" node!
+  # a quick way to fix this for now:
+  toDel <- which(V(g)$name=="foo")
+  if (length(toDel)>0) {
+    g <- delete.vertices(g, toDel)
+  }
+
   if (writeToFile=="TRUE" | writeToFile=="true" | writeToFile=="T" | writeToFile==TRUE) {
     # Output the final network to a graphml file, to import directly into Gephi
     currTime <- format(Sys.time(), "%b_%d_%X_%Y_%Z")
