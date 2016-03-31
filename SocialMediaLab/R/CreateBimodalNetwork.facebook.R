@@ -48,7 +48,7 @@ function(x,writeToFile,removeTermsOrHashtags, ...)
 
   # for some reason the dummy row is still generating the "foo" node!
   # a quick way to fix this for now:
-  toDel <- which(V(g)$name=="foo")
+  toDel <- which(V(g)$name=="foo" | V(g)$name=="buzz" | V(g)$name=="fizz" | V(g)$name=="bar")
   if (length(toDel)>0) {
     g <- delete.vertices(g, toDel)
   }
