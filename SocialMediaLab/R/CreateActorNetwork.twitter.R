@@ -51,6 +51,13 @@ function(x,writeToFile)
     # unique pairs:
     unique_dfActorNetwork1 <- unique(dfActorNetwork1)
 
+    ## remove NA values
+    toDel <- which(is.na(unique_dfActorNetwork1$mentionedUsersTemp) | is.na(unique_dfActorNetwork1$usersTemp))
+    # REMOVE the offendors:
+    if(length(toDel) > 0) {
+      unique_dfActorNetwork1 <- unique_dfActorNetwork1[-toDel,]
+    }
+
     # number of mentions per pair (i.e. edge weight):
     for (i in 1:nrow(unique_dfActorNetwork1)) {
       unique_dfActorNetwork1$numMentions[i] <- sum(usersTemp==unique_dfActorNetwork1[i,1] & mentionedUsersTemp==unique_dfActorNetwork1[i,2])
