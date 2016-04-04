@@ -9,21 +9,7 @@ Description: A suite of tools for collecting and constructing networks from
     different types of networks for analysis.
 Type: Package
 Imports:
-    tm,
-    stringr,
-    twitteR,
-    RCurl,
-    bitops,
-    rjson,
-    plyr,
-    igraph,
-    Rfacebook,
-    Hmisc,
-    data.table,
-    httpuv,
-    instaR,
-    methods,
-    httr(== 0.6.0)
+    tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook,Hmisc,data.table,httpuv,instaR,methods,httr
 Suggests:
     magrittr
 Author: Timothy Graham & Robert Ackland with contribution from Chung-hong Chan
