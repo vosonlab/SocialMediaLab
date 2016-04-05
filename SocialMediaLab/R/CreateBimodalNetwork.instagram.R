@@ -43,7 +43,8 @@ function(x,writeToFile, ...)
      profile_picture=NA,
      post_created_time_UNIX_epoch = NA,
      # post_created_time = as.POSIXct(dataCombined$post_created_time, origin="1970-01-01"),
-     post_created_time = NA,
+     # post_created_time = NA,
+     post_created_time = dataCombined$post_created_time,
      post_type = dataCombined$post_type,
      post_longitude = dataCombined$post_longitude,
      post_latitude = dataCombined$post_latitude,
@@ -82,6 +83,8 @@ function(x,writeToFile, ...)
     cat("Instagram bimodal network was written to current working directory, with filename:\n")
     cat(paste0(currTime,"_Instagram_Bimodal_Network.graphml"))
   }
+
+  V(g)$post_created_time <- as.POSIXct(V(g)$post_created_time, origin="1970-01-01")
 
   cat("\nDone!\n") ### DEBUG
   flush.console()
