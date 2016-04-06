@@ -32,9 +32,7 @@ require(magrittr)
 Authenticate("youtube", apiKey= apiKey) %>% Collect(videoIDs = videoIDs) %>% Create("Actor")
 
 # Authenticate with facebook, archive the API credential, Collect data about Starwars Page and Create a bimodal network
-
 # You can use facebook, FaCebooK or Facebook in the datasource field
-
 Authenticate("Facebook", appID = appID, appSecret = appSecret) %>% SaveCredential("FBCredential.RDS") %>% Collect(pageName="StarWars", rangeFrom="2015-05-01",rangeTo="2015-06-03") %>% Create("Bimodal")
 
 # Authenticate with Twitter, Collect data about #auspol and Create a semantic network
@@ -42,7 +40,7 @@ Authenticate("twitter", apiKey=myapikey, apiSecret=myapisecret,accessToken=myacc
 
 # Create Instagram Ego Network
 myUsernames <- 
-Authenticate("instagram", appID = myAppId, appSecret = myAppSecret) %>% Collect(ego = TRUE, username = c("senjohnmccain","obama")) %>% Create
+Authenticate("instagram", appID = myAppId, appSecret = myAppSecret) %>% Collect(ego = TRUE, username = c("adam_kinzinger","senatorreid")) %>% Create
 ```
 
 ## Example networks
