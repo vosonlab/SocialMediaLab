@@ -4,7 +4,8 @@
 \alias{CollectDataTwitter}
 \title{Collect data from Twitter for generating different types of networks}
 \usage{
-CollectDataTwitter(searchTerm, numTweets, verbose, writeToFile, language)
+CollectDataTwitter(searchTerm, numTweets, verbose, writeToFile, language, since,
+  until, locale, geocode, sinceID, maxID, resultType, retryOnRateLimit, ...)
 }
 \arguments{
 \item{searchTerm}{character string, specifying a search term or phrase (e.g.

@@ -17,14 +17,6 @@ function(x,writeToFile,removeTermsOrHashtags, ...)
 
   dataCombinedUNIQUE <- x # match the variable names (this must be used to avoid warnings in package compilation)
 
-  # Warn the user if they are trying to create a bimodal network
-  # using TEMPORAL data (i.e. it might work, but could be compatibility issues)
-
-  if (inherits(dataCombinedUNIQUE,"temporal")) {
-    cat("\nERROR. Attempting to use dynamic data to create bimodal network. Please use the 'dynamic=FALSE' argument when collecting data.\n")
-    return()
-  }
-
   #EnsurePackage("igraph")
 
   cat("\nCreating Facebook bimodal network...\n")
@@ -33,12 +25,18 @@ function(x,writeToFile,removeTermsOrHashtags, ...)
   usersVec <- rep(c("User"),length(unique(dataCombinedUNIQUE$from)))
   postsVec <- rep(c("Post"),length(unique(dataCombinedUNIQUE$to)))
   usersAndPostsVec <- c(usersVec,postsVec)
-  actors <- data.frame(name=unique(factor(c(as.character(unique(dataCombinedUNIQUE$from)),as.character(unique(dataCombinedUNIQUE$to))))),type=usersAndPostsVec)
+  actors <- data.frame(name=unique(factor(c(as.character(unique(dataCombinedUNIQUE$from)),
+  as.character(unique(dataCombinedUNIQUE$to))))),type=usersAndPostsVec)
 
   # make a dataframe of the relations between actors
   # we need a dataframe here because igraph needs it AFAIK
 
-  relations <- data.frame(from=dataCombinedUNIQUE$from,to=dataCombinedUNIQUE$to,relationship=dataCombinedUNIQUE$relationship,weight=dataCombinedUNIQUE$edgeWeight)
+  relations <- data.frame(
+    from=dataCombinedUNIQUE$from,
+    to=dataCombinedUNIQUE$to,
+    edgeType=dataCombinedUNIQUE$edgeType,
+    timestamp=dataCombinedUNIQUE$commentTimestamp
+    )
 
   # construct a graph
   g <- graph.data.frame(relations, directed=TRUE, vertices=actors)
