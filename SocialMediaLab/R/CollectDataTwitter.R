@@ -1,33 +1,33 @@
 #' Collect data from Twitter for generating different types of networks
-#' 
+#'
 #' This function collects data from Twitter based on hashtags or search terms,
 #' and structures the data into a data frame of class
 #' \code{dataSource.twitter}, ready for creating networks for further analysis.
-#' 
+#'
 #' \code{CollectDataTwitter} collects public 'tweets' from Twitter using the
 #' Twitter API.
-#' 
+#'
 #' The function then finds and maps the relationships of entities of interest
 #' in the data (e.g. users, terms, hashtags), and structures these
 #' relationships into a data frame format suitable for creating unimodal
 #' networks (\code{CreateActorNetwork}), bimodal networks
 #' (\code{CreateBimodalNetwork}), and semantic networks
 #' (\code{CreateSemanticNetwork}).
-#' 
+#'
 #' The maximum number of tweets for a single call of \code{CollectDataTwitter}
 #' is 1500.
-#' 
+#'
 #' Language support is available, using the \code{language} argument. The user
 #' can restrict tweets returned to a particular language, using the ISO 639-1
 #' code. For example, restricting to English would use \code{language="en"}.
 #' The full list of codes is available here:
 #' https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes.
-#' 
+#'
 #' A variety of query operators are available through the Twitter API. For
 #' example, "love OR hate" returns any tweets containing either term (or both).
 #' For more information see the Twitter API documentation (under the heading
 #' 'Query Operators'): https://dev.twitter.com/rest/public/search
-#' 
+#'
 #' @param searchTerm character string, specifying a search term or phrase (e.g.
 #' "Australian politics") or hashtag (e.g. "#auspol"). Many query operators are
 #' available - see the Twitter documentation for more information:
@@ -57,28 +57,28 @@
 #' be collected.
 #' @keywords twitter data mining SNA
 #' @examples
-#' 
+#'
 #' \dontrun{
 #'   # Firstly specify your API credentials
 #'   my_api_key <- "1234567890qwerty"
 #'   my_api_secret <- "1234567890qwerty"
 #'   my_access_token <- "1234567890qwerty"
 #'   my_access_token_secret <- "1234567890qwerty"
-#' 
+#'
 #'   # Authenticate with the Twitter API using \code{AuthenticateWithTwitterAPI}
 #'   AuthenticateWithTwitterAPI(api_key=my_api_key, api_secret=my_api_secret,
 #'     access_token=my_access_token, access_token_secret=my_access_token_secret)
-#' 
+#'
 #'   # Collect tweets data using \code{myTwitterData}
 #'   myTwitterData <- CollectDataTwitter(searchTerm="#auspol",
 #'     numTweets=150,writeToFile=FALSE,verbose=FALSE)
-#' 
+#'
 #'   # Create an 'actor' network using \code{CreateActorNetwork}
 #'   g_actor_twitter <- CreateActorNetwork(myTwitterData)
-#' 
+#'
 #'   # Create a 'bimodal' network using \code{CreateBimodalNetwork}
 #'   g_bimodal_twitter <- CreateBimodalNetwork(myTwitterData)
-#' 
+#'
 #'   # Create a 'semantic' network using \code{CreateSemanticNetwork}
 #'   g_semantic_twitter <- CreateSemanticNetwork(myTwitterData)
 #'   }
