@@ -33,13 +33,23 @@ function(x,writeToFile)
 
       # for speed we will pre-allocate `dataCombined` to a very large size (more rows than needed)
       # and after everything is finished we will delete the unused rows
+      # (use temp character vectors to stop the warnings from data.table)
+
+      from_temp <- as.character(c(rep("NA_f00",20000000)))
+      to_temp <- as.character(c(rep("NA_f00",20000000)))
+      edgeType_temp <- as.character(c(rep("NA_f00",20000000)))
+      timeStamp_temp <- as.character(c(rep("NA_f00",20000000)))
 
       dataCombined <- data.table(
-        from = rep("NA_f00",20000000),
-        to = rep("NA_f00",20000000),
-        edgeType = rep("NA_f00",20000000),
-        timeStamp = rep("NA_f00",20000000)
-      )
+        from = from_temp,
+        to = to_temp,
+        edgeType = edgeType_temp,
+        timeStamp = timeStamp_temp)
+
+      rm(from_temp)
+      rm(to_temp)
+      rm(edgeType_temp)
+      rm(timeStamp_temp)
 
       setkey(dataCombined,from) # set the key value of the data table
 
@@ -52,10 +62,10 @@ function(x,writeToFile)
 
           # nextEmptyRow <- dataCombined[  , .I[from_userID=="NA_f00"] ][1] # we get index of the next 'empty' row to put data into # NOT NEEDED NOW, BUT USEFUL FOR LATER
 
-          dataCombined[nextEmptyRow, from:= df$from_user[i][[1]]]
-          dataCombined[nextEmptyRow, to := df$retweet_from[i][[1]]]
-          dataCombined[nextEmptyRow, edgeType := "Retweet"]
-          dataCombined[nextEmptyRow, timeStamp := df$created_at[i][[1]]]
+          dataCombined[nextEmptyRow, from:= as.character(df$from_user[i][[1]])]
+          dataCombined[nextEmptyRow, to := as.character(df$retweet_from[i][[1]])]
+          dataCombined[nextEmptyRow, edgeType := as.character("Retweet")]
+          dataCombined[nextEmptyRow, timeStamp := as.character(df$created_at[i][[1]])]
 
           nextEmptyRow <- nextEmptyRow + 1 # increment the row to update in `dataCombined`
 
@@ -70,10 +80,10 @@ function(x,writeToFile)
 
           # nextEmptyRow <- dataCombined[  , .I[from_userID=="NA_f00"] ][1] # we get index of the next 'empty' row to put data into # NOT NEEDED NOW, BUT USEFUL FOR LATER
 
-          dataCombined[nextEmptyRow, from := df$from_user[i][[1]]]
-          dataCombined[nextEmptyRow, to := df$users_mentioned[i][[1]][j]]
-          dataCombined[nextEmptyRow, edgeType := "Mention"]
-          dataCombined[nextEmptyRow, timeStamp := df$created_at[i][[1]]]
+          dataCombined[nextEmptyRow, from := as.character(df$from_user[i][[1]])]
+          dataCombined[nextEmptyRow, to := as.character(df$users_mentioned[i][[1]][j])]
+          dataCombined[nextEmptyRow, edgeType := as.character("Mention")]
+          dataCombined[nextEmptyRow, timeStamp := as.character(df$created_at[i][[1]])]
 
           nextEmptyRow <- nextEmptyRow + 1 # increment the row to update in `dataCombined`
 
@@ -88,10 +98,10 @@ function(x,writeToFile)
 
           # nextEmptyRow <- dataCombined[  , .I[from_userID=="NA_f00"] ][1] # we get index of the next 'empty' row to put data into # NOT NEEDED NOW, BUT USEFUL FOR LATER
 
-          dataCombined[nextEmptyRow, from:= df$from_user[i][[1]]]
-          dataCombined[nextEmptyRow, to := df$reply_to[i][[1]]]
-          dataCombined[nextEmptyRow, edgeType := "Reply"]
-          dataCombined[nextEmptyRow, timeStamp := df$created_at[i][[1]]]
+          dataCombined[nextEmptyRow, from:= as.character(df$from_user[i][[1]])]
+          dataCombined[nextEmptyRow, to := as.character(df$reply_to[i][[1]])]
+          dataCombined[nextEmptyRow, edgeType := as.character("Reply")]
+          dataCombined[nextEmptyRow, timeStamp := as.character(df$created_at[i][[1]])]
 
           nextEmptyRow <- nextEmptyRow + 1 # increment the row to update in `dataCombined`
 
@@ -103,7 +113,7 @@ function(x,writeToFile)
     ## --------------------------------
 
     # make a vector of all the unique actors in the network1
-    actorsNames <- unique(c(as.character(unique(dataCombined$from)),as.character(unique(dataCombined$to))))
+    actorsNames <- unique(c(as.character(dataCombined$from),as.character(dataCombined$to)))
 
 # cat(actorsNames) # DEBUG
 
@@ -134,22 +144,23 @@ function(x,writeToFile)
     actorsInfoDF <- RemoveOddCharsUserInfo(actorsInfoDF) # uses the new function in v2_munge_tweets.R
 
     # We sometimes have a PROBLEM of missing actors (no info could be retrieved for them - might be misspellings/errors/pun or joke, etc)
-    # So, identify which users are missing from original set to retrieved set, then ensure these users/connections are removed before proceeding onwards:
+    # So, identify which users are missing from original set to retrieved set,
+    # then ensure these users/connections are removed before proceeding onwards:
 
     missingActors <- setdiff(actorsNames,usersInformationAttributes$screenName)
       # NOTE: This is a horrible approach, need to optimise.
     missingTemp <- NULL # store the indexes of "offending" edge connections (i.e. bad/missing actors)
       # NOTE: Obviously the 'offending' users can only be found in the 2nd column
-      # NOTE: Ipso facto, if they are not real/actual users, then they can't be the source of a directed edge... (do ghosts send tweets?)...
+      # NOTE: Ipso facto, if they are not real/actual users, then they can't be the source of a directed edge
 
     for (i in 1:length(missingActors)) {
       missingTemp <- c(missingTemp, which(missingActors[i] == dataCombined$to))
     }
 
     # REMOVE the offendors:
-    if(length(missingTemp) > 0) {
-    dataCombined <- dataCombined[-missingTemp,]
-    }
+      if(length(missingTemp) > 0) {
+      dataCombined <- dataCombined[-missingTemp,]
+      }
 
     # REMOVE any duplicated usernames in the retrieved user information (NOT SURE HOW/WHY THIS WOULD OCCUR **NEED TO CHECK**):
     # duplicatedUsers <- which(duplicated(actorsInfoDF$screenName))
@@ -174,6 +185,9 @@ function(x,writeToFile)
       profileImageUrl=actorsInfoDF$profileImageUrl
       )
 
+    # actors <- actors[-which(duplicated(actors$name)),]
+    actors <- unique(actors)
+
     # make a dataframe of the relations between actors
       # NOTE - FUTURE WORK: include edge attributes to specify the specific type of "mentions" (see previous comments on temporal network problem (see: approx. LINES 113-116)).
       # NOTE - For example, "RETWEET" versus "TWEET TO" (@username specified beginning of tweet) versus "MENTION" (@username specified somewhere else in tweet text)
@@ -183,13 +197,16 @@ function(x,writeToFile)
     relations <- data.frame(from=dataCombined$from,to=dataCombined$to,edgeType=dataCombined$edgeType,timeStamp=dataCombined$timeStamp)
 
     ##### STEP FOUR #####
-cat("\n I got to the final step before network generation")
+# cat("\n I got to the final step before network generation")
 
     # convert into a graph
+    # note: suppressing warnings is used to avoid this error:
+    #     In if (class(newval) == "factor") { :
+    #     the condition has length > 1 and only the first element will be used
+
+  suppressWarnings( #
     g <- graph.data.frame(relations, directed=TRUE, vertices=actors)
-    # shouldn't need to simplify the graph, but it can't hurt anyway
-    # edit: there could be very specific cases where simplifying is NOT WANTED, e.g. users who mention themselves...?
-    # g <- simplify(g)
+  )
 
     # Make the node labels play nice with Gephi
     V(g)$label <- V(g)$name

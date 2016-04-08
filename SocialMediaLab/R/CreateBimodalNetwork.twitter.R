@@ -155,9 +155,9 @@ function(x,writeToFile,removeTermsOrHashtags)
       ##### STEP FOUR #####
 
       # convert into a graph
-      g <- graph.data.frame(relations, directed=TRUE, vertices=actorsFixed)
-      # shouldn't need to simplify the graph, but it can't hurt anyway
-      # g <- simplify(g)
+      suppressWarnings(
+        g <- graph.data.frame(relations, directed=TRUE, vertices=actorsFixed)
+      )
 
       # Make the node labels play nice with Gephi
       V(g)$label <- V(g)$name

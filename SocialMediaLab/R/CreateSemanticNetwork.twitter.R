@@ -218,10 +218,12 @@ function(x,writeToFile,termFreq,hashtagFreq,removeTermsOrHashtags,stopwordsEngli
       ##### STEP FOUR #####
 
       # convert into a graph
-      g <- graph.data.frame(relations, directed=FALSE, vertices=actorsFixed)
+      suppressWarnings(
+        g <- graph.data.frame(relations, directed=FALSE, vertices=actorsFixed)
+      )
       # we need to simplify the graph because multiple use of same term
       # in one tweet will cause self-loops, etc
-      g <- simplify(g)
+      # g <- simplify(g)
 
       # Make the node labels play nice with Gephi
       V(g)$label <- V(g)$name
