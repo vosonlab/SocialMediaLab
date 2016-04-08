@@ -22,34 +22,16 @@ function(x,writeToFile)
     cat("Generating the network...\n")  ### DEBUG
     flush.console()
 
-    ##### new way ---------------------
-
-    # FIRST: for each row in df, we have to extract any of the following
-    # 1) retweet  (df$retweet_from)
-    # 2) mentions (df$users_mentioned)
-    # 3) reply    (df$reply_to)
-    #
-    # SECOND: we append these rows to the dataframe
-
       # for speed we will pre-allocate `dataCombined` to a very large size (more rows than needed)
       # and after everything is finished we will delete the unused rows
-      # (use temp character vectors to stop the warnings from data.table)
-
-      from_temp <- as.character(c(rep("NA_f00",20000000)))
-      to_temp <- as.character(c(rep("NA_f00",20000000)))
-      edgeType_temp <- as.character(c(rep("NA_f00",20000000)))
-      timeStamp_temp <- as.character(c(rep("NA_f00",20000000)))
 
       dataCombined <- data.table(
-        from = from_temp,
-        to = to_temp,
-        edgeType = edgeType_temp,
-        timeStamp = timeStamp_temp)
-
-      rm(from_temp)
-      rm(to_temp)
-      rm(edgeType_temp)
-      rm(timeStamp_temp)
+        from = as.character(c(rep("NA_f00",20000000))),
+        to = as.character(c(rep("NA_f00",20000000))),
+        edgeType = as.character(c(rep("NA_f00",20000000))),
+        timeStamp = as.character(c(rep("NA_f00",20000000))),
+        tweet_id = as.character(c(rep("NA_f00",20000000)))
+        )
 
       setkey(dataCombined,from) # set the key value of the data table
 
@@ -66,6 +48,7 @@ function(x,writeToFile)
           dataCombined[nextEmptyRow, to := as.character(df$retweet_from[i][[1]])]
           dataCombined[nextEmptyRow, edgeType := as.character("Retweet")]
           dataCombined[nextEmptyRow, timeStamp := as.character(df$created_at[i][[1]])]
+          dataCombined[nextEmptyRow, tweet_id := as.character(df$id[i][[1]])]
 
           nextEmptyRow <- nextEmptyRow + 1 # increment the row to update in `dataCombined`
 
@@ -84,6 +67,7 @@ function(x,writeToFile)
           dataCombined[nextEmptyRow, to := as.character(df$users_mentioned[i][[1]][j])]
           dataCombined[nextEmptyRow, edgeType := as.character("Mention")]
           dataCombined[nextEmptyRow, timeStamp := as.character(df$created_at[i][[1]])]
+          dataCombined[nextEmptyRow, tweet_id := as.character(df$id[i][[1]])]
 
           nextEmptyRow <- nextEmptyRow + 1 # increment the row to update in `dataCombined`
 
@@ -102,6 +86,7 @@ function(x,writeToFile)
           dataCombined[nextEmptyRow, to := as.character(df$reply_to[i][[1]])]
           dataCombined[nextEmptyRow, edgeType := as.character("Reply")]
           dataCombined[nextEmptyRow, timeStamp := as.character(df$created_at[i][[1]])]
+          dataCombined[nextEmptyRow, tweet_id := as.character(df$id[i][[1]])]
 
           nextEmptyRow <- nextEmptyRow + 1 # increment the row to update in `dataCombined`
 
@@ -194,7 +179,12 @@ function(x,writeToFile)
 
     # return(df) # DEBUG
 
-    relations <- data.frame(from=dataCombined$from,to=dataCombined$to,edgeType=dataCombined$edgeType,timeStamp=dataCombined$timeStamp)
+    relations <- data.frame(
+      from=dataCombined$from,
+      to=dataCombined$to,
+      edgeType=dataCombined$edgeType,
+      timeStamp=dataCombined$timeStamp,
+      tweet_id=dataCombined$tweet_id)
 
     ##### STEP FOUR #####
 # cat("\n I got to the final step before network generation")
