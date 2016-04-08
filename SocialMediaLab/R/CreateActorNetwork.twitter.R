@@ -15,56 +15,97 @@ function(x,writeToFile)
 
   df <- df[,-21]
 
-    # Now create the dfActorNetwork1, a dataframe of relations between users (i.e. node i "mentions" node j)
-        # Note: we define a "mention" more broadly as any explicit reference, i.e. retweeting, replying, or tweeting 'to' another user.
+  # convert df to data.table
+  df <- data.table(df)
 
+    # Now create the dfActorNetwork1, a dataframe of relations between users
     cat("Generating the network...\n")  ### DEBUG
     flush.console()
 
-    usersTemp <- c() # temp var to store output
-    mentionedUsersTemp <- c() # temp var to store output
+    ##### new way ---------------------
 
-    # The 'users_mentioned' column in the 'df' dataframe is slightly problematic (i.e. not straightforward)
-    # because each row in this column contains a LIST, itself containing 1 or more char vectors (which are 'mentions' of usernames, or if no mentions then empty).
-    # (Note: this improves on previous approaches that only take the FIRST pattern match of a 'mention' in any given tweet text).
-    # So, need to extract each list item out, and put it into its own row in a new dataframe:
+    # FIRST: for each row in df, we have to extract any of the following
+    # 1) retweet  (df$retweet_from)
+    # 2) mentions (df$users_mentioned)
+    # 3) reply    (df$reply_to)
+    #
+    # SECOND: we append these rows to the dataframe
 
-    for (i in 1:nrow(df)) {
-      if (length(df$users_mentioned[[i]]) > 0) { # skip any rows where NO USERS were mentioned
-        for (j in 1:length(df$users_mentioned[[i]])) {
-          usersTemp <- c(usersTemp, df$from_user[i])
-          mentionedUsersTemp <- c(mentionedUsersTemp,df$users_mentioned[[i]][j])
-        }
+      # for speed we will pre-allocate `dataCombined` to a very large size (more rows than needed)
+      # and after everything is finished we will delete the unused rows
+
+      dataCombined <- data.table(
+        from = rep("NA_f00",20000000),
+        to = rep("NA_f00",20000000),
+        edgeType = rep("NA_f00",20000000),
+        timeStamp = rep("NA_f00",20000000)
+      )
+
+      setkey(dataCombined,from) # set the key value of the data table
+
+      nextEmptyRow <- 1 # so we can update rows in `dataCombined` in a relatively efficient way
+
+      # We firstly do the retweet data
+      for (i in 1:nrow(df)) {
+
+        if (is.na(df[i,retweet_from][[1]])) {next} # we check if there are retweets, if not skip to next row
+
+          # nextEmptyRow <- dataCombined[  , .I[from_userID=="NA_f00"] ][1] # we get index of the next 'empty' row to put data into # NOT NEEDED NOW, BUT USEFUL FOR LATER
+
+          dataCombined[nextEmptyRow, from:= df$from_user[i][[1]]]
+          dataCombined[nextEmptyRow, to := df$retweet_from[i][[1]]]
+          dataCombined[nextEmptyRow, edgeType := "Retweet"]
+          dataCombined[nextEmptyRow, timeStamp := df$created_at[i][[1]]]
+
+          nextEmptyRow <- nextEmptyRow + 1 # increment the row to update in `dataCombined`
+
       }
-    }   # NOTE: try and vectorise this loop in future work to improve speed.
 
-    # create the "mentions network" dataframe (i.e. pairs of users; node i --(mentions)--> node j)
-    dfActorNetwork1 <- data.frame(usersTemp, mentionedUsersTemp)
+      # Next we do the mentions
+      for (i in 1:nrow(df)) {
 
-    # OK, now extract only the UNIQUE pairs (i.e. rows)
-    # But, also create a WEIGHT value for multiple mentions between users
-        # NOTE: This edge weights approach might be problematic for TEMPORAL actor networks, because each edge (with weight > 1) represents mentions in tweets at DIFFERENT TIMES.
-        # NOTE: A possible workaround could be to include an edge attribute that is a set of timestamp elements, showing the date/time of each unique 'mention'.
-        # NOTE: For example, in a temporal visualisation, the first timestamp might 'pop in' the edge to the graph, which then might start to 'fade out' over time (or just 'pop out' of graph after N seconds) if there are no more timestamps indicating activity (i.e. mentions) between the two users.
-        # NOTE: So, a 'timestamps' edge attribute could factor into a kind of 'entropy' based approach to evolving the network visually over time.
+        if (length(df[i,users_mentioned][[1]]) < 1) {next} # we check if there are likes, if not skip to next row
 
-    # unique pairs:
-    unique_dfActorNetwork1 <- unique(dfActorNetwork1)
+        for (j in 1:length(df$users_mentioned[i][[1]])){ # for each row of the likes data for post i
 
-    ## remove NA values
-    toDel <- which(is.na(unique_dfActorNetwork1$mentionedUsersTemp) | is.na(unique_dfActorNetwork1$usersTemp))
-    # REMOVE the offendors:
-    if(length(toDel) > 0) {
-      unique_dfActorNetwork1 <- unique_dfActorNetwork1[-toDel,]
-    }
+          # nextEmptyRow <- dataCombined[  , .I[from_userID=="NA_f00"] ][1] # we get index of the next 'empty' row to put data into # NOT NEEDED NOW, BUT USEFUL FOR LATER
 
-    # number of mentions per pair (i.e. edge weight):
-    for (i in 1:nrow(unique_dfActorNetwork1)) {
-      unique_dfActorNetwork1$numMentions[i] <- sum(usersTemp==unique_dfActorNetwork1[i,1] & mentionedUsersTemp==unique_dfActorNetwork1[i,2])
-    }
+          dataCombined[nextEmptyRow, from := df$from_user[i][[1]]]
+          dataCombined[nextEmptyRow, to := df$users_mentioned[i][[1]][j]]
+          dataCombined[nextEmptyRow, edgeType := "Mention"]
+          dataCombined[nextEmptyRow, timeStamp := df$created_at[i][[1]]]
+
+          nextEmptyRow <- nextEmptyRow + 1 # increment the row to update in `dataCombined`
+
+        }
+
+      }
+
+      # Finally, we do the replies data
+      for (i in 1:nrow(df)) {
+
+        if (is.na(df[i,reply_to][[1]])) {next} # we check if there are retweets, if not skip to next row
+
+          # nextEmptyRow <- dataCombined[  , .I[from_userID=="NA_f00"] ][1] # we get index of the next 'empty' row to put data into # NOT NEEDED NOW, BUT USEFUL FOR LATER
+
+          dataCombined[nextEmptyRow, from:= df$from_user[i][[1]]]
+          dataCombined[nextEmptyRow, to := df$reply_to[i][[1]]]
+          dataCombined[nextEmptyRow, edgeType := "Reply"]
+          dataCombined[nextEmptyRow, timeStamp := df$created_at[i][[1]]]
+
+          nextEmptyRow <- nextEmptyRow + 1 # increment the row to update in `dataCombined`
+
+      }
+
+      # we now delete all the rows at the end of `dataCombined` that are unused
+      dataCombined <- dataCombined[edgeType != "NA_f00"] # we just keep the rows that are unchanged from the original dummy data values
+
+    ## --------------------------------
 
     # make a vector of all the unique actors in the network1
-    actorsNames <- unique(factor(c(as.character(unique(unique_dfActorNetwork1$usersTemp)),as.character(unique(unique_dfActorNetwork1$mentionedUsersTemp)))))
+    actorsNames <- unique(c(as.character(unique(dataCombined$from)),as.character(unique(dataCombined$to))))
+
+# cat(actorsNames) # DEBUG
 
     # Retrieve all the user details (e.g. follower count, number of tweets, etc) and include as node attributes.
       # NOTE: Given API rate limits, the below implementation supports up to 7500 users overall in dataset (150 requests * 50 users per request).
@@ -102,20 +143,20 @@ function(x,writeToFile)
       # NOTE: Ipso facto, if they are not real/actual users, then they can't be the source of a directed edge... (do ghosts send tweets?)...
 
     for (i in 1:length(missingActors)) {
-      missingTemp <- c(missingTemp, which(missingActors[i] == unique_dfActorNetwork1$mentionedUsersTemp))
+      missingTemp <- c(missingTemp, which(missingActors[i] == dataCombined$to))
     }
 
     # REMOVE the offendors:
     if(length(missingTemp) > 0) {
-    unique_dfActorNetwork1 <- unique_dfActorNetwork1[-missingTemp,]
+    dataCombined <- dataCombined[-missingTemp,]
     }
 
     # REMOVE any duplicated usernames in the retrieved user information (NOT SURE HOW/WHY THIS WOULD OCCUR **NEED TO CHECK**):
-    duplicatedUsers <- which(duplicated(actorsInfoDF$screenName))
+    # duplicatedUsers <- which(duplicated(actorsInfoDF$screenName))
 
-    if(length(duplicatedUsers) > 0) {
-      actorsInfoDF <- actorsInfoDF[-duplicatedUsers,]
-    }
+    # if(length(duplicatedUsers) > 0) {
+    #   actorsInfoDF <- actorsInfoDF[-duplicatedUsers,]
+    # }
 
     actors <- data.frame(
       name=actorsInfoDF$screenName,
@@ -136,9 +177,13 @@ function(x,writeToFile)
     # make a dataframe of the relations between actors
       # NOTE - FUTURE WORK: include edge attributes to specify the specific type of "mentions" (see previous comments on temporal network problem (see: approx. LINES 113-116)).
       # NOTE - For example, "RETWEET" versus "TWEET TO" (@username specified beginning of tweet) versus "MENTION" (@username specified somewhere else in tweet text)
-    relations <- data.frame(from=unique_dfActorNetwork1$usersTemp,to=unique_dfActorNetwork1$mentionedUsersTemp,weight=unique_dfActorNetwork1$numMentions)
+
+    # return(df) # DEBUG
+
+    relations <- data.frame(from=dataCombined$from,to=dataCombined$to,edgeType=dataCombined$edgeType,timeStamp=dataCombined$timeStamp)
 
     ##### STEP FOUR #####
+cat("\n I got to the final step before network generation")
 
     # convert into a graph
     g <- graph.data.frame(relations, directed=TRUE, vertices=actors)
