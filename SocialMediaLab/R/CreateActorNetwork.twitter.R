@@ -9,10 +9,12 @@ function(x,writeToFile)
 
   df <- x # match the variable names (this must be used to avoid warnings in package compilation?)
 
-  # EnsurePackage("igraph")
+  # if `df` is a list of dataframes, then need to convert these into one dataframe
+  if (class(df)[1]=="list") {
+  df <- do.call("rbind", df)
+  }
 
   # The `hashtags_used` column in `df` causes problems for creating actor network, so delete it:
-
   df <- df[,-21]
 
   # convert df to data.table
@@ -170,8 +172,8 @@ function(x,writeToFile)
       profileImageUrl=actorsInfoDF$profileImageUrl
       )
 
-    # actors <- actors[-which(duplicated(actors$name)),]
-    actors <- unique(actors)
+    actors <- actors[-which(duplicated(actors$name)),]
+    # actors <- unique(actors)
 
     # make a dataframe of the relations between actors
       # NOTE - FUTURE WORK: include edge attributes to specify the specific type of "mentions" (see previous comments on temporal network problem (see: approx. LINES 113-116)).
@@ -187,7 +189,7 @@ function(x,writeToFile)
       tweet_id=dataCombined$tweet_id)
 
     ##### STEP FOUR #####
-# cat("\n I got to the final step before network generation")
+cat("\n I got to the final step before network generation")
 
     # convert into a graph
     # note: suppressing warnings is used to avoid this error:
@@ -210,7 +212,7 @@ function(x,writeToFile)
       cat(paste0(currTime,"_TwitterActorNetwork.graphml"))
     }
 
-    cat("\nDone\n") ### DEBUG
+    cat("\nDone.\n") ### DEBUG
     flush.console()
 
     return(g)
