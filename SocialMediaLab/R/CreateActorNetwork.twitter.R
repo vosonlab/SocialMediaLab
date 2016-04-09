@@ -10,12 +10,17 @@ function(x,writeToFile)
   df <- x # match the variable names (this must be used to avoid warnings in package compilation?)
 
   # if `df` is a list of dataframes, then need to convert these into one dataframe
-  if (class(df)[1]=="list") {
-  df <- do.call("rbind", df)
-  }
+  suppressWarnings(
+    if (class(df)=="list") {
+    df <- do.call("rbind", df)
+    }
+  )
 
   # The `hashtags_used` column in `df` causes problems for creating actor network, so delete it:
   df <- df[,-21]
+
+  # clear any odd characters
+  # df <- removeOddChars(df)
 
   # convert df to data.table
   df <- data.table(df)
@@ -128,7 +133,7 @@ function(x,writeToFile)
     actorsInfoDF <- usersInformationAttributes
 
     # Need to clean the user text collected here (get rid of odd characters):
-    actorsInfoDF <- RemoveOddCharsUserInfo(actorsInfoDF) # uses the new function in v2_munge_tweets.R
+    # actorsInfoDF <- RemoveOddCharsUserInfo(actorsInfoDF) # uses the new function in v2_munge_tweets.R
 
     # We sometimes have a PROBLEM of missing actors (no info could be retrieved for them - might be misspellings/errors/pun or joke, etc)
     # So, identify which users are missing from original set to retrieved set,
@@ -172,7 +177,7 @@ function(x,writeToFile)
       profileImageUrl=actorsInfoDF$profileImageUrl
       )
 
-    actors <- actors[-which(duplicated(actors$name)),]
+    # actors <- actors[-which(duplicated(actors$name)),]
     # actors <- unique(actors)
 
     # make a dataframe of the relations between actors
@@ -196,7 +201,7 @@ cat("\n I got to the final step before network generation")
     #     In if (class(newval) == "factor") { :
     #     the condition has length > 1 and only the first element will be used
 
-  suppressWarnings( #
+  suppressWarnings(
     g <- graph.data.frame(relations, directed=TRUE, vertices=actors)
   )
 
