@@ -12,6 +12,7 @@ function(x,writeToFile)
   df <- x # match the variable names (this must be used to avoid warnings in package compilation?)
 
   # if `df` is a list of dataframes, then need to convert these into one dataframe
+  # CURRENTLY NOT IMPLEMENTED - there is no method for lists yet.
   suppressWarnings(
     if (class(df)=="list") {
     df <- do.call("rbind", df)
@@ -107,86 +108,88 @@ function(x,writeToFile)
     ## --------------------------------
 
     # make a vector of all the unique actors in the network1
-    actorsNames <- unique(c(as.character(dataCombined$from),as.character(dataCombined$to)))
+    # actorsNames <- unique(c(as.character(dataCombined$from),as.character(dataCombined$to)))
+    actorsNames <- unique(factor(c(as.character(unique(dataCombined$from)),as.character(unique(dataCombined$to)))))
 
-# cat(actorsNames) # DEBUG
-
-    # Retrieve all the user details (e.g. follower count, number of tweets, etc) and include as node attributes.
-      # NOTE: Given API rate limits, the below implementation supports up to 7500 users overall in dataset (150 requests * 50 users per request).
-      # NOTE: Future work needs to address the Twitter API rate limit for looking up user information (150 requests per 15 minutes).
-      # NOTE: Requesting 50 users at a time seems to avoid rate limit errors (it's a safe bet...).
-
-        # This function is supposed to perform the lookups in batches
-        # and mind the rate limit:
-        getUserObjects <- function(users) {
-          groups <- split(users, ceiling(seq_along(users)/50))
-          userObjects <- ldply(groups, function(group) { # ldply is a very cool function, found in plyr package.
-            objects <- lookupUsers(group)
-            out <- twListToDF(objects) # twListToDF is also a handy function, found in twitteR package. Converts weird class object to data frame.
-              # print("Waiting for 15 minutes (to 'refresh' the rate limit)...") # Don't need to use this yet. Implement later for number of users > 7500 (have to do chunked batches... chunks of chunks... urrghh)
-              # Sys.sleep(900)
-            return(out)
-          })
-          return(userObjects)
-        }
-
-    # Putting it into action:
-    usersInformationAttributes <- getUserObjects(actorsNames)
-    actorsInfoDF <- usersInformationAttributes
-
-    # Need to clean the user text collected here (get rid of odd characters):
-    # actorsInfoDF <- RemoveOddCharsUserInfo(actorsInfoDF) # uses the new function in v2_munge_tweets.R
-
-    # We sometimes have a PROBLEM of missing actors (no info could be retrieved for them - might be misspellings/errors/pun or joke, etc)
-    # So, identify which users are missing from original set to retrieved set,
-    # then ensure these users/connections are removed before proceeding onwards:
-
-    missingActors <- setdiff(actorsNames,usersInformationAttributes$screenName)
-      # NOTE: This is a horrible approach, need to optimise.
-    missingTemp <- NULL # store the indexes of "offending" edge connections (i.e. bad/missing actors)
-      # NOTE: Obviously the 'offending' users can only be found in the 2nd column
-      # NOTE: Ipso facto, if they are not real/actual users, then they can't be the source of a directed edge
-
-    for (i in 1:length(missingActors)) {
-      missingTemp <- c(missingTemp, which(missingActors[i] == dataCombined$to))
-    }
-
-    # REMOVE the offendors:
-      if(length(missingTemp) > 0) {
-      dataCombined <- dataCombined[-missingTemp,]
-      }
-
-    # REMOVE any duplicated usernames in the retrieved user information (NOT SURE HOW/WHY THIS WOULD OCCUR **NEED TO CHECK**):
-    # duplicatedUsers <- which(duplicated(actorsInfoDF$screenName))
-
-    # if(length(duplicatedUsers) > 0) {
-    #   actorsInfoDF <- actorsInfoDF[-duplicatedUsers,]
-    # }
-
-    actors <- data.frame(
-      name=actorsInfoDF$screenName,
-      userDescription=actorsInfoDF$description,
-      statusesCount=actorsInfoDF$statusesCount,
-      followersCount=actorsInfoDF$followersCount,
-      favoritesCount=actorsInfoDF$favoritesCount,
-      friendsCount=actorsInfoDF$friendsCount,
-      url=actorsInfoDF$url,
-      realName=actorsInfoDF$name,
-      dateAccountCreated=actorsInfoDF$created,
-      userLocation=actorsInfoDF$location,
-      userLanguage=actorsInfoDF$lang,
-      numberOfListsUserIsFeaturedOn=actorsInfoDF$listedCount,
-      profileImageUrl=actorsInfoDF$profileImageUrl
-      )
-
-    # actors <- actors[-which(duplicated(actors$name)),]
-    # actors <- unique(actors)
-
-    # make a dataframe of the relations between actors
-      # NOTE - FUTURE WORK: include edge attributes to specify the specific type of "mentions" (see previous comments on temporal network problem (see: approx. LINES 113-116)).
-      # NOTE - For example, "RETWEET" versus "TWEET TO" (@username specified beginning of tweet) versus "MENTION" (@username specified somewhere else in tweet text)
-
-    # return(df) # DEBUG
+#
+# # cat(actorsNames) # DEBUG
+#
+#     # Retrieve all the user details (e.g. follower count, number of tweets, etc) and include as node attributes.
+#       # NOTE: Given API rate limits, the below implementation supports up to 7500 users overall in dataset (150 requests * 50 users per request).
+#       # NOTE: Future work needs to address the Twitter API rate limit for looking up user information (150 requests per 15 minutes).
+#       # NOTE: Requesting 50 users at a time seems to avoid rate limit errors (it's a safe bet...).
+#
+#         # This function is supposed to perform the lookups in batches
+#         # and mind the rate limit:
+#         getUserObjects <- function(users) {
+#           groups <- split(users, ceiling(seq_along(users)/50))
+#           userObjects <- ldply(groups, function(group) { # ldply is a very cool function, found in plyr package.
+#             objects <- lookupUsers(group)
+#             out <- twListToDF(objects) # twListToDF is also a handy function, found in twitteR package. Converts weird class object to data frame.
+#               # print("Waiting for 15 minutes (to 'refresh' the rate limit)...") # Don't need to use this yet. Implement later for number of users > 7500 (have to do chunked batches... chunks of chunks... urrghh)
+#               # Sys.sleep(900)
+#             return(out)
+#           })
+#           return(userObjects)
+#         }
+#
+#     # Putting it into action:
+#     usersInformationAttributes <- getUserObjects(actorsNames)
+#     actorsInfoDF <- usersInformationAttributes
+#
+#     # Need to clean the user text collected here (get rid of odd characters):
+#     # actorsInfoDF <- RemoveOddCharsUserInfo(actorsInfoDF) # uses the new function in v2_munge_tweets.R
+#
+#     # We sometimes have a PROBLEM of missing actors (no info could be retrieved for them - might be misspellings/errors/pun or joke, etc)
+#     # So, identify which users are missing from original set to retrieved set,
+#     # then ensure these users/connections are removed before proceeding onwards:
+#
+#     missingActors <- setdiff(actorsNames,usersInformationAttributes$screenName)
+#       # NOTE: This is a horrible approach, need to optimise.
+#     missingTemp <- NULL # store the indexes of "offending" edge connections (i.e. bad/missing actors)
+#       # NOTE: Obviously the 'offending' users can only be found in the 2nd column
+#       # NOTE: Ipso facto, if they are not real/actual users, then they can't be the source of a directed edge
+#
+#     for (i in 1:length(missingActors)) {
+#       missingTemp <- c(missingTemp, which(missingActors[i] == dataCombined$to))
+#     }
+#
+#     # REMOVE the offendors:
+#       if(length(missingTemp) > 0) {
+#       dataCombined <- dataCombined[-missingTemp,]
+#       }
+#
+#     # REMOVE any duplicated usernames in the retrieved user information (NOT SURE HOW/WHY THIS WOULD OCCUR **NEED TO CHECK**):
+#     # duplicatedUsers <- which(duplicated(actorsInfoDF$screenName))
+#
+#     # if(length(duplicatedUsers) > 0) {
+#     #   actorsInfoDF <- actorsInfoDF[-duplicatedUsers,]
+#     # }
+#
+#     actors <- data.frame(
+#       name=actorsInfoDF$screenName,
+#       userDescription=actorsInfoDF$description,
+#       statusesCount=actorsInfoDF$statusesCount,
+#       followersCount=actorsInfoDF$followersCount,
+#       favoritesCount=actorsInfoDF$favoritesCount,
+#       friendsCount=actorsInfoDF$friendsCount,
+#       url=actorsInfoDF$url,
+#       realName=actorsInfoDF$name,
+#       dateAccountCreated=actorsInfoDF$created,
+#       userLocation=actorsInfoDF$location,
+#       userLanguage=actorsInfoDF$lang,
+#       numberOfListsUserIsFeaturedOn=actorsInfoDF$listedCount,
+#       profileImageUrl=actorsInfoDF$profileImageUrl
+#       )
+#
+#     # actors <- actors[-which(duplicated(actors$name)),]
+#     # actors <- unique(actors)
+#
+#     # make a dataframe of the relations between actors
+#       # NOTE - FUTURE WORK: include edge attributes to specify the specific type of "mentions" (see previous comments on temporal network problem (see: approx. LINES 113-116)).
+#       # NOTE - For example, "RETWEET" versus "TWEET TO" (@username specified beginning of tweet) versus "MENTION" (@username specified somewhere else in tweet text)
+#
+#     # return(df) # DEBUG
 
     relations <- data.frame(
       from=dataCombined$from,
@@ -204,7 +207,7 @@ function(x,writeToFile)
     #     the condition has length > 1 and only the first element will be used
 
   suppressWarnings(
-    g <- graph.data.frame(relations, directed=TRUE, vertices=actors)
+    g <- graph.data.frame(relations, directed=TRUE, vertices=actorsNames) # used to be vertices=actors (when it collected user data)
   )
 
     # Make the node labels play nice with Gephi
