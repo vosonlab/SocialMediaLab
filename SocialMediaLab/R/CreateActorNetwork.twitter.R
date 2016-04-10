@@ -3,6 +3,8 @@ CreateActorNetwork.twitter <-
 function(x,writeToFile)
 {
 
+  from=retweet_from=to=edgeType=timeStamp=tweet_id=users_mentioned=reply_to=NULL # to please the gods of R CMD CHECK
+
   if (missing(writeToFile)) {
     writeToFile <- FALSE # default = not write to file
   }

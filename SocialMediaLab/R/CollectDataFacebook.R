@@ -82,7 +82,7 @@
 #' }
 #' @export
 CollectDataFacebook <-
-function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL, ...) {
+function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
 
     postID=from=edgeType=edgeWeight=to=NULL # to please the gods of R CMD CHECK
 

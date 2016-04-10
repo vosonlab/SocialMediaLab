@@ -1,5 +1,5 @@
 Package: SocialMediaLab
-Version: 0.20.0
+Version: 0.21.0-1
 Date: 2015-11-25
 Title: Tools for Collecting Social Media Data and Generating Networks
         for Analysis
@@ -11,8 +11,8 @@ Type: Package
 Imports:
         tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook,Hmisc,data.table,httpuv,instaR,methods,httr
 Suggests: magrittr
-Author: Timothy Graham & Robert Ackland with contribution from Chung-hong Chan
+Author: Timothy Graham & Robert Ackland, with contribution from Chung-hong Chan
 Maintainer: Timothy Graham <timothy.graham3@uq.net.au>
 License: GPL (>= 2)
 RoxygenNote: 5.0.1
-Built: R 3.2.3; ; 2016-03-30 12:26:25 UTC; unix
+Built: R 3.2.3; ; 2016-04-10 00:19:34 UTC; unix

@@ -5,7 +5,7 @@
 * using option ‘--as-cran’
 * checking for file ‘SocialMediaLab/DESCRIPTION’ ... OK
 * checking extension type ... Package
-* this is package ‘SocialMediaLab’ version ‘0.20.0’
+* this is package ‘SocialMediaLab’ version ‘0.21.0-1’
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Timothy Graham <timothy.graham3@uq.net.au>’
 
@@ -39,17 +39,44 @@ The Date field is over a month old.
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... OK
+* checking R code for possible problems ... NOTE
+CreateActorNetwork.twitter: no visible binding for global variable
+  ‘from’
+CreateActorNetwork.twitter: no visible binding for global variable
+  ‘retweet_from’
+CreateActorNetwork.twitter: no visible binding for global variable ‘to’
+CreateActorNetwork.twitter: no visible binding for global variable
+  ‘edgeType’
+CreateActorNetwork.twitter: no visible binding for global variable
+  ‘timeStamp’
+CreateActorNetwork.twitter: no visible binding for global variable
+  ‘tweet_id’
+CreateActorNetwork.twitter: no visible binding for global variable
+  ‘users_mentioned’
+CreateActorNetwork.twitter: no visible binding for global variable
+  ‘reply_to’
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
 * checking Rd cross-references ... OK
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
-* checking Rd \usage sections ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'CollectDataFacebook'
+  ‘...’
+
+Undocumented arguments in documentation object 'CollectDataTwitter'
+  ‘since’ ‘until’ ‘locale’ ‘geocode’ ‘sinceID’ ‘maxID’ ‘resultType’
+  ‘retryOnRateLimit’ ‘...’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
+See chapter ‘Writing R documentation files’ in the ‘Writing R
+Extensions’ manual.
 * checking Rd contents ... OK
 * checking for unstated dependencies in examples ... OK
 * checking examples ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 NOTE
+Status: 1 WARNING, 2 NOTEs
