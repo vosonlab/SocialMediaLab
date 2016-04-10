@@ -2,7 +2,8 @@
 % Please edit documentation in R/CollectDataFacebook.R
 \name{CollectDataFacebook}
 \alias{CollectDataFacebook}
-\title{Collect data from Facebook pages for generating different types of networks}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Collect} function}
 \usage{
 CollectDataFacebook(pageName, rangeFrom, rangeTo, verbose, n, writeToFile,
   credential = NULL)
@@ -40,12 +41,14 @@ A data frame object of class \code{dataSource.facebook} that can be
 used with \code{Create}.
 }
 \description{
+Collect data from Facebook pages for generating different types of networks
+}
+\details{
 This function collects data from Facebook pages (i.e. post data and
 comments/likes data within posts), and structures the data into a data frame
 of class \code{dataSource.facebook}, ready for creating networks for further
 analysis.
-}
-\details{
+
 \code{CollectDataFacebook} collects public 'post' data from a given Facebook
 page, including comments and 'likes' from within each post.
 

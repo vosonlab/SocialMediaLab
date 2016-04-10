@@ -1,14 +1,17 @@
+#' Note: this function is DEPRECATED and will be removed in a future release.
+#' Please use the \code{Authenticate} function
+#'
 #' Twitter API Authentication
-#' 
+#'
 #' Oauth based authentication with the Twitter API
-#' 
+#'
 #' In order to collect data from Twitter, the user must first authenticate with
 #' Twitter's Application Programming Interface (API).
-#' 
+#'
 #' This requires setting up an App on Twitter. An excellent guide to achieving
 #' this can be found at:
 #' http://thinktostart.com/twitter-authentification-with-r/
-#' 
+#'
 #' @param api_key character string specifying the 'API key' used for
 #' authentication.
 #' @param api_secret character string specifying the 'API secret' used for
@@ -26,14 +29,14 @@
 #' data.
 #' @keywords twitter social media SNA
 #' @examples
-#' 
+#'
 #' \dontrun{
 #'   # Firstly specify your API credentials
 #'   my_api_key <- "1234567890qwerty"
 #'   my_api_secret <- "1234567890qwerty"
 #'   my_access_token <- "1234567890qwerty"
 #'   my_access_token_secret <- "1234567890qwerty"
-#' 
+#'
 #'   AuthenticateWithTwitterAPI(api_key=my_api_key, api_secret=my_api_secret,
 #'     access_token=my_access_token, access_token_secret=my_access_token_secret)
 #' }

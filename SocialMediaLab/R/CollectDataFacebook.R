@@ -1,3 +1,6 @@
+#' Note: this function is DEPRECATED and will be removed in a future release.
+#' Please use the \code{Collect} function
+#'
 #' Collect data from Facebook pages for generating different types of networks
 #'
 #' This function collects data from Facebook pages (i.e. post data and

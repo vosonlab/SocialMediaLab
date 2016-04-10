@@ -2,7 +2,8 @@
 % Please edit documentation in R/AuthenticateWithInstagramAPI.R
 \name{AuthenticateWithInstagramAPI}
 \alias{AuthenticateWithInstagramAPI}
-\title{Instagram API Authentication}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Authenticate} function}
 \usage{
 AuthenticateWithInstagramAPI(appID, appSecret, useCachedToken)
 }
@@ -24,10 +25,12 @@ An OAuth access token that enables R to make authenticated calls to
 the Instagram API.
 }
 \description{
-OAuth token based authentication with the Instagram API, with caching
-options for automatic authentication (i.e. avoid using the browser).
+Instagram API Authentication
 }
 \details{
+OAuth token based authentication with the Instagram API, with caching
+options for automatic authentication (i.e. avoid using the browser).
+
 In order to collect data from Instagram, the user must first authenticate
 with Instagram's Application Programming Interface (API). Furthermore, the
 user must create a Instagram 'app' and get an 'app secret'.

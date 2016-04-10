@@ -2,7 +2,8 @@
 % Please edit documentation in R/CollectDataYoutube.R
 \name{CollectDataYoutube}
 \alias{CollectDataYoutube}
-\title{Collect YouTube comments data for generating different types of networks}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Collect} function}
 \usage{
 CollectDataYoutube(videoIDs, apiKeyYoutube, verbose, writeToFile, maxComments)
 }
@@ -36,11 +37,13 @@ A data frame object of class \code{dataSource.youtube} that can be
 used for creating unimodal networks (\code{CreateActorNetwork}).
 }
 \description{
+Collect YouTube comments data for generating different types of networks
+}
+\details{
 This function collects YouTube comments data for one or more YouTube videos.
 It structures the data into a data frame of class \code{dataSource.youtube},
 ready for creating networks for further analysis.
-}
-\details{
+
 \code{CollectDataYoutube} collects public comments from YouTube videos,
 using the YouTube API.
 

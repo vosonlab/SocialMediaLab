@@ -2,7 +2,8 @@
 % Please edit documentation in R/CollectDataTwitter.R
 \name{CollectDataTwitter}
 \alias{CollectDataTwitter}
-\title{Collect data from Twitter for generating different types of networks}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Collect} function}
 \usage{
 CollectDataTwitter(searchTerm, numTweets, verbose, writeToFile, language, since,
   until, locale, geocode, sinceID, maxID, resultType, retryOnRateLimit)
@@ -62,11 +63,13 @@ networks (\code{CreateBimodalNetwork}), and semantic networks
 (\code{CreateSemanticNetwork}).
 }
 \description{
+Collect data from Twitter for generating different types of networks
+}
+\details{
 This function collects data from Twitter based on hashtags or search terms,
 and structures the data into a data frame of class
 \code{dataSource.twitter}, ready for creating networks for further analysis.
-}
-\details{
+
 \code{CollectDataTwitter} collects public 'tweets' from Twitter using the
 Twitter API.
 

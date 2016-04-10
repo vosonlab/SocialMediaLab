@@ -7,12 +7,7 @@
 Create(dataSource, type = "Actor", ...)
 }
 \arguments{
-\item{dataSource}{a data frame of class \code{dataSource}. For Twitter data,
-it is also possible to provide a *list* of data frames (i.e. data frames
-that inherit class \code{dataSource} and \code{twitter}). Only lists of
-Twitter data frames are supported at this time. If a list of data frames is
-provided, then the function binds these row-wise and computes over the
-entire data set.}
+\item{dataSource}{a data frame of class \code{dataSource}}
 
 \item{type}{character, type of network to be created, currently supports
 "actor", "bimodal", "dynamic", "semantic" and "ego"}
@@ -24,9 +19,14 @@ An igraph graph object
 }
 \description{
 This function creates network from social media data (i.e. from data frames
-of class \code{dataSource} , or for Twitter data it is also possible to
-provide a *list* of data frames).\code{Create} is the final step of the
+of class \code{dataSource}. \code{Create} is the final step of the
 \code{Authenticate}, \code{Collect}, \code{Create} workflow.
+}
+\details{
+Note: when creating Facebook *bimodal* networks, the user information
+is also collected and stored as vertex attributes (involving additional
+calls to the Facebook API). However, this is not currently implemented
+for Facebook *actor* networks.
 }
 \examples{
 \dontrun{

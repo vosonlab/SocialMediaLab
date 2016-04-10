@@ -2,7 +2,8 @@
 % Please edit documentation in R/AuthenticateWithFacebookAPI.R
 \name{AuthenticateWithFacebookAPI}
 \alias{AuthenticateWithFacebookAPI}
-\title{Facebook API Authentication}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Authenticate} function}
 \usage{
 AuthenticateWithFacebookAPI(appID, appSecret, extended_permissions,
   useCachedToken)
@@ -33,10 +34,12 @@ An OAuth access token that enables R to make authenticated calls to
 the Facebook API.
 }
 \description{
-OAuth token based authentication with the Facebook API, with caching options
-for automatic authentication (i.e. avoid using the browser).
+Facebook API Authentication
 }
 \details{
+OAuth token based authentication with the Facebook API, with caching options
+for automatic authentication (i.e. avoid using the browser).
+
 In order to collect data from Facebook, the user must first authenticate
 with Facebook's Application Programming Interface (API). Furthermore, the
 user must create a Facebook 'app' and get an 'app secret'.
