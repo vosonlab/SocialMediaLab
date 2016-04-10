@@ -80,12 +80,12 @@ youtubeCollector <-
 }
 
 facebookCollector <-
-    function(credential,pageName,rangeFrom,rangeTo,verbose,n,writeToFile,dynamic) {
-        return(CollectDataFacebook(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,dynamic, credential))
+    function(credential,pageName,rangeFrom,rangeTo,verbose,n,writeToFile) {
+        return(CollectDataFacebook(pageName,rangeFrom,rangeTo,verbose,n,writeToFile, credential))
 }
 
-twitterCollector <- function(credential, searchTerm, numTweets, verbose, writeToFile, language) {
-    return(CollectDataTwitter(searchTerm, numTweets, verbose, writeToFile, language)) # credential means nothing to twitteR
+twitterCollector <- function(credential, searchTerm, numTweets, verbose, writeToFile, language, ...) {
+    return(CollectDataTwitter(searchTerm, numTweets, verbose, writeToFile, language, ...)) # credential means nothing to twitteR
 }
 
 instagramCollector <- function(credential, tag, n, lat, lng, distance, folder, mindate, maxdate, verbose, sleep, writeToFile, waitForRateLimit) {

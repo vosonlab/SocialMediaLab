@@ -2,7 +2,8 @@
 % Please edit documentation in R/CollectDataInstagram.R
 \name{CollectDataInstagram}
 \alias{CollectDataInstagram}
-\title{Collect data from Instagram for generating different types of networks}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Collect} function}
 \usage{
 CollectDataInstagram(tag, n, lat, lng, distance, folder, mindate, maxdate,
   verbose, sleep, writeToFile, waitForRateLimit, credential = NULL)
@@ -51,6 +52,9 @@ A data frame object of class \code{dataSource.Instagram} that can be
 used with \code{CreateBimodalNetwork}.
 }
 \description{
+Collect data from Instagram for generating different types of networks
+}
+\details{
 This function collects data from Instagram using either hashtag (e.g.
 #obama) or search coordinates (latitude and longitude), and structures the
 data into a data frame of class \code{dataSource.Instagram}, ready for
@@ -58,8 +62,7 @@ creating networks for further analysis. This function draws heavily on the
 `searchInstagram` function (from the 'instaR' package) and includes all the
 arguments for collecting Instagram data using that function, as well as
 additional arguments listed below.
-}
-\details{
+
 \code{CollectDataInstagram} collects public pictures and videos from
 Instagram, and also collects the maximum amount of comments and 'likes' for
 each post. It draws on and extends the `searchInstagram` function from the

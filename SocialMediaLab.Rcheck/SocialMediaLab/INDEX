@@ -1,34 +1,55 @@
 Authenticate            Create credential to access social media APIs
 AuthenticateWithFacebookAPI
-                        Facebook API Authentication
+                        Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Authenticate' function
 AuthenticateWithInstagramAPI
-                        Instagram API Authentication
+                        Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Authenticate' function
 AuthenticateWithTwitterAPI
-                        Twitter API Authentication
+                        Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Authenticate' function
 AuthenticateWithYoutubeAPI
-                        YouTube API Authentication
+                        Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Authenticate' function
 Collect                 Collect data from social media for generating
                         networks
-CollectDataFacebook     Collect data from Facebook pages for generating
-                        different types of networks
-CollectDataInstagram    Collect data from Instagram for generating
-                        different types of networks
-CollectDataTwitter      Collect data from Twitter for generating
-                        different types of networks
-CollectDataYoutube      Collect YouTube comments data for generating
-                        different types of networks
-CollectEgoInstagram     Collect Instagram data for generating ego
-                        network
+CollectDataFacebook     Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Collect' function
+CollectDataInstagram    Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Collect' function
+CollectDataTwitter      Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Collect' function
+CollectDataYoutube      Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Collect' function
+CollectEgoInstagram     Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Collect' function
 Create                  Create networks from social media data
-CreateActorNetwork      Create 'actor' networks from social media data
-CreateBimodalNetwork    Create bimodal networks from social media data
-CreateDynamicNetwork    Create dynamic networks from social media data
-                        (networks that vary over time)
-CreateEgoNetwork        Create 'ego' networks from social media data
+CreateActorNetwork      Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Create' function
+CreateBimodalNetwork    Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Create' function
+CreateDynamicNetwork    Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Create' function
+CreateEgoNetwork        Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Create' function
 CreateEgoNetworkFromData
                         Create 'ego' networks from social media data
-CreateSemanticNetwork   Create semantic networks from social media data
-                        (semantic relationships between concepts)
+CreateSemanticNetwork   Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Create' function
 GetYoutubeVideoIDs      Extract/scrape the IDs from a set of YouTube
                         video URLs
 SaveCredential          Save and load credential information

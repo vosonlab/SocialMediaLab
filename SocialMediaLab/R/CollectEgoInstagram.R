@@ -1,13 +1,16 @@
+#' Note: this function is DEPRECATED and will be removed in a future release.
+#' Please use the \code{Collect} function
+#'
 #' Collect Instagram data for generating ego network
-#' 
+#'
 #' This function collects data for creating a (weighted and directed) 'ego'
 #' network from a given set of seed users (the ego nodes). Note! The network
 #' size can become extremely large very quickly, depending on the arguments the
 #' user provides to this function. For example, specifying degreeEgoNet=2 and
 #' getFollows=TRUE can generate very large networks from just a small number of
 #' ego users (even just 3 or 4 ego nodes).
-#' 
-#' 
+#'
+#'
 #' @param username character vector, specifying a set of usernames who will be
 #' the 'ego' nodes for the network generation.
 #' @param userid character vector, specifying a set of usernames who will be
@@ -36,15 +39,15 @@
 #' Ackland<robert.ackland@@anu.edu.au> & Chung-hong Chan
 #' <chainsawtiney@@gmail.com>
 #' @examples
-#' 
+#'
 #' \dontrun{
 #' myAppID <- "123456789098765"
 #' myAppSecret <- "abc123abc123abc123abc123abc123ab"
-#' 
+#'
 #' # Authenticate with the Instagram API using `AuthenticateWithInstagramAPI`
 #' instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=myAppI,
 #' appSecret=myAppSecret, useCachedToken=TRUE)
-#' 
+#'
 #' myUsernames <- c("senjohnmccain","obama")
 #' instagramEgodata <- CollectEgoInstgram(username=myUsernames,
 #' verbose=TRUE,degreeEgoNet=1, waitForRateLimit=TRUE,

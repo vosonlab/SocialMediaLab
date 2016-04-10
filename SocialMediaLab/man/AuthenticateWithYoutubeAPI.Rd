@@ -2,7 +2,8 @@
 % Please edit documentation in R/AuthenticateWithYoutubeAPI.R
 \name{AuthenticateWithYoutubeAPI}
 \alias{AuthenticateWithYoutubeAPI}
-\title{YouTube API Authentication}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Authenticate} function}
 \usage{
 AuthenticateWithYoutubeAPI(apiKeyYoutube)
 }
@@ -14,9 +15,11 @@ key.}
 This is called for its side effect.
 }
 \description{
-OAuth based authentication with the Google API
+YouTube API Authentication
 }
 \details{
+OAuth based authentication with the Google API
+
 In order to collect data from YouTube, the user must first authenticate with
 Google's Application Programming Interface (API). Users can obtain a Google
 Developer API key at: https://console.developers.google.com

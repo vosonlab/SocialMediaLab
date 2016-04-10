@@ -61,7 +61,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: AuthenticateWithFacebookAPI
-### Title: Facebook API Authentication
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Authenticate' function
 ### Aliases: AuthenticateWithFacebookAPI
 ### Keywords: SNA facebook media social
 
@@ -90,7 +91,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: AuthenticateWithInstagramAPI
-### Title: Instagram API Authentication
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Authenticate' function
 ### Aliases: AuthenticateWithInstagramAPI
 ### Keywords: Instagram SNA media social
 
@@ -119,7 +121,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: AuthenticateWithTwitterAPI
-### Title: Twitter API Authentication
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Authenticate' function
 ### Aliases: AuthenticateWithTwitterAPI
 ### Keywords: SNA media social twitter
 
@@ -148,7 +151,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: AuthenticateWithYoutubeAPI
-### Title: YouTube API Authentication
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Authenticate' function
 ### Aliases: AuthenticateWithYoutubeAPI
 ### Keywords: SNA media social youtube
 
@@ -210,8 +214,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: CollectDataFacebook
-### Title: Collect data from Facebook pages for generating different types
-###   of networks
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Collect' function
 ### Aliases: CollectDataFacebook
 ### Keywords: SNA data facebook mining
 
@@ -219,22 +223,25 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ## Not run: 
 ##D   ## Use your own values for myAppID and myAppSecret
-##D   myAppID <- "123456789098765"
-##D   myAppSecret <- "abc123abc123abc123abc123abc123ab"
+##D   appID <- "xxxx"
+##D   appSecret <- "yyyy"
 ##D 
-##D   # Authenticate with the Facebook API using `AuthenticateWithFacebookAPI`
-##D   fb_oauth <- AuthenticateWithFacebookAPI(appID=myAppID, appSecret=myAppSecret,
-##D     extended_permissions=FALSE, useCachedToken=TRUE)
+##D   ## Collect data and create bimodal network
 ##D 
-##D   # Run the `CollectDataFacebook` function and store the results in variable `myFacebookData`
-##D   myFacebookData <- CollectDataFacebook(pageName="StarWars", rangeFrom="2015-05-01",
-##D   rangeTo="2015-06-03",writeToFile=FALSE,verbose=TRUE)
+##D   g_bimodal_facebook_star_wars <- Authenticate("Facebook",
+##D   appID = appID, appSecret = appSecret) %>%
+##D   SaveCredential("FBCredential.RDS") %>%
+##D   Collect(pageName="StarWars", rangeFrom="2015-03-01",
+##D   rangeTo="2015-03-02", writeToFile=FALSE) %>%
+##D   Create("Bimodal")
 ##D 
-##D   # Create a 'bimodal' network using \code{CreateBimodalNetwork}
-##D   g_bimodal_facebook <- CreateBimodalNetwork(myFacebookData)
+##D   ## Create a dynamic network using the saved credentials
 ##D 
-##D   # View descriptive information about the bimodal network
-##D   g_bimodal_facebook
+##D   g_bimodal_facebook_star_wars_dynamic <-
+##D   LoadCredential("FBCredential.RDS") %>%
+##D   Collect(pageName="StarWars", rangeFrom="2015-03-01",
+##D   rangeTo="2015-03-02", writeToFile=FALSE) %>%
+##D   Create("dynamic")
 ## End(Not run)
 
 
@@ -249,8 +256,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: CollectDataInstagram
-### Title: Collect data from Instagram for generating different types of
-###   networks
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Collect' function
 ### Aliases: CollectDataInstagram
 ### Keywords: SNA data instagram mining
 
@@ -304,8 +311,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: CollectDataTwitter
-### Title: Collect data from Twitter for generating different types of
-###   networks
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Collect' function
 ### Aliases: CollectDataTwitter
 ### Keywords: SNA data mining twitter
 
@@ -349,8 +356,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: CollectDataYoutube
-### Title: Collect YouTube comments data for generating different types of
-###   networks
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Collect' function
 ### Aliases: CollectDataYoutube
 ### Keywords: SNA data mining youtube
 
@@ -387,7 +394,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: CollectEgoInstagram
-### Title: Collect Instagram data for generating ego network
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Collect' function
 ### Aliases: CollectEgoInstagram
 
 ### ** Examples
@@ -456,7 +464,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: CreateActorNetwork
-### Title: Create 'actor' networks from social media data
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Create' function
 ### Aliases: CreateActorNetwork
 ### Keywords: SNA igraph media network social unimodal
 
@@ -498,7 +507,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: CreateBimodalNetwork
-### Title: Create bimodal networks from social media data
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Create' function
 ### Aliases: CreateBimodalNetwork
 ### Keywords: SNA bimodal igraph media network social
 
@@ -538,8 +548,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: CreateDynamicNetwork
-### Title: Create dynamic networks from social media data (networks that
-###   vary over time)
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Create' function
 ### Aliases: CreateDynamicNetwork
 ### Keywords: SNA dynamic igraph media network social
 
@@ -580,7 +590,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: CreateEgoNetwork
-### Title: Create 'ego' networks from social media data
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Create' function
 ### Aliases: CreateEgoNetwork
 ### Keywords: SNA igraph instagram media network social unimodal
 
@@ -646,8 +657,8 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: CreateSemanticNetwork
-### Title: Create semantic networks from social media data (semantic
-###   relationships between concepts)
+### Title: Note: this function is DEPRECATED and will be removed in a
+###   future release. Please use the 'Create' function
 ### Aliases: CreateSemanticNetwork
 ### Keywords: SNA igraph media network semantic social
 

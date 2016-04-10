@@ -2,10 +2,11 @@
 % Please edit documentation in R/CollectDataFacebook.R
 \name{CollectDataFacebook}
 \alias{CollectDataFacebook}
-\title{Collect data from Facebook pages for generating different types of networks}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Collect} function}
 \usage{
 CollectDataFacebook(pageName, rangeFrom, rangeTo, verbose, n, writeToFile,
-  dynamic, credential = NULL)
+  credential = NULL)
 }
 \arguments{
 \item{pageName}{character string, specifying the name of the Facebook page.
@@ -33,31 +34,25 @@ for long computations. Default is \code{FALSE}.}
 current working directory (CSV format), with filename denoting
 \code{rangeFrom}, \code{rangeTo}, and \code{pageName}.}
 
-\item{dynamic}{logical. If \code{TRUE} then temporal data will be collected,
-which can be used to create dynamic networks (using function
-\code{CreateDynamicNetwork}). Note: Facebook API does not currently provide
-timestamp data for 'likes' on posts. Therefore, if dynamic is set to
-\code{TRUE}, then only 'comments' data are collected. In this way, an edge
-from user i to post j represents whether (and how many times) user i has
-commented on post j.}
-
 \item{credential}{Optional, a \code{credential} object created by \code{Authenticate}.}
 }
 \value{
 A data frame object of class \code{dataSource.facebook} that can be
-used with \code{CreateBimodalNetwork}.
+used with \code{Create}.
 }
 \description{
+Collect data from Facebook pages for generating different types of networks
+}
+\details{
 This function collects data from Facebook pages (i.e. post data and
 comments/likes data within posts), and structures the data into a data frame
 of class \code{dataSource.facebook}, ready for creating networks for further
 analysis.
-}
-\details{
+
 \code{CollectDataFacebook} collects public 'post' data from a given Facebook
 page, including comments and 'likes' from within each post.
 
-The function then finds and maps the relationships between users and posts,
+The function then finds and maps the edgeTypes between users and posts,
 and structures these relationships into a format suitable for creating
 bimodal networks using \code{CreateBimodalNetwork}.
 
@@ -70,36 +65,38 @@ current system date).
 \note{
 Currently supported network types:
 
-- bimodal networks; \code{CreateBimodalNetwork} - dynamic bimodal networks;
-\code{CreateDynamicNetwork}
+- bimodal networks
+- dynamic networks
 
 Note: dynamic networks created using Facebook data are bimodal. This means
 that there are two types of vertices present in the network (i.e. Facebook
 users and Facebook posts), with edges representing the time(s) when user i
 commented on post j. Currently, timestamp data is not available through the
 Facebook API for 'likes' data (i.e. when user i 'likes' post j), so
-relationships based on 'likes' are excluded from dynamic Facebook data (and
-therefore networks generated using \code{CreateDynamicNetwork}).
+edge ties based on 'likes' are excluded from dynamic Facebook data.
 }
 \examples{
 \dontrun{
   ## Use your own values for myAppID and myAppSecret
-  myAppID <- "123456789098765"
-  myAppSecret <- "abc123abc123abc123abc123abc123ab"
+  appID <- "xxxx"
+  appSecret <- "yyyy"
 
-  # Authenticate with the Facebook API using `AuthenticateWithFacebookAPI`
-  fb_oauth <- AuthenticateWithFacebookAPI(appID=myAppID, appSecret=myAppSecret,
-    extended_permissions=FALSE, useCachedToken=TRUE)
+  ## Collect data and create bimodal network
 
-  # Run the `CollectDataFacebook` function and store the results in variable `myFacebookData`
-  myFacebookData <- CollectDataFacebook(pageName="StarWars", rangeFrom="2015-05-01",
-  rangeTo="2015-06-03",writeToFile=FALSE,verbose=TRUE)
+  g_bimodal_facebook_star_wars <- Authenticate("Facebook",
+  appID = appID, appSecret = appSecret) \%>\%
+  SaveCredential("FBCredential.RDS") \%>\%
+  Collect(pageName="StarWars", rangeFrom="2015-03-01",
+  rangeTo="2015-03-02", writeToFile=FALSE) \%>\%
+  Create("Bimodal")
 
-  # Create a 'bimodal' network using \\code{CreateBimodalNetwork}
-  g_bimodal_facebook <- CreateBimodalNetwork(myFacebookData)
+  ## Create a dynamic network using the saved credentials
 
-  # View descriptive information about the bimodal network
-  g_bimodal_facebook
+  g_bimodal_facebook_star_wars_dynamic <-
+  LoadCredential("FBCredential.RDS") \%>\%
+  Collect(pageName="StarWars", rangeFrom="2015-03-01",
+  rangeTo="2015-03-02", writeToFile=FALSE) \%>\%
+  Create("dynamic")
 }
 }
 \author{
@@ -107,10 +104,8 @@ Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
 <robert.ackland@anu.edu.au>
 }
 \seealso{
-\code{AuthenticateWithFacebookAPI} must be run first or no data
-will be collected, \code{collectTemporalDataFacebook} is used to collect
-temporal data suitable for dynamic networks (i.e. Facebook network that
-changes as a function of time).
+\code{Authenticate} must be run first or no data
+will be collected.
 }
 \keyword{SNA}
 \keyword{data}

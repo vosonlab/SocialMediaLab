@@ -2,8 +2,8 @@
 % Please edit documentation in R/CreateDynamicNetwork.R
 \name{CreateDynamicNetwork}
 \alias{CreateDynamicNetwork}
-\title{Create dynamic networks from social media data (networks that vary over
-time)}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Create} function}
 \usage{
 CreateDynamicNetwork(x, writeToFile)
 }
@@ -18,10 +18,13 @@ current date/time and the type of network.}
 An igraph graph object, with directed and non-weighted edges.
 }
 \description{
-This function creates a dynamic network from social media data (i.e. from
-data frames of class \code{dataSource} and class \code{temporal}).
+Create dynamic networks from social media data (networks that vary over
+time)
 }
 \details{
+This function creates a dynamic network from social media data (i.e. from
+data frames of class \code{dataSource} and class \code{temporal}).
+
 This function creates a directed network from a data frame of class
 \code{dataSource} and \code{temporal} (which are created using the
 `CollectTemporalData` family of functions in the SocialMediaLab package).

@@ -2,7 +2,8 @@
 % Please edit documentation in R/CreateActorNetwork.R
 \name{CreateActorNetwork}
 \alias{CreateActorNetwork}
-\title{Create 'actor' networks from social media data}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Create} function}
 \usage{
 CreateActorNetwork(x, writeToFile)
 }
@@ -22,6 +23,9 @@ current date/time and the type of network.}
 An igraph graph object, with directed and weighted edges.
 }
 \description{
+Create 'actor' networks from social media data
+}
+\details{
 This function creates a unimodal 'actor' network from social media data
 (i.e. from data frames of class \code{dataSource}, or for Twitter data it is
 also possible to provide a *list* of data frames). In this actor network,
@@ -30,8 +34,7 @@ interactions between Twitter users). For example, with Twitter data an
 interaction is defined as a 'mention' or 'reply' or 'retweet' from user i to
 user j, given 'tweet' m. With YouTube comments, an interaction is defined as
 a 'reply' or 'mention' from user i to user j, given 'comment' m.
-}
-\details{
+
 This function creates a (weighted and directed) unimodal 'actor' network
 from a data frame of class \code{dataSource} (which are created using the
 `CollectData` family of functions in the SocialMediaLab package), or a

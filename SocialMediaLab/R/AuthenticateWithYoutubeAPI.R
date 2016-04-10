@@ -1,11 +1,14 @@
+#' Note: this function is DEPRECATED and will be removed in a future release.
+#' Please use the \code{Authenticate} function
+#'
 #' YouTube API Authentication
-#' 
+#'
 #' OAuth based authentication with the Google API
-#' 
+#'
 #' In order to collect data from YouTube, the user must first authenticate with
 #' Google's Application Programming Interface (API). Users can obtain a Google
 #' Developer API key at: https://console.developers.google.com
-#' 
+#'
 #' @param apiKeyYoutube character string specifying your Google Developer API
 #' key.
 #' @return This is called for its side effect.
@@ -19,11 +22,11 @@
 #' data.
 #' @keywords youtube social media SNA
 #' @examples
-#' 
+#'
 #' \dontrun{
 #'   # Replace with your Google Developer API Key:
 #'   my_apiKeyYoutube <- "314159265358979qwerty"
-#' 
+#'
 #'   apiKeyYoutube <- AuthenticateWithYoutubeAPI(my_apiKeyYoutube)
 #' }
 #' @export

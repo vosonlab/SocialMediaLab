@@ -1,23 +1,26 @@
+#' Note: this function is DEPRECATED and will be removed in a future release.
+#' Please use the \code{Authenticate} function
+#'
 #' Facebook API Authentication
-#' 
+#'
 #' OAuth token based authentication with the Facebook API, with caching options
 #' for automatic authentication (i.e. avoid using the browser).
-#' 
+#'
 #' In order to collect data from Facebook, the user must first authenticate
 #' with Facebook's Application Programming Interface (API). Furthermore, the
 #' user must create a Facebook 'app' and get an 'app secret'.
-#' 
+#'
 #' To get a Facebook 'app ID' and 'API secret', the excellent tutorial at
 #' http://thinktostart.com/analyzing-facebook-with-r/ provides more
 #' information.
-#' 
+#'
 #' One problem with Facebook authentication through R is that it normally
 #' requires the user to authenticate using their browser each time they wish to
 #' collect data. The \code{useCachedToken} argument provides a way to
 #' circumvent this, by saving and loading an authenticated 'token' file stored
 #' in the working directory. If the \code{useCachedToken} argument is set to
 #' \code{TRUE}, then the browser is not necessary for future sessions.
-#' 
+#'
 #' @param appID character string specifying the 'App ID' of the Facebook app
 #' used for authentication.
 #' @param appSecret character string specifying the 'API Secret' associated
@@ -43,12 +46,12 @@
 #' data.
 #' @keywords facebook social media SNA
 #' @examples
-#' 
+#'
 #' \dontrun{
 #'   ## Use your own values for myAppID and myAppSecret
 #'   myAppID <- "123456789098765"
 #'   myAppSecret <- "abc123abc123abc123abc123abc123ab"
-#' 
+#'
 #'   # Authenticate with the Facebook API using `AuthenticateWithFacebookAPI`
 #'   fb_oauth <- AuthenticateWithFacebookAPI(appID=myAppID, appSecret=myAppSecret,
 #'     extended_permissions=FALSE, useCachedToken=TRUE)

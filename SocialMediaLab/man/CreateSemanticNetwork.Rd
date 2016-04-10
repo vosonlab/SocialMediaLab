@@ -2,8 +2,8 @@
 % Please edit documentation in R/CreateSemanticNetwork.R
 \name{CreateSemanticNetwork}
 \alias{CreateSemanticNetwork}
-\title{Create semantic networks from social media data (semantic relationships
-between concepts)}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Create} function}
 \usage{
 CreateSemanticNetwork(x, writeToFile, termFreq, hashtagFreq,
   removeTermsOrHashtags, stopwordsEnglish)
@@ -48,13 +48,16 @@ removed from the tweets (e.g. words such as 'the' or 'and'). Using
 An igraph graph object, with weighted edges.
 }
 \description{
+Create semantic networks from social media data (semantic relationships
+between concepts)
+}
+\details{
 This function creates a semantic network from social media data (i.e. from
 data frames of class \code{dataSource}, or for Twitter data it is also
 possible to provide a list of data frames). In such semantic networks,
 concepts are words/terms extracted from the text corpus of social media data
 (e.g. tweets on Twitter).
-}
-\details{
+
 This function creates a weighted network from a data frame of class
 \code{dataSource} (which are created using the `CollectData` family of
 functions in the SocialMediaLab package), or a list of Twitter data frames

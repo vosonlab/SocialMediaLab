@@ -2,7 +2,8 @@
 % Please edit documentation in R/AuthenticateWithTwitterAPI.R
 \name{AuthenticateWithTwitterAPI}
 \alias{AuthenticateWithTwitterAPI}
-\title{Twitter API Authentication}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Authenticate} function}
 \usage{
 AuthenticateWithTwitterAPI(api_key, api_secret, access_token,
   access_token_secret, createToken)
@@ -26,9 +27,11 @@ secret' used for authentication.}
 This is called for its side effect.
 }
 \description{
-Oauth based authentication with the Twitter API
+Twitter API Authentication
 }
 \details{
+Oauth based authentication with the Twitter API
+
 In order to collect data from Twitter, the user must first authenticate with
 Twitter's Application Programming Interface (API).
 

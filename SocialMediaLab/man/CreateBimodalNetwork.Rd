@@ -2,7 +2,8 @@
 % Please edit documentation in R/CreateBimodalNetwork.R
 \name{CreateBimodalNetwork}
 \alias{CreateBimodalNetwork}
-\title{Create bimodal networks from social media data}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Create} function}
 \usage{
 CreateBimodalNetwork(x, writeToFile, removeTermsOrHashtags)
 }
@@ -30,14 +31,16 @@ vertex will be removed.}
 An igraph graph object, with weighted and directed edges.
 }
 \description{
+Create bimodal networks from social media data
+}
+\details{
 This function creates a bimodal network from social media data (i.e. from
 data frames of class \code{dataSource}, or for Twitter data it is also
 possible to provide a *list* of data frames), with edges representing
 relationships between actors of two different types (e.g. Facebook users and
 Facebook posts, with edges representing whether a user has commented or
 'liked' a post).
-}
-\details{
+
 This function creates a (directed and weighted) bimodal network from a data
 frame of class \code{dataSource} (which are created using the `CollectData`
 family of functions in the SocialMediaLab package), or a *list* of Twitter

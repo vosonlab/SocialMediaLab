@@ -2,7 +2,8 @@
 % Please edit documentation in R/CollectEgoInstagram.R
 \name{CollectEgoInstagram}
 \alias{CollectEgoInstagram}
-\title{Collect Instagram data for generating ego network}
+\title{Note: this function is DEPRECATED and will be removed in a future release.
+Please use the \code{Collect} function}
 \usage{
 CollectEgoInstagram(username, userid, verbose, degreeEgoNet, waitForRateLimit,
   getFollows, credential = NULL)
@@ -42,6 +43,9 @@ A data frame object of class \code{dataSource.instagram.ego} that
 can be used with \code{Create}.
 }
 \description{
+Collect Instagram data for generating ego network
+}
+\details{
 This function collects data for creating a (weighted and directed) 'ego'
 network from a given set of seed users (the ego nodes). Note! The network
 size can become extremely large very quickly, depending on the arguments the

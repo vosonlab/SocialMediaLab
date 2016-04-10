@@ -1,3 +1,6 @@
+#' Note: this function is DEPRECATED and will be removed in a future release.
+#' Please use the \code{Collect} function
+#'
 #' Collect data from Twitter for generating different types of networks
 #'
 #' This function collects data from Twitter based on hashtags or search terms,
@@ -44,6 +47,24 @@
 #' @param language character string, restricting tweets to the given language,
 #' given by an ISO 639-1 code. For example, "en" restricts to English tweets.
 #' Defaults to NULL.
+#' @param since If not NULL, restricts tweets to those since the given date. Date is to be formatted
+#' as YYYY-MM-DD (this is a wrapper to the searchTwitter function in the twitteR package).
+#' @param until If not NULL, restricts tweets to those up until the given date. Date is to be formatted
+#' as YYYY-MM-DD (this is a wrapper to the searchTwitter function in the twitteR package).
+#' @param locale If not NULL, will set the locale for the search. As of 03/06/11 only ja is effective,
+#' as per the Twitter API (this is a wrapper to the searchTwitter function in the twitteR package).
+#' @param geocode If not NULL, returns tweets by users located within a given radius of the given
+#' latitude/longitude. (this is a wrapper to the searchTwitter function in the twitteR package).
+#' @param sinceID If not NULL, returns tweets with IDs greater (ie newer) than the specified ID
+#' (this is a wrapper to the searchTwitter function in the twitteR package).
+#' @param maxID If not NULL, returns tweets with IDs smaller (ie older) than the specified ID
+#' (this is a wrapper to the searchTwitter function in the twitteR package).
+#' @param resultType If not NULL, returns filtered tweets as per value. See details for allowed values.
+#' (this is a wrapper to the searchTwitter function in the twitteR package).
+#' @param retryOnRateLimit If non-zero the search command will block retry up to X times if the rate limit
+#' is experienced. This might lead to a much longer run time but the task will
+#' eventually complete if the retry count is high enough (this is a wrapper to the searchTwitter
+#' function in the twitteR package).
 #' @return A data frame object of class \code{dataSource.twitter} that can be
 #' used for creating unimodal networks (\code{CreateActorNetwork}), bimodal
 #' networks (\code{CreateBimodalNetwork}), and semantic networks
@@ -84,7 +105,8 @@
 #'   }
 #' @export
 CollectDataTwitter <-
-function(searchTerm, numTweets, verbose, writeToFile, language) {
+function(searchTerm, numTweets, verbose, writeToFile, language, since, until,
+  locale, geocode, sinceID, maxID, resultType, retryOnRateLimit) {
 
 # cat(paste("DEBUG - numTweets is set to:", numTweets)) # DEBUG
 
@@ -118,6 +140,38 @@ function(searchTerm, numTweets, verbose, writeToFile, language) {
     break
   }
 
+  if (missing(since)) {
+    since <- NULL # default to NULL (as per 'twitteR' package default)
+  }
+
+  if (missing(until)) {
+    until <- NULL # default to NULL (as per 'twitteR' package default)
+  }
+
+  if (missing(locale)) {
+    locale <- NULL # default to NULL (as per 'twitteR' package default)
+  }
+
+  if (missing(geocode)) {
+    geocode <- NULL # default to NULL (as per 'twitteR' package default)
+  }
+
+  if (missing(sinceID)) {
+    sinceID <- NULL # default to NULL (as per 'twitteR' package default)
+  }
+
+  if (missing(maxID)) {
+    maxID <- NULL # default to NULL (as per 'twitteR' package default)
+  }
+
+  if (missing(resultType)) {
+    resultType <- NULL # default to NULL (as per 'twitteR' package default)
+  }
+
+  if (missing(retryOnRateLimit)) {
+    retryOnRateLimit <- 0 # default to NULL (as per 'twitteR' package default)
+  }
+
   # Start data collection
 if (verbose) {
   cat(paste("Now retrieving data based on search term: ",searchTerm,"\n",sep=""))
@@ -125,7 +179,8 @@ if (verbose) {
 }
   # Collecting tweets based on hashtag / keyword
 
-  tweetsData <- searchTwitter(searchTerm, n=numTweets, lang=language) #1500 is max
+  tweetsData <- searchTwitter(searchTerm, n=numTweets, lang=language, since=since, until=until,
+    locale=locale, geocode=geocode, sinceID=sinceID, maxID=maxID, resultType=resultType, retryOnRateLimit=retryOnRateLimit) #1500 is max
 
   # Convert this data into a dataframe object, for ease of use
   if (verbose) {

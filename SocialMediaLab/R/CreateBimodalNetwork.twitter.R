@@ -16,6 +16,13 @@ function(x,writeToFile,removeTermsOrHashtags)
 
   df <- x # match the variable names (this must be used to avoid warnings in package compilation)
 
+  # if `df` is a list of dataframes, then need to convert these into one dataframe
+  suppressWarnings(
+    if (class(df)=="list") {
+    df <- do.call("rbind", df)
+    }
+  )
+  
   # EnsurePackage("igraph")
 
       # Now create the dfBimodalNetwork2, a dataframe of relations between users and hashtags (i.e. user i "tweeted" hashtag j)
@@ -155,9 +162,9 @@ function(x,writeToFile,removeTermsOrHashtags)
       ##### STEP FOUR #####
 
       # convert into a graph
-      g <- graph.data.frame(relations, directed=TRUE, vertices=actorsFixed)
-      # shouldn't need to simplify the graph, but it can't hurt anyway
-      # g <- simplify(g)
+      suppressWarnings(
+        g <- graph.data.frame(relations, directed=TRUE, vertices=actorsFixed)
+      )
 
       # Make the node labels play nice with Gephi
       V(g)$label <- V(g)$name
