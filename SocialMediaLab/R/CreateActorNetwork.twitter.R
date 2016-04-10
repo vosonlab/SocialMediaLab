@@ -196,7 +196,7 @@ function(x,writeToFile)
       tweet_id=dataCombined$tweet_id)
 
     ##### STEP FOUR #####
-cat("\n I got to the final step before network generation")
+# cat("\n I got to the final step before network generation")
 
     # convert into a graph
     # note: suppressing warnings is used to avoid this error:

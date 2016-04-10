@@ -5,7 +5,7 @@
 \title{Collect data from Facebook pages for generating different types of networks}
 \usage{
 CollectDataFacebook(pageName, rangeFrom, rangeTo, verbose, n, writeToFile,
-  credential = NULL, ...)
+  credential = NULL)
 }
 \arguments{
 \item{pageName}{character string, specifying the name of the Facebook page.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.16)  9 APR 2016 17:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.16)  9 APR 2016 17:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -830,64 +830,64 @@ Overfull \hbox (0.78091pt too wide) in paragraph at lines 800--800
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [13]
-Overfull \hbox (17.84683pt too wide) in paragraph at lines 871--876
+) [13] [14]
+Overfull \hbox (17.84683pt too wide) in paragraph at lines 897--902
 \T1/zi4/m/n/10 language="en"\T1/ptm/m/n/10 . The full list of codes is avail-ab
 le here: https://en.wikipedia.org/wiki/List_of_ISO_639-
  []
 
-[14] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+[15] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 )
-Overfull \hbox (18.30962pt too wide) in paragraph at lines 956--962
+Overfull \hbox (18.30962pt too wide) in paragraph at lines 982--988
 \T1/zi4/m/n/10 videoIDs=\TS1/zi4/m/n/10 '\T1/zi4/m/n/10 W2GZFeYGU3s\TS1/zi4/m/n
 /10 '\T1/ptm/m/n/10 . For mul-ti-ple videos, the func-tion \T1/zi4/m/n/10 GetYo
 utubeVideoIDs
  []
 
-[15] [16] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+[16] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [17]
+) [17] [18]
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [18]
-Overfull \hbox (15.84094pt too wide) in paragraph at lines 1180--1183
+)
+Overfull \hbox (15.84094pt too wide) in paragraph at lines 1206--1209
 [][][]\T1/zi4/m/n/10 CreateActorNetwork[][][]\T1/ptm/m/n/10 , [][]\T1/zi4/m/n/1
 0 CreateBimodalNetwork[][][]\T1/ptm/m/n/10 , [][]\T1/zi4/m/n/10 CreateDynamicNe
 twork[][][]\T1/ptm/m/n/10 , [][]\T1/zi4/m/n/10 CreateSemanticNetwork[][][]\T1/p
 tm/m/n/10 ,
  []
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+[19] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [19]
-Overfull \hbox (6.96567pt too wide) in paragraph at lines 1257--1262
+)
+Overfull \hbox (6.96567pt too wide) in paragraph at lines 1283--1288
 \T1/ptm/m/n/10 sent re-la-tion-ships be-tween ver-tices of the same type (read:
  'ac-tors'), such as replies/retweets/mentions
  []
 
-
-Overfull \hbox (22.58022pt too wide) in paragraph at lines 1280--1285
+[20]
+Overfull \hbox (22.58022pt too wide) in paragraph at lines 1306--1311
 \T1/ptm/m/n/10 net-work from. For ex-am-ple, \T1/zi4/m/n/10 myList <- list(myTw
 itterData1, myTwitterData2,myTwitterData3)\T1/ptm/m/n/10 . 
  []
 
-[20] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+[21] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [21]
-Overfull \hbox (13.63731pt too wide) in paragraph at lines 1373--1377
+)
+Overfull \hbox (13.63731pt too wide) in paragraph at lines 1399--1403
 []\T1/ptm/m/n/10 This func-tion cre-ates a (di-rected and weighted) bi-modal ne
 t-work from a data frame of class \T1/zi4/m/n/10 dataSource
  []
 
-
-Overfull \hbox (42.47998pt too wide) in paragraph at lines 1403--1408
+[22]
+Overfull \hbox (42.47998pt too wide) in paragraph at lines 1429--1434
 \T1/ptm/m/n/10 ate a net-work from. For ex-am-ple, \T1/zi4/m/n/10 myList <- lis
 t(myTwitterData1, myTwitterData2,myTwitterData3)\T1/ptm/m/n/10 . 
  []
 
-[22]
-Overfull \hbox (11.58096pt too wide) in paragraph at lines 1433--1433
+
+Overfull \hbox (11.58096pt too wide) in paragraph at lines 1459--1459
  []  \T1/zi4/m/n/9 # Run the \TS1/zi4/m/n/9 `\T1/zi4/m/n/9 CollectDataFacebook\
 TS1/zi4/m/n/9 ` \T1/zi4/m/n/9 function and store the results in variable \TS1/z
 i4/m/n/9 `\T1/zi4/m/n/9 myFacebookData\TS1/zi4/m/n/9 `[] 
@@ -898,8 +898,8 @@ File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 ) [23] [24]
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [25]
-Overfull \hbox (9.78091pt too wide) in paragraph at lines 1673--1673
+) [25] [26]
+Overfull \hbox (9.78091pt too wide) in paragraph at lines 1699--1699
  []  \T1/zi4/m/n/9 instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=
 app_id, appSecret=app_secret,[] 
  []
@@ -907,15 +907,15 @@ app_id, appSecret=app_secret,[]
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 )
-Overfull \hbox (17.14735pt too wide) in paragraph at lines 1691--1693
+Overfull \hbox (17.14735pt too wide) in paragraph at lines 1717--1719
 []\T1/ptm/m/n/10 This func-tion cre-ates 'ego' net-works from so-cial me-dia da
 ta as a data.frame of class \T1/zi4/m/n/10 dataSource.*.ego\T1/ptm/m/n/10 .
  []
 
-[26] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+[27] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-) [27] [28]
-Overfull \hbox (42.47998pt too wide) in paragraph at lines 1840--1845
+) [28]
+Overfull \hbox (42.47998pt too wide) in paragraph at lines 1866--1871
 \T1/ptm/m/n/10 ate a net-work from. For ex-am-ple, \T1/zi4/m/n/10 myList <- lis
 t(myTwitterData1, myTwitterData2,myTwitterData3)\T1/ptm/m/n/10 . 
  []
@@ -923,7 +923,7 @@ t(myTwitterData1, myTwitterData2,myTwitterData3)\T1/ptm/m/n/10 .
 [29] (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
 )
-Overfull \hbox (40.76834pt too wide) in paragraph at lines 1890--1897
+Overfull \hbox (40.76834pt too wide) in paragraph at lines 1916--1923
 \T1/ptm/m/n/10 This func-tion can be used to cre-ate an ob-ject for the ar-gu-m
 ent \T1/zi4/m/n/10 videoIDs \T1/ptm/m/n/10 in the func-tion \T1/zi4/m/n/10 Coll
 ectDataYoutube\T1/ptm/m/n/10 ,
@@ -945,11 +945,11 @@ LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
 [34
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2017.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2017.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2043.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2043.
  (./Rd2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2017.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2017.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2043.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2043.
 
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
 (rerunfilecheck)             Checksum: F148C98B14DA831FA314C64A6AFD5E25;1527.
@@ -957,7 +957,7 @@ Package rerunfilecheck Info: File `Rd2.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2017.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2043.
  ) 
 Here is how much of TeX's memory you used:
  6631 strings out of 493089
@@ -977,7 +977,7 @@ texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on Rd2.pdf (34 pages, 159979 bytes).
+Output written on Rd2.pdf (34 pages, 161434 bytes).
 PDF statistics:
  659 PDF objects out of 1000 (max. 8388607)
  609 compressed objects within 7 object streams

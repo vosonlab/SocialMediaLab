@@ -5,7 +5,7 @@
 \title{Collect data from Twitter for generating different types of networks}
 \usage{
 CollectDataTwitter(searchTerm, numTweets, verbose, writeToFile, language, since,
-  until, locale, geocode, sinceID, maxID, resultType, retryOnRateLimit, ...)
+  until, locale, geocode, sinceID, maxID, resultType, retryOnRateLimit)
 }
 \arguments{
 \item{searchTerm}{character string, specifying a search term or phrase (e.g.
@@ -28,6 +28,32 @@ system time and \code{searchTerm}. Default is \code{FALSE}.}
 \item{language}{character string, restricting tweets to the given language,
 given by an ISO 639-1 code. For example, "en" restricts to English tweets.
 Defaults to NULL.}
+
+\item{since}{If not NULL, restricts tweets to those since the given date. Date is to be formatted
+as YYYY-MM-DD (this is a wrapper to the searchTwitter function in the twitteR package).}
+
+\item{until}{If not NULL, restricts tweets to those up until the given date. Date is to be formatted
+as YYYY-MM-DD (this is a wrapper to the searchTwitter function in the twitteR package).}
+
+\item{locale}{If not NULL, will set the locale for the search. As of 03/06/11 only ja is effective,
+as per the Twitter API (this is a wrapper to the searchTwitter function in the twitteR package).}
+
+\item{geocode}{If not NULL, returns tweets by users located within a given radius of the given
+latitude/longitude. (this is a wrapper to the searchTwitter function in the twitteR package).}
+
+\item{sinceID}{If not NULL, returns tweets with IDs greater (ie newer) than the specified ID
+(this is a wrapper to the searchTwitter function in the twitteR package).}
+
+\item{maxID}{If not NULL, returns tweets with IDs smaller (ie older) than the specified ID
+(this is a wrapper to the searchTwitter function in the twitteR package).}
+
+\item{resultType}{If not NULL, returns filtered tweets as per value. See details for allowed values.
+(this is a wrapper to the searchTwitter function in the twitteR package).}
+
+\item{retryOnRateLimit}{If non-zero the search command will block retry up to X times if the rate limit
+is experienced. This might lead to a much longer run time but the task will
+eventually complete if the retry count is high enough (this is a wrapper to the searchTwitter
+function in the twitteR package).}
 }
 \value{
 A data frame object of class \code{dataSource.twitter} that can be
