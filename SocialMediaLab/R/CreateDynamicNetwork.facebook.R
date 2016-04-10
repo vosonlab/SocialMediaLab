@@ -8,7 +8,12 @@ function(x,writeToFile)
 
   dataCombinedUNIQUE <- x # match the variable names (this must be used to avoid warnings in package compilation)
 
-  # EnsurePackage("igraph")
+  # if `dataCombinedUNIQUE` is a list of dataframes, then need to convert these into one dataframe
+  suppressWarnings(
+    if (class(dataCombinedUNIQUE)=="list") {
+    dataCombinedUNIQUE <- do.call("rbind", dataCombinedUNIQUE)
+    }
+  )
 
   cat("\nCreating Facebook dynamic network...\n")
 

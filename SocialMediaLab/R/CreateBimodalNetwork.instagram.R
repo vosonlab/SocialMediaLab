@@ -9,8 +9,13 @@ function(x,writeToFile, ...)
 
   dataCombined <- x # match the variable names (this must be used to avoid warnings in package compilation)
 
-  # EnsurePackage("igraph")
-
+  # if `dataCombined` is a list of dataframes, then need to convert these into one dataframe
+  suppressWarnings(
+    if (class(dataCombined)=="list") {
+    dataCombined <- do.call("rbind", dataCombined)
+    }
+  )
+  
   cat("\nCreating Instagram bimodal network...\n")
 
   actors_users <- data.table(id=dataCombined$from_userID,

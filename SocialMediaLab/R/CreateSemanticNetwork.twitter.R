@@ -30,6 +30,13 @@ function(x,writeToFile,termFreq,hashtagFreq,removeTermsOrHashtags,stopwordsEngli
 
   df <- x # match the variable names (this must be used to avoid warnings in package compilation)
 
+  # if `df` is a list of dataframes, then need to convert these into one dataframe
+  suppressWarnings(
+    if (class(df)=="list") {
+    df <- do.call("rbind", df)
+    }
+  )
+  
   EnsurePackage("igraph")
 
       # Now create the dfSemanticNetwork3,
