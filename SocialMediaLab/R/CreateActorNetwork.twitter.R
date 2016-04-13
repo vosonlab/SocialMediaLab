@@ -13,11 +13,11 @@ function(x,writeToFile)
 
   # if `df` is a list of dataframes, then need to convert these into one dataframe
   # CURRENTLY NOT IMPLEMENTED - there is no method for lists yet.
-  suppressWarnings(
-    if (class(df)=="list") {
-    df <- do.call("rbind", df)
-    }
-  )
+  # suppressWarnings(
+  #   if (class(df)=="list") {
+  #   df <- do.call("rbind", df)
+  #   }
+  # )
 
   # The `hashtags_used` column in `df` causes problems for creating actor network, so delete it:
   df <- df[,-21]
