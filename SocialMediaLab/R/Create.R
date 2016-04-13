@@ -1,13 +1,14 @@
 #' Create networks from social media data
 #'
-#' This function creates network from social media data (i.e. from data frames
+#' This function creates networks from social media data (i.e. from data frames
 #' of class \code{dataSource}. \code{Create} is the final step of the
-#' \code{Authenticate}, \code{Collect}, \code{Create} workflow.
+#' \code{Authenticate}, \code{Collect}, \code{Create} workflow. This function is
+#' a convenient UI wrapper to the core Create*Network family of functions.
 #'
-#' Note: when creating Facebook *bimodal* networks, the user information
+#' Note: when creating Twitter *bimodal* networks, the user information
 #' is also collected and stored as vertex attributes (involving additional
-#' calls to the Facebook API). However, this is not currently implemented
-#' for Facebook *actor* networks.
+#' calls to the Twitter API). However, this is not currently implemented
+#' for Twitter *actor* networks.
 #'
 #' @param dataSource a data frame of class \code{dataSource}
 #' @param type character, type of network to be created, currently supports
