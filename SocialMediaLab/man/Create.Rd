@@ -18,15 +18,16 @@ Create(dataSource, type = "Actor", ...)
 An igraph graph object
 }
 \description{
-This function creates network from social media data (i.e. from data frames
+This function creates networks from social media data (i.e. from data frames
 of class \code{dataSource}. \code{Create} is the final step of the
-\code{Authenticate}, \code{Collect}, \code{Create} workflow.
+\code{Authenticate}, \code{Collect}, \code{Create} workflow. This function is
+a convenient UI wrapper to the core Create*Network family of functions.
 }
 \details{
-Note: when creating Facebook *bimodal* networks, the user information
+Note: when creating Twitter *bimodal* networks, the user information
 is also collected and stored as vertex attributes (involving additional
-calls to the Facebook API). However, this is not currently implemented
-for Facebook *actor* networks.
+calls to the Twitter API). However, this is not currently implemented
+for Twitter *actor* networks.
 }
 \examples{
 \dontrun{
