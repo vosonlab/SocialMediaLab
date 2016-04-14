@@ -34,10 +34,11 @@ A data.frame object of class \code{dataSource.*} that can be used
 with \code{Create}.
 }
 \description{
-This function collects data from social media API, and structures the data
+This function collects data from social media APIs, and structures the data
 into a data frame of class \code{dataSource.*}, ready for creating networks
 for further analysis. \code{Collect} is the second step of the
-\code{Authenticate}, \code{Collect}, \code{Create} workflow.
+\code{Authenticate}, \code{Collect}, \code{Create} workflow. This function is
+a convenient UI wrapper to the core CollectDataFrom* family of functions.
 }
 \examples{
 \dontrun{
