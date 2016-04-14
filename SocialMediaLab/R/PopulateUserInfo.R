@@ -1,7 +1,26 @@
+#' Populate Twitter networks with user information
+#'
+#' This function is used to 'populate' Twitter networks (generated
+#' with the \code{\link{Create}} function) with information about
+#' the users in the network. This involves calls to the Twitter API
+#' to collect this information, which is then applied to the network
+#' as vertex attributes.
+#'
+#' @param networkObject an igraph graph object created with \code{\link{Create}}
+#' @return An igraph graph object
+#' @author Timothy Graham <timothy.graham3@@uq.net.au> & Robert Ackland
+#' <robert.ackland@@anu.edu.au>
+#' @seealso \code{\link{Collect}}, \code{\link{Create}}
+#' @examples
+#'
+#' \dontrun{
+#' require(magrittr)
+#' ## Get Twitter user information and apply to network
+#' myTwitterNetwork_userInfo <- PopulateUserInfo(myTwitterNetwork)
+#'
+#' }
 #' @export
-PopulateUserInfo <- function(network_object) {
-  # require(data.table)
-  # require(plyr)
+PopulateUserInfo <- function(networkObject) {
 
   # This function is supposed to perform the lookups in batches
   # and mind the rate limit:
@@ -18,7 +37,7 @@ PopulateUserInfo <- function(network_object) {
   }
 
   # get the list of users
-  listOfUsers <- unique(V(network_object)$name)
+  listOfUsers <- unique(V(networkObject)$name)
   listOfUsers_actual <- listOfUsers[-grep("^#",listOfUsers)]
 
   ## Test if it is a Twitter actor network
@@ -80,23 +99,23 @@ PopulateUserInfo <- function(network_object) {
           actors$numberOfListsUserIsFeaturedOn <- actorsInfoDF$listedCount
           actors$profileImageUrl <- actorsInfoDF$profileImageUrl
 
-      # the final thing to do is apply the values in `actors` to the network_object
+      # the final thing to do is apply the values in `actors` to the networkObject
 
-      V(network_object)$screenName <- actors$name
-      V(network_object)$userDescription <- actors$userDescription
-      V(network_object)$statusesCount <- actors$statusesCount
-      V(network_object)$followersCount <- actors$followersCount
-      V(network_object)$favoritesCount <- actors$favoritesCount
-      V(network_object)$friendsCount <- actors$friendsCount
-      V(network_object)$url <- actors$url
-      V(network_object)$realName <- actors$realName
-      V(network_object)$dateAccountCreated <- actors$dateAccountCreated
-      V(network_object)$userLocation <- actors$userLocation
-      V(network_object)$userLanguage <- actors$userLanguage
-      V(network_object)$numberOfListsUserIsFeaturedOn <- actors$numberOfListsUserIsFeaturedOn
-      V(network_object)$profileImageUrl <- actors$profileImageUrl
+      V(networkObject)$screenName <- actors$name
+      V(networkObject)$userDescription <- actors$userDescription
+      V(networkObject)$statusesCount <- actors$statusesCount
+      V(networkObject)$followersCount <- actors$followersCount
+      V(networkObject)$favoritesCount <- actors$favoritesCount
+      V(networkObject)$friendsCount <- actors$friendsCount
+      V(networkObject)$url <- actors$url
+      V(networkObject)$realName <- actors$realName
+      V(networkObject)$dateAccountCreated <- actors$dateAccountCreated
+      V(networkObject)$userLocation <- actors$userLocation
+      V(networkObject)$userLanguage <- actors$userLanguage
+      V(networkObject)$numberOfListsUserIsFeaturedOn <- actors$numberOfListsUserIsFeaturedOn
+      V(networkObject)$profileImageUrl <- actors$profileImageUrl
 
-      return(network_object)
+      return(networkObject)
 
   }
 
@@ -145,23 +164,23 @@ PopulateUserInfo <- function(network_object) {
       actors$numberOfListsUserIsFeaturedOn[1:length(listOfUsers_actual)] <- actorsInfoDF$listedCount
       actors$profileImageUrl[1:length(listOfUsers_actual)] <- actorsInfoDF$profileImageUrl
 
-      # the final thing to do is apply the values in `actors` to the network_object
+      # the final thing to do is apply the values in `actors` to the networkObject
 
-      V(network_object)$screenName <- actors$name
-      V(network_object)$userDescription <- actors$userDescription
-      V(network_object)$statusesCount <- actors$statusesCount
-      V(network_object)$followersCount <- actors$followersCount
-      V(network_object)$favoritesCount <- actors$favoritesCount
-      V(network_object)$friendsCount <- actors$friendsCount
-      V(network_object)$url <- actors$url
-      V(network_object)$realName <- actors$realName
-      V(network_object)$dateAccountCreated <- actors$dateAccountCreated
-      V(network_object)$userLocation <- actors$userLocation
-      V(network_object)$userLanguage <- actors$userLanguage
-      V(network_object)$numberOfListsUserIsFeaturedOn <- actors$numberOfListsUserIsFeaturedOn
-      V(network_object)$profileImageUrl <- actors$profileImageUrl
+      V(networkObject)$screenName <- actors$name
+      V(networkObject)$userDescription <- actors$userDescription
+      V(networkObject)$statusesCount <- actors$statusesCount
+      V(networkObject)$followersCount <- actors$followersCount
+      V(networkObject)$favoritesCount <- actors$favoritesCount
+      V(networkObject)$friendsCount <- actors$friendsCount
+      V(networkObject)$url <- actors$url
+      V(networkObject)$realName <- actors$realName
+      V(networkObject)$dateAccountCreated <- actors$dateAccountCreated
+      V(networkObject)$userLocation <- actors$userLocation
+      V(networkObject)$userLanguage <- actors$userLanguage
+      V(networkObject)$numberOfListsUserIsFeaturedOn <- actors$numberOfListsUserIsFeaturedOn
+      V(networkObject)$profileImageUrl <- actors$profileImageUrl
 
-      return(network_object)
+      return(networkObject)
 
   }
 
