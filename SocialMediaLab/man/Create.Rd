@@ -24,17 +24,10 @@ of class \code{dataSource}. \code{Create} is the final step of the
 a convenient UI wrapper to the core Create*Network family of functions.
 }
 \details{
-<<<<<<< HEAD
-Note: when creating Twitter *bimodal* networks, the user information
-is also collected and stored as vertex attributes (involving additional
-calls to the Twitter API). However, this is not currently implemented
-for Twitter *actor* networks.
-=======
 Note: when creating Twitter networks, the user information
 can be collected separately using the \code{\link{PopulateUserInfo}} function
 and stored into the network as vertex attributes (this involves additional
 calls to the Twitter API).
->>>>>>> develop
 }
 \examples{
 \dontrun{
