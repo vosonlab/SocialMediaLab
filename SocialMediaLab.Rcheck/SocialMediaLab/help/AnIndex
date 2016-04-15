@@ -19,5 +19,6 @@ CreateEgoNetworkFromData	CreateEgoNetworkFromData
 CreateSemanticNetwork	CreateSemanticNetwork
 GetYoutubeVideoIDs	GetYoutubeVideoIDs
 LoadCredential	SaveCredential
+PopulateUserInfo	PopulateUserInfo
 SaveCredential	SaveCredential
 SocialMediaLab	SocialMediaLab-package

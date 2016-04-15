@@ -727,6 +727,30 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("GetYoutubeVideoIDs", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
+nameEx("PopulateUserInfo")
+### * PopulateUserInfo
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: PopulateUserInfo
+### Title: Populate Twitter networks with user information
+### Aliases: PopulateUserInfo
+
+### ** Examples
+
+## Not run: 
+##D require(magrittr)
+##D ## Get Twitter user information and apply to network
+##D myTwitterNetwork_userInfo <- PopulateUserInfo(myTwitterNetwork)
+##D 
+## End(Not run)
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("PopulateUserInfo", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
 nameEx("SaveCredential")
 ### * SaveCredential
 
