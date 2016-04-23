@@ -52,6 +52,7 @@ CreateSemanticNetwork   Note: this function is DEPRECATED and will be
                         'Create' function
 GetYoutubeVideoIDs      Extract/scrape the IDs from a set of YouTube
                         video URLs
+PopulateUserInfo        Populate Twitter networks with user information
 SaveCredential          Save and load credential information
 SocialMediaLab-package
                         Collection and network analysis of social media
