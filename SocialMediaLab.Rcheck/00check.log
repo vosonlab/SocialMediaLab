@@ -5,15 +5,24 @@
 * using option ‘--as-cran’
 * checking for file ‘SocialMediaLab/DESCRIPTION’ ... OK
 * checking extension type ... Package
-* this is package ‘SocialMediaLab’ version ‘0.21.0-1’
-* checking CRAN incoming feasibility ... Note_to_CRAN_maintainers
+* this is package ‘SocialMediaLab’ version ‘0.22.2’
+* checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Timothy Graham <timothy.graham3@uq.net.au>’
+
+Days since last update: 5
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
 * checking if there is a namespace ... OK
 * checking for executable files ... OK
-* checking for hidden files and directories ... OK
+* checking for hidden files and directories ... NOTE
+Found the following hidden files and directories:
+  .Rd2pdf19742
+These were most likely included in error. See section ‘Package
+structure’ in the ‘Writing R Extensions’ manual.
+
+CRAN-pack does not know about
+  .Rd2pdf19742
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking whether package ‘SocialMediaLab’ can be installed ... OK
@@ -23,7 +32,10 @@ Maintainer: ‘Timothy Graham <timothy.graham3@uq.net.au>’
 * checking top-level files ... OK
 * checking for left-over files ... OK
 * checking index information ... OK
-* checking package subdirectories ... OK
+* checking package subdirectories ... WARNING
+Found the following directory with the name of a Rd2pdf directory:
+  ./.Rd2pdf19742
+Most likely, these were included erroneously.
 * checking R files for non-ASCII characters ... OK
 * checking R files for syntax errors ... OK
 * checking whether the package can be loaded ... OK
@@ -37,7 +49,18 @@ Maintainer: ‘Timothy Graham <timothy.graham3@uq.net.au>’
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... OK
+* checking R code for possible problems ... NOTE
+CreateBimodalNetwork.twitter: no visible binding for global variable
+  ‘from’
+CreateBimodalNetwork.twitter: no visible binding for global variable
+  ‘to’
+CreateBimodalNetwork.twitter: no visible binding for global variable
+  ‘edgeType’
+CreateBimodalNetwork.twitter: no visible binding for global variable
+  ‘timeStamp’
+CreateBimodalNetwork.twitter: no visible binding for global variable
+  ‘tweet_id’
+PopulateUserInfo: no visible binding for global variable ‘name’
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
@@ -50,4 +73,4 @@ Maintainer: ‘Timothy Graham <timothy.graham3@uq.net.au>’
 * checking examples ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: OK
+Status: 1 WARNING, 3 NOTEs
