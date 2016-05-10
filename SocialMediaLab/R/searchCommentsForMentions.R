@@ -22,8 +22,8 @@ function (commentsTextCleaned,usernamesCleaned) {
   )
 
   matchTemp <- unlist(matchTemp)
-  matchTemp <- as.vector(matchTemp)
-  matchTemp <- iconv(matchTemp, to = 'UTF-8')
+  # matchTemp <- as.vector(matchTemp)
+  # matchTemp <- iconv(matchTemp, to = 'UTF-8')
 
   # have to split `matchTemp` into as many groups as there are rows (i.e. comment texts)
   matchTemp2 <- split(matchTemp, ceiling(seq_along(matchTemp)/length(commentsTextCleaned)))
