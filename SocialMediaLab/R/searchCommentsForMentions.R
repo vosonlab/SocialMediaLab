@@ -21,8 +21,8 @@ function (commentsTextCleaned,usernamesCleaned) {
     }
   )
 
-  matchTemp <- unlist(matchTemp)
-  matchTemp <- as.vector(matchTemp)
+  # matchTemp <- unlist(matchTemp)
+  # matchTemp <- as.vector(matchTemp)
   matchTemp <- iconv(matchTemp, to = 'UTF-8')
 
   # have to split `matchTemp` into as many groups as there are rows (i.e. comment texts)
@@ -37,29 +37,29 @@ function (commentsTextCleaned,usernamesCleaned) {
   # So, we want to ensure it takes the username with more characters (i.e. "Timothy"),
   # rather than the subset match (i.e. "Tim").
 
-  matchTemp3 <- lapply(matchTemp2, function(x) {
+  # matchTemp3 <- lapply(matchTemp2, function(x) {
+  #
+  #   # if all elements == "FALSE" then just return "FALSE"
+  #     if (length(x[which(x=="FALSE")])==length(x)) {
+  #       return("FALSE")
+  #     }
+  #
+  #   # if all elements except one == "FALSE" then return the 'non false' element
+  #   # e.g. c("FALSE", "FALSE", "Timothy", "FALSE") ---> returns "Timothy"
+  #     if (length(x[which(x!="FALSE")])==1){
+  #       return(x[which(x!="FALSE")])
+  #     }
+  #
+  #   #
+  #     else {
+  #       tempResult <- x[which(x!="FALSE")]
+  #       tempResult <- x[which(nchar(x)==max(nchar(x)))][1] # if two duplicate results (e.g. "Timothy" and "Timothy"), then just return the 1st
+  #       return(tempResult)
+  #       # return(max(nchar(x))) #DEBUG
+  #     }
+  #     })
 
-    # if all elements == "FALSE" then just return "FALSE"
-    if (length(x[which(x=="FALSE")])==length(x)) {
-      return("FALSE")
-    }
-
-    # if all elements except one == "FALSE" then return the 'non false' element
-    # e.g. c("FALSE", "FALSE", "Timothy", "FALSE") ---> returns "Timothy"
-    if (length(x[which(x!="FALSE")])==1){
-      return(x[which(x!="FALSE")])
-    }
-
-    #
-    else {
-      tempResult <- x[which(x!="FALSE")]
-      tempResult <- x[which(nchar(x)==max(nchar(x)))][1] # if two duplicate results (e.g. "Timothy" and "Timothy"), then just return the 1st
-      return(tempResult)
-      # return(max(nchar(x))) #DEBUG
-    }
-    })
-
-  matchTemp3 # what is this?
+  # matchTemp3 # what is this?
 
   # debugResultDF <- data.frame(commentsTextCleaned,usernamesCleaned,unlist(matchTemp3)) #DEBUG
   finalMatchesTemp <- as.vector(unlist(matchTemp3))
