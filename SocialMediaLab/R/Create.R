@@ -53,5 +53,8 @@ Create <- function(dataSource, type = "Actor", ...) {
                       ego = CreateEgoNetworkFromData,
                       stop("Unknown Type")
                       )
-    return(creator(dataSource, ...))
+    # return()
+    networkToReturn <- creator(dataSource, ...)
+    class(networkToReturn) <- append(class(networkToReturn),c("SocialMediaLab"))
+    return(networkToReturn)
 }
