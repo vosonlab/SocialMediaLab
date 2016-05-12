@@ -46,27 +46,33 @@ function (commentsTextCleaned,usernamesCleaned) {
 
     # if all elements == "FALSE" then just return "FALSE"
       if (length(x[which(x=="FALSE")])==length(x)) {
+cat("\nAll elements of list slice are FALSE\n")               # DEBUG
         return("FALSE")
       }
 
     # if all elements except one == "FALSE" then return the 'non false' element
     # e.g. c("FALSE", "FALSE", "Timothy", "FALSE") ---> returns "Timothy"
       if (length(x[which(x!="FALSE")])==1){
+cat("\nFound 1 non-false ELEMENT:\n")                         # DEBUG
+cat(paste0(x[which(x!="FALSE")],"\n"))                        # DEBUG
         return(x[which(x!="FALSE")])
       }
 
       else {
         tempResult <- x[which(x!="FALSE")]
         tempResult <- x[which(nchar(x)==max(nchar(x)))][1] # if two duplicate results (e.g. "Timothy" and "Timothy"), then just return the 1st
+cat("\nTwo or more results found:\n")                         # DEBUG
+cat("\nTwo or more results found:\n")                         # DEBUG
+cat(x[which(x!="FALSE")])
+cat("\n")
         return(tempResult)
         # return(max(nchar(x))) #DEBUG
       }
       })
 
-  # matchTemp3 # what is this?
-
   # debugResultDF <- data.frame(commentsTextCleaned,usernamesCleaned,unlist(matchTemp3)) #DEBUG
-  finalMatchesTemp <- as.vector(unlist(matchTemp3))
+finalMatchesTemp <- as.vector(unlist(matchTemp2))
+finalMatchesTemp <- as.vector(unlist(matchTemp3))
 
   # convert back (or 'de-regex') the username characters
   finalMatches <- gsub("\\\\","",finalMatchesTemp)
