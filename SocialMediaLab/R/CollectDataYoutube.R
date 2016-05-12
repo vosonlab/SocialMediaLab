@@ -648,7 +648,8 @@ yt_scraper <- setRefClass(
       opts <- api_opts
           # DEBUG
           # cat(paste0("\n","Value of nextPageToken = ", nextPageToken,"\n"))
-      if (!is.null(nextPageToken) || nextPageToken != "") {
+      if (!is.null(nextPageToken) || length(nextPageToken) != 0L || nextPageToken != "") {
+      # if (!is.null(nextPageToken) || nextPageToken != "")
         opts$pageToken <- nextPageToken
       }
 
@@ -664,8 +665,8 @@ yt_scraper <- setRefClass(
       while (TRUE) {
                         cat(".") # DEBUG # UI FEEDBACK - I AM STILL ALIVE AND WORKING
                         flush.console() # DEBUG
-        old_count <- unique_count
         scrape()
+        old_count <- unique_count
         if (unique_count == old_count) {
           done <<- TRUE
           nextPageToken <<- ""
