@@ -1,17 +1,20 @@
+#' Note: this function is DEPRECATED and will be removed in a future release.
+#' Please use the \code{Create} function
+#'
 #' Create semantic networks from social media data (semantic relationships
 #' between concepts)
-#' 
+#'
 #' This function creates a semantic network from social media data (i.e. from
 #' data frames of class \code{dataSource}, or for Twitter data it is also
 #' possible to provide a list of data frames). In such semantic networks,
 #' concepts are words/terms extracted from the text corpus of social media data
 #' (e.g. tweets on Twitter).
-#' 
+#'
 #' This function creates a weighted network from a data frame of class
 #' \code{dataSource} (which are created using the `CollectData` family of
 #' functions in the SocialMediaLab package), or a list of Twitter data frames
 #' collected using \code{CollectDataTwitter} function.
-#' 
+#'
 #' The resulting semantic network is an igraph graph object. This graph object
 #' is semantic because vertices represent unique concepts (in this case unique
 #' terms/words extracted from a social media text corpus), and edges represent
@@ -21,7 +24,7 @@
 #' the data set (i.e. 1500 observations), and the term "#auspol" and the term
 #' "politics" appear together in every tweet, then this will be represented by
 #' an edge with weight equal to 1500.
-#' 
+#'
 #' @param x a data frame of class \code{dataSource}. For Twitter data, it is
 #' also possible to provide a *list* of data frames (i.e. data frames that
 #' inherit class \code{dataSource} and \code{twitter}). Only lists of Twitter
@@ -54,15 +57,15 @@
 #' @return An igraph graph object, with weighted edges.
 #' @note Not all data sources in SocialMediaLab can be used for creating
 #' semantic networks.
-#' 
+#'
 #' Currently supported data sources are:
-#' 
+#'
 #' - Twitter
-#' 
+#'
 #' Other data sources (e.g. YouTube and Facebook) will be implemented in the
 #' future. Additionally, the user is notified if they try to create semantic
 #' networks for incompatible data sources.
-#' 
+#'
 #' For Twitter data, semantic networks can be created from multiple data frames
 #' (i.e. datasets collected individually using CollectDataTwitter). Simply
 #' create a list of the data frames that you wish to create a network from. For
@@ -74,29 +77,29 @@
 #' networks in SocialMediaLab.
 #' @keywords SNA semantic network igraph social media
 #' @examples
-#' 
+#'
 #' \dontrun{
 #'   ## This example shows how to collect Twitter data and create a semantic network
-#' 
+#'
 #'   # Firstly specify your API credentials
 #'   my_api_key <- "1234567890qwerty"
 #'   my_api_secret <- "1234567890qwerty"
 #'   my_access_token <- "1234567890qwerty"
 #'   my_access_token_secret <- "1234567890qwerty"
-#' 
+#'
 #'   # Authenticate with the Twitter API using \code{AuthenticateWithTwitterAPI}
 #'   AuthenticateWithTwitterAPI(api_key=my_api_key, api_secret=my_api_secret,
 #'     access_token=my_access_token, access_token_secret=my_access_token_secret)
-#' 
+#'
 #'   # Collect tweets data using \code{myTwitterData}
 #'   myTwitterData <- CollectDataTwitter(searchTerm="#auspol",
 #'     numTweets=200,writeToFile=FALSE,verbose=FALSE)
-#' 
+#'
 #'   # Create a 'semantic' network using \code{CreateSemanticNetwork}
 #'   g_semantic_twitter <- CreateSemanticNetwork(myTwitterData,writeToFile=FALSE,
 #'     termFreq=20,hashtagFreq=80)
 #' }
-#' 
+#'
 CreateSemanticNetwork <-
 function(x,writeToFile,termFreq,hashtagFreq,removeTermsOrHashtags,stopwordsEnglish)
   {

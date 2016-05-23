@@ -1,5 +1,5 @@
 #' Collection and network analysis of social media data
-#' 
+#'
 #' The goal of the SocialMediaLab package is to provide a suite of easy-to-use
 #' tools for collecting data from social media sources (Instagram, Facebook,
 #' Twitter, and Youtube) and generating different types of networks suited to
@@ -11,7 +11,7 @@
 #' networks out of these data. Creating networks from social media data is
 #' often non-trivial and time consuming. This package simplifies such tasks so
 #' users can focus on analysis.
-#' 
+#'
 #' SocialMediaLab uses a straightforward S3 class system. Data collected with
 #' this package produces \code{data.table} objects (extension of class
 #' \code{data.frame}), which are assigned the class \code{dataSource}.
@@ -19,16 +19,15 @@
 #' source of data, e.g. \code{facebook} or \code{youtube}. In this way,
 #' \code{dataSource} objects are fast, easy to work with, and can be used as
 #' input to easily construct different types of networks. For example, the
-#' function \code{\link{CollectDataTwitter}} is used to collect Twitter data,
-#' and the resulting object can be supplied to a number of network generation
-#' functions (e.g. \code{\link{CreateBimodalNetwork}}).
-#' 
-#' 
+#' function \code{\link{Collect}} can be used to collect Twitter data, which is
+#' then 'piped' to the \code{\link{Create}} function, resulting in a network
+#' (an igraph object) that is ready for analysis.
+#'
 #' @name SocialMediaLab-package
 #' @aliases SocialMediaLab-package SocialMediaLab
 #' @docType package
-#' @author Timothy Graham & Robert Ackland
-#' 
+#' @author Timothy Graham & Robert Ackland, with contribution from Chung-hong Chan
+#'
 #' Maintainer: Timothy Graham <timothy.graham3@@uq.net.au>
 #' @import tm
 #' @import RCurl

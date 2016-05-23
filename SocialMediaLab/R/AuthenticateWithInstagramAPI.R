@@ -1,22 +1,25 @@
+#' Note: this function is DEPRECATED and will be removed in a future release.
+#' Please use the \code{Authenticate} function
+#'
 #' Instagram API Authentication
-#' 
+#'
 #' OAuth token based authentication with the Instagram API, with caching
 #' options for automatic authentication (i.e. avoid using the browser).
-#' 
+#'
 #' In order to collect data from Instagram, the user must first authenticate
 #' with Instagram's Application Programming Interface (API). Furthermore, the
 #' user must create a Instagram 'app' and get an 'app secret'.
-#' 
+#'
 #' To get a Instagram 'app ID' and 'API secret', please see the Instagram
 #' document at: https://instagram.com/developer/authentication/
-#' 
+#'
 #' One problem with Instagram authentication through R is that it normally
 #' requires the user to authenticate using their browser each time they wish to
 #' collect data. The \code{useCachedToken} argument provides a way to
 #' circumvent this, by saving and loading an authenticated 'token' file stored
 #' in the working directory. If the \code{useCachedToken} argument is set to
 #' \code{TRUE}, then the browser is not necessary for future sessions.
-#' 
+#'
 #' @param appID character string specifying the 'App ID' of the Instagram app
 #' used for authentication.
 #' @param appSecret character string specifying the 'API Secret' associated
@@ -35,12 +38,12 @@
 #' other ways to collect social media data.
 #' @keywords Instagram social media SNA
 #' @examples
-#' 
+#'
 #' \dontrun{
 #'   ## Use your own values for myAppID and myAppSecret
 #'   app_id <- "123456789098765"
 #'   app_secret <- "abc123abc123abc123abc123abc123ab"
-#' 
+#'
 #'   # Authenticate with the Instagram API using `AuthenticateWithInstagramAPI`
 #'   instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=app_id,
 #'     appSecret=app_secret, useCachedToken=FALSE)

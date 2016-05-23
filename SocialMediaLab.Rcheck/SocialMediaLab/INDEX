@@ -1,0 +1,59 @@
+Authenticate            Create credential to access social media APIs
+AuthenticateWithFacebookAPI
+                        Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Authenticate' function
+AuthenticateWithInstagramAPI
+                        Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Authenticate' function
+AuthenticateWithTwitterAPI
+                        Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Authenticate' function
+AuthenticateWithYoutubeAPI
+                        Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Authenticate' function
+Collect                 Collect data from social media for generating
+                        networks
+CollectDataFacebook     Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Collect' function
+CollectDataInstagram    Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Collect' function
+CollectDataTwitter      Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Collect' function
+CollectDataYoutube      Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Collect' function
+CollectEgoInstagram     Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Collect' function
+Create                  Create networks from social media data
+CreateActorNetwork      Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Create' function
+CreateBimodalNetwork    Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Create' function
+CreateDynamicNetwork    Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Create' function
+CreateEgoNetwork        Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Create' function
+CreateEgoNetworkFromData
+                        Create 'ego' networks from social media data
+CreateSemanticNetwork   Note: this function is DEPRECATED and will be
+                        removed in a future release. Please use the
+                        'Create' function
+GetYoutubeVideoIDs      Extract/scrape the IDs from a set of YouTube
+                        video URLs
+PopulateUserInfo        Populate Twitter networks with user information
+SaveCredential          Save and load credential information
+SocialMediaLab-package
+                        Collection and network analysis of social media
+                        data

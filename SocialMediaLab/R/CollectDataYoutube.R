@@ -1,22 +1,25 @@
+#' Note: this function is DEPRECATED and will be removed in a future release.
+#' Please use the \code{Collect} function
+#'
 #' Collect YouTube comments data for generating different types of networks
-#' 
+#'
 #' This function collects YouTube comments data for one or more YouTube videos.
 #' It structures the data into a data frame of class \code{dataSource.youtube},
 #' ready for creating networks for further analysis.
-#' 
+#'
 #' \code{CollectDataYoutube} collects public comments from YouTube videos,
 #' using the YouTube API.
-#' 
+#'
 #' The function then finds and maps the relationships of YouTube users who have
 #' interacted with each other (i.e. user i has replied to user j or mentioned
 #' user j in a comment) and structures these relationships into a data frame
 #' format suitable for creating unimodal networks (\code{CreateActorNetwork}).
-#' 
+#'
 #' For multiple videos, the user may wish to use the function
 #' \code{GetYoutubeVideoIDs}, which creates a character vector of video IDs
 #' from a plain text file of YouTube video URLs, which can then be used for the
 #' \code{videoIDs} argument of the function \code{CollectDataYoutube}.
-#' 
+#'
 #' @param videoIDs character vector, specifying one or more YouTube video IDs.
 #' For example, if the video URL is
 #' 'https://www.youtube.com/watch?v=W2GZFeYGU3s', then use
@@ -39,13 +42,13 @@
 #' @return A data frame object of class \code{dataSource.youtube} that can be
 #' used for creating unimodal networks (\code{CreateActorNetwork}).
 #' @note Currently supported network types:
-#' 
+#'
 #' - unimodal 'actor' network; \code{CreateActorNetwork}
-#' 
+#'
 #' Data generated using this function is *not* suitable for dynamic networks.
 #' Dynamic YouTube comments networks are not currently implemented in the
 #' SocialMediaLab package. This will be implemented in a future release.
-#' 
+#'
 #' Note on \code{maxComments} argument: Due to quirks/specifications of the
 #' Google API, it is currently not possible to specify the exact number of
 #' comments to return from the API using \code{maxResults} argument (i.e.
@@ -63,22 +66,22 @@
 #' be collected.
 #' @keywords youtube data mining SNA
 #' @examples
-#' 
+#'
 #' \dontrun{
 #'   # Use your own Google Developer API Key here:
 #'   myApiKey <- "1234567890"
-#' 
+#'
 #'   # Authenticate with the Google API
 #'   apiKeyYoutube <- AuthenticateWithYoutubeAPI(apiKeyYoutube=myApiKey)
-#' 
+#'
 #'   # Generate a vector of YouTube video IDs to collect data from
 #'   # (or use the function `GetYoutubeVideoIDs` to automatically
 #'   # generate from a plain text file of video URLs)
 #'   videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
-#' 
+#'
 #'   # Collect the data using function `CollectDataYoutube`
 #'   myYoutubeData <- CollectDataYoutube(videoIDs,apiKeyYoutube,writeToFile=FALSE)
-#' 
+#'
 #'   # Create an 'actor' network using the function `CreateActorNetwork`
 #'   g_actor_youtube <- CreateActorNetwork(myYoutubeData)
 #' }
@@ -212,7 +215,7 @@ function(videoIDs, apiKeyYoutube, verbose, writeToFile, maxComments) {
             )
 
             init_results <- httr::content(httr::GET(base_url, query = api_opts)) # TODO: should die when there is error
-                    
+
             tempDataReplies <- lapply(init_results$items, function(x) {
               data.frame(
                 Comment = x$snippet$textDisplay,
@@ -487,7 +490,7 @@ function(videoIDs, apiKeyYoutube, verbose, writeToFile, maxComments) {
             )
 
             init_results <- httr::content(httr::GET(base_url, query = api_opts)) # TODO: should die when there is error
-                    
+
             tempDataReplies <- lapply(init_results$items, function(x) {
               data.frame(
                 Comment = x$snippet$textDisplay,
@@ -649,7 +652,8 @@ yt_scraper <- setRefClass(
       opts <- api_opts
           # DEBUG
           # cat(paste0("\n","Value of nextPageToken = ", nextPageToken,"\n"))
-      if (!is.null(nextPageToken) || nextPageToken != "") {
+      if (!is.null(nextPageToken) || length(nextPageToken) != 0L || nextPageToken != "") {
+      # if (!is.null(nextPageToken) || nextPageToken != "")
         opts$pageToken <- nextPageToken
       }
 
@@ -665,8 +669,8 @@ yt_scraper <- setRefClass(
       while (TRUE) {
                         cat(".") # DEBUG # UI FEEDBACK - I AM STILL ALIVE AND WORKING
                         flush.console() # DEBUG
-        old_count <- unique_count
         scrape()
+        old_count <- unique_count
         if (unique_count == old_count) {
           done <<- TRUE
           nextPageToken <<- ""

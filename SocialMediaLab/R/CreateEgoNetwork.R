@@ -1,5 +1,8 @@
+#' Note: this function is DEPRECATED and will be removed in a future release.
+#' Please use the \code{Create} function
+#'
 #' Create 'ego' networks from social media data
-#' 
+#'
 #' This function creates 'ego' networks from social media data (currently only
 #' Instagram). The networks are igraph objects. The user provides a character
 #' vector of usernames, and the function collects data about the 'followers' of
@@ -7,17 +10,17 @@
 #' It also provides the ability to specify the 'degree' of the egonet (also
 #' sometimes known as the order), currently for 1-degree (ego + alters) or
 #' 2-degree (ego + alters + alters of alters of ego).
-#' 
+#'
 #' This function creates a (weighted and directed) 'ego' network from a given
 #' set of seed users (the ego nodes).
-#' 
+#'
 #' The resulting network is an igraph graph object.
-#' 
+#'
 #' Note! The network size can become extremely large very quickly, depending on
 #' the arguments the user provides to this function. For example, specifying
 #' `degreeEgoNet=2` and `getFollows=TRUE` can generate very large networks from
 #' just a small number of ego users (even just 3 or 4 ego nodes).
-#' 
+#'
 #' @param dataSource character string, specifying which data source. Currently
 #' only "instagram" (default).
 #' @param username character vector, specifying a set of usernames who will be
@@ -52,25 +55,25 @@
 #' collect data sources for creating actor networks in SocialMediaLab.
 #' @keywords SNA unimodal instagram network igraph social media
 #' @examples
-#' 
+#'
 #' \dontrun{
 #'   ## Use your own values for myAppID and myAppSecret
 #'   myAppID <- "123456789098765"
 #'   myAppSecret <- "abc123abc123abc123abc123abc123ab"
-#' 
+#'
 #'   # Authenticate with the Instagram API using `AuthenticateWithInstagramAPI`
 #'   instagram_oauth_token <- AuthenticateWithInstagramAPI(appID=app_id, appSecret=app_secret,
 #'     useCachedToken=TRUE)
-#' 
+#'
 #'   myUsernames <- c("senjohnmccain","obama")
-#' 
+#'
 #'   g_ego_network <- CreateEgoNetwork(username=myUsernames,verbose=TRUE,degreeEgoNet=1,
 #'     writeToFile=FALSE,waitForRateLimit=TRUE,getFollows=FALSE)
-#' 
+#'
 #'   # Description of actor network
 #'   g_ego_network
 #' }
-#' 
+#'
 CreateEgoNetwork <-
 function(dataSource,username,userid,verbose,degreeEgoNet,writeToFile,waitForRateLimit,getFollows)
 {
