@@ -255,6 +255,10 @@ function(videoIDs, apiKeyYoutube, verbose, writeToFile, maxComments) {
       }
       # Remove 'dummy' first row
       dataCombined <- dataCombined[-1,]
+      # Throw Error when no comment can be collected
+      if (nrow(dataCombined) == 0) {
+          stop("No comment can be collected from the given videoIDs.")
+      }
 
       # REMOVE COMMENTS WITH NO TEXT
       # Note: this often occurs because users shared the video on Google+, but didn't write a comment.
