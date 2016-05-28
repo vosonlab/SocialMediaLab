@@ -11,8 +11,9 @@ Type: Package
 Imports:
     tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook,Hmisc,data.table,httpuv,instaR,methods,httr
 Suggests:
-    magrittr
-Author: Timothy Graham & Robert Ackland, with contribution from Chung-hong Chan
+    magrittr,
+    testthat
+Author: Timothy Graham & Robert Ackland with contribution from Chung-hong Chan
 Maintainer: Timothy Graham <timothy.graham3@uq.net.au>
 License: GPL (>= 2)
 RoxygenNote: 5.0.1
