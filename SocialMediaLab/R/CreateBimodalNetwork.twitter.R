@@ -2,6 +2,8 @@
 CreateBimodalNetwork.twitter <-
 function(x,writeToFile,removeTermsOrHashtags)
 {
+  from=to=edgeType=timeStamp=tweet_id=NULL # to please the gods of R CMD CHECK
+
   if (missing(writeToFile)) {
     writeToFile <- FALSE # default = not write to file
   }

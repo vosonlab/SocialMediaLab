@@ -57,3 +57,5 @@ SaveCredential          Save and load credential information
 SocialMediaLab-package
                         Collection and network analysis of social media
                         data
+importData              Import SocialMediaLab data previously saved to
+                        disk using the 'Collect()' function.

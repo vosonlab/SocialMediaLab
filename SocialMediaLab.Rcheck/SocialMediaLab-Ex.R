@@ -29,6 +29,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
+
 ## Not run: 
 ##D require(magrittr)
 ##D ## Instagram ego network example
@@ -68,6 +69,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
+
 ## Not run: 
 ##D   ## Use your own values for myAppID and myAppSecret
 ##D   myAppID <- "123456789098765"
@@ -97,6 +99,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Keywords: Instagram SNA media social
 
 ### ** Examples
+
 
 ## Not run: 
 ##D   ## Use your own values for myAppID and myAppSecret
@@ -128,6 +131,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
+
 ## Not run: 
 ##D   # Firstly specify your API credentials
 ##D   my_api_key <- "1234567890qwerty"
@@ -158,6 +162,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
+
 ## Not run: 
 ##D   # Replace with your Google Developer API Key:
 ##D   my_apiKeyYoutube <- "314159265358979qwerty"
@@ -181,6 +186,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Aliases: Collect
 
 ### ** Examples
+
 
 ## Not run: 
 ##D require(magrittr)
@@ -220,6 +226,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Keywords: SNA data facebook mining
 
 ### ** Examples
+
 
 ## Not run: 
 ##D   ## Use your own values for myAppID and myAppSecret
@@ -262,6 +269,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Keywords: SNA data instagram mining
 
 ### ** Examples
+
 
 ## Not run: 
 ##D ## Use your own values for myAppID and myAppSecret
@@ -318,6 +326,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
+
 ## Not run: 
 ##D   # Firstly specify your API credentials
 ##D   my_api_key <- "1234567890qwerty"
@@ -363,6 +372,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
+
 ## Not run: 
 ##D   # Use your own Google Developer API Key here:
 ##D   myApiKey <- "1234567890"
@@ -400,6 +410,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
+
 ## Not run: 
 ##D myAppID <- "123456789098765"
 ##D myAppSecret <- "abc123abc123abc123abc123abc123ab"
@@ -431,6 +442,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Aliases: Create
 
 ### ** Examples
+
 
 ## Not run: 
 ##D require(magrittr)
@@ -471,6 +483,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
+
 ## Not run: 
 ##D   ## This example shows how to collect YouTube comments data and create an actor network
 ##D 
@@ -497,6 +510,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 
 
+
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("CreateActorNetwork", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
@@ -513,6 +527,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Keywords: SNA bimodal igraph media network social
 
 ### ** Examples
+
 
 ## Not run: 
 ##D   ## This example shows how to collect Facebook page data and create a bimodal network
@@ -538,6 +553,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 
 
+
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("CreateBimodalNetwork", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
@@ -554,6 +570,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Keywords: SNA dynamic igraph media network social
 
 ### ** Examples
+
 
 ## Not run: 
 ##D   ## This example shows how to collect Facebook page data and create a bimodal network
@@ -580,6 +597,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 
 
+
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("CreateDynamicNetwork", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
@@ -596,6 +614,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Keywords: SNA igraph instagram media network social unimodal
 
 ### ** Examples
+
 
 ## Not run: 
 ##D   ## Use your own values for myAppID and myAppSecret
@@ -617,6 +636,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 
 
+
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("CreateEgoNetwork", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
@@ -632,6 +652,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
+
 ## Not run: 
 ##D myAppID <- "123456789098765"
 ##D myAppSecret <- "abc123abc123abc123abc123abc123ab"
@@ -644,6 +665,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ##D CreateEgoNetoworkFromData(instagramEgodata)
 ##D ## the same as Create(instagramEgodata) or Create(instagramEgodata, "ego")
 ## End(Not run)
+
 
 
 
@@ -663,6 +685,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Keywords: SNA igraph media network semantic social
 
 ### ** Examples
+
 
 ## Not run: 
 ##D   ## This example shows how to collect Twitter data and create a semantic network
@@ -688,6 +711,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 
 
+
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("CreateSemanticNetwork", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
@@ -703,6 +727,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Keywords: SocialMediaLab scraping youtube
 
 ### ** Examples
+
 
 ## Not run: 
 ##D   ## This example shows how to use `GetYoutubeVideoIDs` to extract video IDs from YouTube
@@ -739,6 +764,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
+
 ## Not run: 
 ##D require(magrittr)
 ##D ## Get Twitter user information and apply to network
@@ -763,6 +789,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
+
 ## Not run: 
 ##D require(magrittr)
 ##D myAppID <- "123456789098765"
@@ -783,6 +810,45 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("SaveCredential", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("importData")
+### * importData
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: importData
+### Title: Import SocialMediaLab data previously saved to disk using the
+###   'Collect()' function.
+### Aliases: importData
+
+### ** Examples
+
+
+## Not run: 
+##D require(magrittr)
+##D ## Facebook example
+##D 
+##D # Specify your API keys
+##D appID <- "xxxx"
+##D appSecret <- "xxxx"
+##D 
+##D # Authenticate and Collect some data (and save data to disk using `writeToFile=TRUE`)
+##D myFacebookData <- Authenticate("Facebook", appID = appID, appSecret = appSecret) %>%
+##D    Collect(pageName="StarWars", rangeFrom="2015-03-01",
+##D      rangeTo="2015-03-02", writeToFile=TRUE)
+##D 
+##D # Import the data (that was saved to disk in the previous step)
+##D myStarWarsData <- importData("2015-03-01_to_2015-03-02_StarWars_FacebookData.csv","facebook")
+##D 
+##D # Create a network using the imported dataframe object
+##D myNetwork <- myStarWarsData %>% Create("Bimodal")
+## End(Not run)
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("importData", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 ### * <FOOTER>
 ###
 options(digits = 7L)

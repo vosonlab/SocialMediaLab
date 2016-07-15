@@ -21,7 +21,7 @@
 #' }
 #' @export
 PopulateUserInfo <- function(networkObject) {
-
+  name=NULL # appease the gods of R CMD CHECK
   # This function is supposed to perform the lookups in batches
   # and mind the rate limit:
   getUserObjects <- function(users) {
