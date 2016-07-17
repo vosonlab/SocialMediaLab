@@ -1,11 +1,6 @@
 Package: SocialMediaLab
-<<<<<<< HEAD
-Version: 0.22.5
-Date: 2016-05-13
-=======
-Version: 0.22.4-1
-Date: 2016-07-15
->>>>>>> develop
+Version: 0.23.0
+Date: 2016-07-17
 Title: Tools for Collecting Social Media Data and Generating Networks for
     Analysis
 Description: A suite of tools for collecting and constructing networks from
