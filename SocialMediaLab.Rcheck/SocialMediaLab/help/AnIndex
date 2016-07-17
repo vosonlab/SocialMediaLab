@@ -18,6 +18,7 @@ CreateEgoNetwork	CreateEgoNetwork
 CreateEgoNetworkFromData	CreateEgoNetworkFromData
 CreateSemanticNetwork	CreateSemanticNetwork
 GetYoutubeVideoIDs	GetYoutubeVideoIDs
+importData	importData
 LoadCredential	SaveCredential
 PopulateUserInfo	PopulateUserInfo
 SaveCredential	SaveCredential

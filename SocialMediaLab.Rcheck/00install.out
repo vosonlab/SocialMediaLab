@@ -1,4 +1,3 @@
-Multithreaded BLAS/LAPACK libraries detected. Using 8 cores for math algorithms.
 * installing *source* package ‘SocialMediaLab’ ...
 ** R
 ** preparing package for lazy loading
