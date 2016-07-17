@@ -216,7 +216,7 @@ s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (34 pages, 151601 bytes).
+Output written on Rd2.pdf (34 pages, 151600 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (110 entries accepted, 0 rejected).
@@ -448,7 +448,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts
 urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (37 pages, 167979 bytes).
+Output written on Rd2.pdf (37 pages, 167980 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (110 entries accepted, 0 rejected).
@@ -675,16 +675,8 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts
 urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-<<<<<<< HEAD
-Output written on Rd2.pdf (36 pages, 166168 bytes).
-Transcript written on Rd2.log.
-Saving output to 'SocialMediaLab-manual.pdf' ...
-Done
-You may want to clean up by 'rm -rf /var/folders/g2/66rks8xn1w5gmqn6y2t4bn2w0000gn/T//Rtmpd9vEEX/Rd2pdfabda259fac22'
-=======
 Output written on Rd2.pdf (37 pages, 168600 bytes).
 Transcript written on Rd2.log.
 Saving output to 'SocialMediaLab-manual.pdf' ...
 Done
-You may want to clean up by 'rm -rf /var/folders/g2/66rks8xn1w5gmqn6y2t4bn2w0000gn/T//RtmpUY7TR8/Rd2pdf3097266a2d79'
->>>>>>> develop
+You may want to clean up by 'rm -rf /var/folders/g2/66rks8xn1w5gmqn6y2t4bn2w0000gn/T//RtmpGuuNmr/Rd2pdf67a357266896'
