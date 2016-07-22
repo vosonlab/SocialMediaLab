@@ -1,4 +1,4 @@
-library(testthat)
-library(SocialMediaLab)
+# library(testthat)
+# library(SocialMediaLab)
 
-test_check("SocialMediaLab")
+# test_check("SocialMediaLab")
