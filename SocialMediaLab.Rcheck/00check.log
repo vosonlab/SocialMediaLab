@@ -19,8 +19,7 @@ Maintainer: ‘Timothy Graham <timothy.graham3@uq.net.au>’
 * checking whether package ‘SocialMediaLab’ can be installed ... OK
 * checking installed package size ... OK
 * checking package directory ... OK
-* checking DESCRIPTION meta-information ... NOTE
-Checking should be performed on sources prepared by ‘R CMD build’.
+* checking DESCRIPTION meta-information ... OK
 * checking top-level files ... OK
 * checking for left-over files ... OK
 * checking index information ... OK
@@ -49,22 +48,8 @@ Checking should be performed on sources prepared by ‘R CMD build’.
 * checking for unstated dependencies in examples ... OK
 * checking examples ... OK
 * checking for unstated dependencies in ‘tests’ ... OK
-* checking tests ... ERROR
-Running the tests in ‘tests/testthat.R’ failed.
-Last 13 lines of output:
-  > library(testthat)
-  > library(SocialMediaLab)
-  > 
-  > test_check("SocialMediaLab")
-  Error in file(filename, "r", encoding = encoding) : 
-    cannot open the connection
-  Calls: test_check ... force -> source_file -> eval -> eval -> source -> file
-  In addition: Warning message:
-  In file(filename, "r", encoding = encoding) :
-    cannot open file 'cred.R': No such file or directory
-  testthat results ================================================================
-  OK: 0 SKIPPED: 0 FAILED: 0
-  Execution halted
+* checking tests ... OK
+  Running ‘testthat.R’
 * checking PDF version of manual ... OK
 * DONE
-Status: 1 ERROR, 1 NOTE
+Status: OK
