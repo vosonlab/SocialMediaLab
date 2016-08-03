@@ -201,8 +201,33 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
               error=function(cond) {
                 cat(paste("\nFacebook API caused an unknown error while retrieving post ID, ", x,"\n"))
                 cat(paste("Condition: ",cond,"\n"))
-                # Just return a unique string for debugging in case of error
-                return("dodgydata123")
+                # We will return a list (what the rest of the code expects)
+                # with some NA values. Then we will need to remove these later.
+                      postTEMP <- data.frame(from_id=NA,
+                                           from_name=NA,
+                                           message=NA,
+                                           created_time=NA,
+                                           type=NA,
+                                           link=NA,
+                                           id=NA,
+                                           likes_count=NA,
+                                           comments_count=NA,
+                                           shares_count=NA)
+
+                      likesTEMP <- data.frame(from_name=NA,
+                                             from_id=NA)
+
+                      commentsTEMP <- data.frame(from_id=NA,
+                                             from_name=NA,
+                                             message=NA,
+                                             created_time=NA,
+                                             likes_count=NA,
+                                             id=NA)
+
+                      postListTemp <- list(postTEMP,likesTEMP,commentsTEMP)
+                      names(postListTemp) <- c("post","likes","comments")
+                # return("dodgydata123")
+                return(postListTemp)
               }
             )
 
