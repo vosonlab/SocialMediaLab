@@ -384,7 +384,8 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
           # create subsets of data, for processing
 
           usersLikedPosts <- data.table(
-            from          = tempDataTable$likeFromName,
+            from_username = tempDataTable$likeFromName,
+            from          = tempDataTable$likeFromID, # <-------------- 4/08/16 - we want IDs, not usernames (ID is unique)
             to            = tempDataTable$postID,
             edgeType  = "Like",
             # edgeWeight    = 1,
@@ -396,7 +397,8 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
             )
 
           usersCommentedPosts <- data.table(
-            from          = tempDataTable$commentFromName,
+            from_username = tempDataTable$commentFromName,
+            from          = tempDataTable$commentFromID, # <----------- 4/08/16 - we want IDs, not usernames (ID is unique)
             to            = tempDataTable$postID,
             edgeType  = "Comment",
             # edgeWeight    = 1,
@@ -429,6 +431,7 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
           # get unique pairs only
           dataCombinedUNIQUE <- data.table(
             from             = dataCombined$from,
+            from_username    = dataCombined$from_username,
             to               = dataCombined$to,
             edgeType     = dataCombined$edgeType,
             commentTimestamp = dataCombined$commentTimestamp
