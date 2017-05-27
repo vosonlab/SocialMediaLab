@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.16)  26 MAY 2017 17:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.8.16)  27 MAY 2017 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -682,13 +682,8 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 11.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 11.
-
-Overfull \hbox (30.21837pt too wide) in paragraph at lines 26--27
-\T1/ptm/m/n/10 tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook,Hmis
-c,data.table,httpuv,instaR,methods,httr  
- []
-
 LaTeX Font Info:    Try loading font information for T1+zi4 on input line 29.
+
 (/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2014/06/22 T1/zi4 (Inconsolata)
 )
@@ -988,7 +983,7 @@ texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on Rd2.pdf (37 pages, 168601 bytes).
+Output written on Rd2.pdf (37 pages, 168618 bytes).
 PDF statistics:
  719 PDF objects out of 1000 (max. 8388607)
  666 compressed objects within 7 object streams

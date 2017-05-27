@@ -92,69 +92,69 @@ cat("\nCached fb_oauth token was found (using cached token).\n") # DEBUG
     }
   }
 
-  ## QUICK FIX
-  # 26/5/17 - unfortunately there is a problem with `fb_oauth` due to api changes.
-  # see https://stackoverflow.com/a/43099356/2589495.
-  # so, we need to define a temporary function that is modified to fix the problem
-
-  rfacebook_oauth_fixed <- function (app_id, app_secret, extended_permissions = FALSE, legacy_permissions = FALSE)
-{
-  full_url <- oauth_callback()
-  full_url <- gsub("(.*localhost:[0-9]{1,5}/).*", x = full_url,
-                   replacement = "\\1")
-  message <- paste("Copy and paste into Site URL on Facebook App Settings:",
-                   full_url, "\nWhen done, press any key to continue...")
-  invisible(readline(message))
-  facebook <- oauth_endpoint(authorize = "https://www.facebook.com/dialog/oauth",
-                             access = "https://graph.facebook.com/oauth/access_token")
-  myapp <- oauth_app("facebook", app_id, app_secret)
-  if (extended_permissions == TRUE) {
-    scope <- paste("user_birthday,user_hometown,user_location,user_relationships,",
-                   "publish_actions,user_status,user_likes", collapse = "")
-  }
-  else {
-    scope <- "public_profile,user_friends"
-  }
-  if (legacy_permissions == TRUE) {
-    scope <- paste(scope, "read_stream", sep = ",")
-  }
-  if (packageVersion("httr") <= "0.2") {
-    facebook_token <- oauth2.0_token(facebook, myapp, scope = scope)
-    fb_oauth <- sign_oauth2.0(facebook_token$access_token)
-    if (GET("https://graph.facebook.com/me", config = fb_oauth)$status ==
-        200) {
-      message("Authentication successful.")
-    }
-  }
-  if (packageVersion("httr") > "0.2" & packageVersion("httr") <=
-      "0.6.1") {
-    fb_oauth <- oauth2.0_token(facebook, myapp, scope = scope, cache = FALSE)
-    if (GET("https://graph.facebook.com/me", config(token = fb_oauth))$status ==
-        200) {
-      message("Authentication successful.")
-    }
-  }
-  if (packageVersion("httr") > "0.6.1") {
-    Sys.setenv(HTTR_SERVER_PORT = "1410/")
-    fb_oauth <- oauth2.0_token(facebook, myapp, scope = scope, cache = FALSE)
-    if (GET("https://graph.facebook.com/me", config(token = fb_oauth))$status ==
-        200) {
-      message("Authentication successful.")
-    }
-  }
-  error <- tryCatch(callAPI("https://graph.facebook.com/pablobarbera",
-                            fb_oauth), error = function(e) e)
-  if (inherits(error, "error")) {
-    class(fb_oauth)[4] <- "v2"
-  }
-  if (!inherits(error, "error")) {
-    class(fb_oauth)[4] <- "v1"
-  }
-  return(fb_oauth)
-}
+#   ## QUICK FIX
+#   # 26/5/17 - unfortunately there is a problem with `fb_oauth` due to api changes.
+#   # see https://stackoverflow.com/a/43099356/2589495.
+#   # so, we need to define a temporary function that is modified to fix the problem
+#
+#   rfacebook_oauth_fixed <- function (app_id, app_secret, extended_permissions = FALSE, legacy_permissions = FALSE)
+# {
+#   full_url <- oauth_callback()
+#   full_url <- gsub("(.*localhost:[0-9]{1,5}/).*", x = full_url,
+#                    replacement = "\\1")
+#   message <- paste("Copy and paste into Site URL on Facebook App Settings:",
+#                    full_url, "\nWhen done, press any key to continue...")
+#   invisible(readline(message))
+#   facebook <- oauth_endpoint(authorize = "https://www.facebook.com/dialog/oauth",
+#                              access = "https://graph.facebook.com/oauth/access_token")
+#   myapp <- oauth_app("facebook", app_id, app_secret)
+#   if (extended_permissions == TRUE) {
+#     scope <- paste("user_birthday,user_hometown,user_location,user_relationships,",
+#                    "publish_actions,user_status,user_likes", collapse = "")
+#   }
+#   else {
+#     scope <- "public_profile,user_friends"
+#   }
+#   if (legacy_permissions == TRUE) {
+#     scope <- paste(scope, "read_stream", sep = ",")
+#   }
+#   if (packageVersion("httr") <= "0.2") {
+#     facebook_token <- oauth2.0_token(facebook, myapp, scope = scope)
+#     fb_oauth <- sign_oauth2.0(facebook_token$access_token)
+#     if (GET("https://graph.facebook.com/me", config = fb_oauth)$status ==
+#         200) {
+#       message("Authentication successful.")
+#     }
+#   }
+#   if (packageVersion("httr") > "0.2" & packageVersion("httr") <=
+#       "0.6.1") {
+#     fb_oauth <- oauth2.0_token(facebook, myapp, scope = scope, cache = FALSE)
+#     if (GET("https://graph.facebook.com/me", config(token = fb_oauth))$status ==
+#         200) {
+#       message("Authentication successful.")
+#     }
+#   }
+#   if (packageVersion("httr") > "0.6.1") {
+#     Sys.setenv(HTTR_SERVER_PORT = "1410/")
+#     fb_oauth <- oauth2.0_token(facebook, myapp, scope = scope, cache = FALSE)
+#     if (GET("https://graph.facebook.com/me", config(token = fb_oauth))$status ==
+#         200) {
+#       message("Authentication successful.")
+#     }
+#   }
+#   error <- tryCatch(callAPI("https://graph.facebook.com/pablobarbera",
+#                             fb_oauth), error = function(e) e)
+#   if (inherits(error, "error")) {
+#     class(fb_oauth)[4] <- "v2"
+#   }
+#   if (!inherits(error, "error")) {
+#     class(fb_oauth)[4] <- "v1"
+#   }
+#   return(fb_oauth)
+# }
 
   # note that we use the fixed function now, not the original Rfacebook one
-  fb_oauth <- rfacebook_oauth_fixed(appID, appSecret, extended_permissions)
+  fb_oauth <- fbOAuth(appID, appSecret, extended_permissions)
 
   if (useCachedToken) {
     save(fb_oauth, file="fb_oauth")

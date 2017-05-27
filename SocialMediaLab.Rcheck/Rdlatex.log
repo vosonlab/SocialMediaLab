@@ -66,9 +66,6 @@ No file Rd2.aux.
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
-Overfull \hbox (30.21837pt too wide) in paragraph at lines 26--27
-\T1/ptm/m/n/10 tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook,Hmis
-c,data.table,httpuv,instaR,methods,httr  
 (/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def) [1{/usr/local/texl
@@ -216,7 +213,7 @@ s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (34 pages, 151600 bytes).
+Output written on Rd2.pdf (34 pages, 151613 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (110 entries accepted, 0 rejected).
@@ -290,9 +287,6 @@ Writing index file Rd2.idx
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
 (./Rd2.out) (./Rd2.out)
-Overfull \hbox (30.21837pt too wide) in paragraph at lines 26--27
-\T1/ptm/m/n/10 tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook,Hmis
-c,data.table,httpuv,instaR,methods,httr  
 (/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
@@ -448,7 +442,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts
 urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (37 pages, 167984 bytes).
+Output written on Rd2.pdf (37 pages, 168002 bytes).
 Transcript written on Rd2.log.
 This is makeindex, version 2.15 [TeX Live 2015] (kpathsea + Thai support).
 Scanning input file Rd2.idx....done (110 entries accepted, 0 rejected).
@@ -522,9 +516,6 @@ Writing index file Rd2.idx
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
 (./Rd2.out) (./Rd2.out)
-Overfull \hbox (30.21837pt too wide) in paragraph at lines 26--27
-\T1/ptm/m/n/10 tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook,Hmis
-c,data.table,httpuv,instaR,methods,httr  
 (/usr/local/texlive/2015/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
@@ -675,8 +666,8 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts
 urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (37 pages, 168601 bytes).
+Output written on Rd2.pdf (37 pages, 168618 bytes).
 Transcript written on Rd2.log.
 Saving output to 'SocialMediaLab-manual.pdf' ...
 Done
-You may want to clean up by 'rm -rf /var/folders/g2/66rks8xn1w5gmqn6y2t4bn2w0000gn/T//RtmpDt8da7/Rd2pdf33ea56df7d00'
+You may want to clean up by 'rm -rf /var/folders/g2/66rks8xn1w5gmqn6y2t4bn2w0000gn/T//RtmpmzXuIV/Rd2pdf521d79cc6c76'

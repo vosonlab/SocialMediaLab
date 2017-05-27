@@ -1,6 +1,6 @@
 Package: SocialMediaLab
 Version: 0.23.2
-Date: 2017-05-26
+Date: 2017-05-27
 Title: Tools for Collecting Social Media Data and Generating Networks for
     Analysis
 Description: A suite of tools for collecting and constructing networks from
@@ -9,7 +9,7 @@ Description: A suite of tools for collecting and constructing networks from
     different types of networks for analysis.
 Type: Package
 Imports:
-    tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook,Hmisc,data.table,httpuv,instaR,methods,httr
+    tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook (>= 0.6.15),Hmisc,data.table,httpuv,instaR,methods,httr
 Suggests:
     magrittr,
     testthat
