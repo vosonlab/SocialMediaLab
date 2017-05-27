@@ -1,13 +1,15 @@
 * using log directory ‘/Users/Tim/University/SocialMediaLab/SocialMediaLab.Rcheck’
-* using R version 3.3.0 (2016-05-03)
+* using R version 3.3.3 (2017-03-06)
 * using platform: x86_64-apple-darwin13.4.0 (64-bit)
 * using session charset: UTF-8
 * using option ‘--as-cran’
 * checking for file ‘SocialMediaLab/DESCRIPTION’ ... OK
 * checking extension type ... Package
-* this is package ‘SocialMediaLab’ version ‘0.23.0’
-* checking CRAN incoming feasibility ... Note_to_CRAN_maintainers
+* this is package ‘SocialMediaLab’ version ‘0.23.2’
+* checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Timothy Graham <timothy.graham3@uq.net.au>’
+
+The Date field is over a month old.
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -19,7 +21,8 @@ Maintainer: ‘Timothy Graham <timothy.graham3@uq.net.au>’
 * checking whether package ‘SocialMediaLab’ can be installed ... OK
 * checking installed package size ... OK
 * checking package directory ... OK
-* checking DESCRIPTION meta-information ... OK
+* checking DESCRIPTION meta-information ... NOTE
+Checking should be performed on sources prepared by ‘R CMD build’.
 * checking top-level files ... OK
 * checking for left-over files ... OK
 * checking index information ... OK
@@ -36,7 +39,16 @@ Maintainer: ‘Timothy Graham <timothy.graham3@uq.net.au>’
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... OK
+* checking R code for possible problems ... NOTE
+AuthenticateWithFacebookAPI : rfacebook_oauth_fixed: no visible global
+  function definition for ‘packageVersion’
+AuthenticateWithFacebookAPI : rfacebook_oauth_fixed: no visible global
+  function definition for ‘callAPI’
+Undefined global functions or variables:
+  callAPI packageVersion
+Consider adding
+  importFrom("utils", "packageVersion")
+to your NAMESPACE file.
 * checking Rd files ... OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
@@ -52,4 +64,4 @@ Maintainer: ‘Timothy Graham <timothy.graham3@uq.net.au>’
   Running ‘testthat.R’
 * checking PDF version of manual ... OK
 * DONE
-Status: OK
+Status: 3 NOTEs

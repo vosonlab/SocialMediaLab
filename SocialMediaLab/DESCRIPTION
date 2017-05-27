@@ -1,6 +1,6 @@
 Package: SocialMediaLab
 Version: 0.23.2
-Date: 2016-07-17
+Date: 2017-05-26
 Title: Tools for Collecting Social Media Data and Generating Networks for
     Analysis
 Description: A suite of tools for collecting and constructing networks from
@@ -14,6 +14,6 @@ Suggests:
     magrittr,
     testthat
 Author: Timothy Graham & Robert Ackland with contribution from Chung-hong Chan
-Maintainer: Timothy Graham <timothy.graham3@uq.net.au>
+Maintainer: Timothy Graham <Timothy.Graham@anu.edu.au>
 License: GPL (>= 2)
 RoxygenNote: 5.0.1
