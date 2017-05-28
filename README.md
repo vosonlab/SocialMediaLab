@@ -16,7 +16,7 @@ The latest 'official' version of the package can also be found on [CRAN](https:/
 
 If you are getting the error `Error in check_twitter_oauth( )`, please find a [solution here](https://github.com/geoffjentry/twitteR/issues/90).
 
-If you are having trouble getting data from Facebook, it is probably due to a known issue with authentication for the `Rfacebook` package, which [has a solution] (https://github.com/vosonlab/SocialMediaLab/issues/28). 
+If you are having trouble getting data from Facebook, it is probably due to a known issue with authentication for the `Rfacebook` package, which [has a solution](https://github.com/vosonlab/SocialMediaLab/issues/28). 
 
 ### Special thanks
 
