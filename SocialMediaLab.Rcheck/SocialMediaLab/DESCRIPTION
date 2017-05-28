@@ -15,4 +15,6 @@ Author: Timothy Graham & Robert Ackland with contribution from Chung-hong Chan
 Maintainer: Timothy Graham <Timothy.Graham@anu.edu.au>
 License: GPL (>= 2)
 RoxygenNote: 5.0.1
-Built: R 3.3.3; ; 2017-05-27 18:56:49 UTC; unix
+NeedsCompilation: no
+Packaged: 2017-05-27 22:10:32 UTC; Tim
+Built: R 3.3.3; ; 2017-05-27 22:11:09 UTC; unix
