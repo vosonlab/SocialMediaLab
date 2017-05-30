@@ -12,6 +12,8 @@ Contributors:
 
 The latest 'official' version of the package can also be found on [CRAN](https://cran.r-project.org/web/packages/SocialMediaLab/index.html).
 
+[![](http://cranlogs.r-pkg.org/badges/SocialMediaLab)](http://cran.rstudio.com/web/packages/SocialMediaLab/index.html)
+
 ### Current known issues
 
 If you are getting the error `Error in check_twitter_oauth( )`, please find a [solution here](https://github.com/geoffjentry/twitteR/issues/90).
