@@ -1,7 +1,4 @@
-# SocialMediaLab
-
-[![](http://cranlogs.r-pkg.org/badges/SocialMediaLab)](http://cran.rstudio.com/web/packages/SocialMediaLab/index.html)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/SocialMediaLab)](https://CRAN.R-project.org/package=SocialMediaLab) ![Downloads](https://cranlogs.r-pkg.org/badges/SocialMediaLab) ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/SocialMediaLab) [![Rdoc](http://www.rdocumentation.org/badges/version/SocialMediaLab)](http://www.rdocumentation.org/packages/SocialMediaLab)
+# SocialMediaLab [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/SocialMediaLab)](https://CRAN.R-project.org/package=SocialMediaLab) ![Downloads](https://cranlogs.r-pkg.org/badges/SocialMediaLab) ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/SocialMediaLab) [![Rdoc](http://www.rdocumentation.org/badges/version/SocialMediaLab)](http://www.rdocumentation.org/packages/SocialMediaLab)
 
 ## What does this package do?
 
