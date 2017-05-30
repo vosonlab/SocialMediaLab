@@ -1,5 +1,7 @@
 # SocialMediaLab
 
+[![](http://cranlogs.r-pkg.org/badges/SocialMediaLab)](http://cran.rstudio.com/web/packages/SocialMediaLab/index.html)
+
 ## What does this package do?
 
 `SocialMediaLab` is an R package that provides a suite of tools for collecting and constructing networks from social media data. It provides easy-to-use functions for collecting data across popular platforms (Instagram, Facebook, Twitter, and YouTube) and generating different types of networks for analysis.
@@ -11,8 +13,6 @@ Contributors:
 * [Chung-hong Chan](https://github.com/chainsawriot)
 
 The latest 'official' version of the package can also be found on [CRAN](https://cran.r-project.org/web/packages/SocialMediaLab/index.html).
-
-[![](http://cranlogs.r-pkg.org/badges/SocialMediaLab)](http://cran.rstudio.com/web/packages/SocialMediaLab/index.html)
 
 ### Current known issues
 
