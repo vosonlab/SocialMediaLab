@@ -1,4 +1,4 @@
-# SocialMediaLab
+# SocialMediaLab [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/SocialMediaLab)](https://CRAN.R-project.org/package=SocialMediaLab) ![Downloads](https://cranlogs.r-pkg.org/badges/SocialMediaLab) ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/SocialMediaLab) [![Rdoc](http://www.rdocumentation.org/badges/version/SocialMediaLab)](http://www.rdocumentation.org/packages/SocialMediaLab)
 
 ## What does this package do?
 
@@ -17,6 +17,8 @@ The latest 'official' version of the package can also be found on [CRAN](https:/
 If you are getting the error `Error in check_twitter_oauth( )`, please find a [solution here](https://github.com/geoffjentry/twitteR/issues/90).
 
 If you are having trouble getting data from Facebook, it is probably due to a known issue with authentication for the `Rfacebook` package, which [has a solution](https://github.com/vosonlab/SocialMediaLab/issues/28). 
+
+Instagram API access is severely limited if you do not have an authorised app, which is significantly harder to obtain nowadays.
 
 ### Special thanks
 
