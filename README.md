@@ -1,8 +1,6 @@
-#SocialMediaLab
+# SocialMediaLab [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/SocialMediaLab)](https://CRAN.R-project.org/package=SocialMediaLab) ![Downloads](https://cranlogs.r-pkg.org/badges/SocialMediaLab) ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/SocialMediaLab) [![Rdoc](http://www.rdocumentation.org/badges/version/SocialMediaLab)](http://www.rdocumentation.org/packages/SocialMediaLab)
 
-## README
-
-Note: if you are getting the error `Error in check_twitter_oauth( )`, please find a [solution here](https://github.com/geoffjentry/twitteR/issues/90).
+## What does this package do?
 
 `SocialMediaLab` is an R package that provides a suite of tools for collecting and constructing networks from social media data. It provides easy-to-use functions for collecting data across popular platforms (Instagram, Facebook, Twitter, and YouTube) and generating different types of networks for analysis.
 
@@ -13,6 +11,16 @@ Contributors:
 * [Chung-hong Chan](https://github.com/chainsawriot)
 
 The latest 'official' version of the package can also be found on [CRAN](https://cran.r-project.org/web/packages/SocialMediaLab/index.html).
+
+### Current known issues
+
+If you are getting the error `Error in check_twitter_oauth( )`, please find a [solution here](https://github.com/geoffjentry/twitteR/issues/90).
+
+If you are having trouble getting data from Facebook, it is probably due to a known issue with authentication for the `Rfacebook` package, which [has a solution](https://github.com/vosonlab/SocialMediaLab/issues/28). 
+
+Instagram API access is severely limited if you do not have an authorised app, which is significantly harder to obtain nowadays.
+
+### Special thanks
 
 This package would not be possible without key packages by other authors in the R community, particularly: [igraph](https://github.com/igraph/rigraph), [Rfacebook](https://github.com/pablobarbera/Rfacebook), [instaR](https://github.com/pablobarbera/instaR), [twitteR](https://github.com/geoffjentry/twitteR), [data.table](https://github.com/Rdatatable/data.table), [tm](https://cran.r-project.org/web/packages/tm/index.html), and [httr](https://github.com/hadley/httr).
 
