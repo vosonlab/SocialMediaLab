@@ -53,10 +53,12 @@ function(x,writeToFile,removeTermsOrHashtags, ...)
   # we will add the vertex 'type' attribute after creating the network
   V(g)$type <- "User" # default to user
   V(g)$type[grep("_",V(g)$name)] <- "Post" # change the posts to post
+
   # now we also need to add a username attribute for the users
   V(g)$username <- dataCombinedUNIQUE$from_username[match(V(g)$name, dataCombinedUNIQUE$from)]
   # we will just give the posts a username equal to their ID
   V(g)$username[which(is.na(V(g)$username))] <- V(g)$name[which(is.na(V(g)$username))]
+
   # Make the node labels play nice with Gephi
   V(g)$label <- V(g)$name
 
