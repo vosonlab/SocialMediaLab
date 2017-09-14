@@ -110,8 +110,7 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
 
       if (verbose=="TRUE" | verbose=="true" | verbose=="T" | verbose==TRUE) {
         verbose <- TRUE
-      }
-      else {verbose <- FALSE}
+      }else {verbose <- FALSE}
 
       if (missing(n)) {
         n <- 1000 # default to 1000 max comments/like for each post (within the page)
@@ -240,6 +239,12 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
     # DEBUG
     # cat(paste0("\nI am cleaning odd characters on tempDataList[",i,"] out of ",length(tempDataList)))
 
+          #if (verbose) {
+          #    if ( i%%100==0 ){
+          #        cat(paste0("\nCleaning odd characters on tempDataList[",i,"] out of ",length(tempDataList)))  
+          #    }
+          #}
+            
           tempDataList[i][[1]]$post$from_name <- iconv(tempDataList[i][[1]]$post$from_name, to = 'UTF-8')
           tempDataList[i][[1]]$post$message <- iconv(tempDataList[i][[1]]$post$message, to = 'UTF-8')
           tempDataList[i][[1]]$like$from_name <- iconv(tempDataList[i][[1]]$like$from_name, to = 'UTF-8')
@@ -263,6 +268,7 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
             postMessage = "something",
             postType = "something",
             postLink = "something",
+            postMessage = "something",
             postTimestamp = "something",
             likeFromID = "fizz",
             likeFromName = "buzz",
@@ -288,6 +294,13 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
     # DEBUG
     # cat(paste0("\nI am sorting through tempDataList[",i,"] out of ",length(tempDataList)))
 
+          if (verbose) {
+              if ( i%%10==0 ){
+                  cat(paste0("\nWorking on post ",i," out of ",length(tempDataList)))  
+              }
+          }
+ 
+              
             # for each of the likes
             for (j in 1:length(tempDataList[i][[1]]$likes$from_id)) {
 
@@ -311,6 +324,7 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
                   postMessage     = tempDataList[i][[1]]$post$message,
                   postType        = tempDataList[i][[1]]$post$type,
                   postLink        = tempDataList[i][[1]]$post$link,
+                  postMessage     = tempDataList[i][[1]]$post$message,                  
                   postTimestamp   = tempDataList[i][[1]]$post$created_time,
                   likeFromID      = likeFromID_TEMP,
                   likeFromName    = likeFromName_TEMP,
@@ -353,6 +367,7 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
                   postMessage     = tempDataList[i][[1]]$post$message,
                   postType        = tempDataList[i][[1]]$post$type,
                   postLink        = tempDataList[i][[1]]$post$link,
+                  postMessage     = tempDataList[i][[1]]$post$message,                  
                   postTimestamp   = tempDataList[i][[1]]$post$created_time,
                   likeFromID      = "NA",
                   likeFromName    = "NA",
@@ -389,9 +404,10 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
             to            = tempDataTable$postID,
             edgeType  = "Like",
             # edgeWeight    = 1,
-            postType      = tempDataTable$postType,
-            postLink      = tempDataTable$postLink,
-            postTimestamp = tempDataTable$postTimestamp,
+            #postType      = tempDataTable$postType,
+            #postLink      = tempDataTable$postLink,
+            #postMessage   = tempDataTable$postMessage,
+            #postTimestamp = tempDataTable$postTimestamp,
             commentText   = "Not_applicable",
             commentTimestamp   = "Not_applicable"
             )
@@ -402,13 +418,14 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
             to            = tempDataTable$postID,
             edgeType  = "Comment",
             # edgeWeight    = 1,
-            postType      = tempDataTable$postType,
-            postLink      = tempDataTable$postLink,
-            postTimestamp = tempDataTable$postTimestamp,
+            #postType      = tempDataTable$postType,
+            #postLink      = tempDataTable$postLink,
+            #postMessage   = tempDataTable$postMessage,
+            #postTimestamp = tempDataTable$postTimestamp,
             commentText   = tempDataTable$commentText,
             commentTimestamp   = tempDataTable$commentTimestamp
             )
-
+    
           dataCombined <- rbind(usersLikedPosts,usersCommentedPosts)
 
           setkey(dataCombined,from) # set the key value of the data table
@@ -444,11 +461,27 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
 
           class(dataCombinedUNIQUE) <- append(class(dataCombinedUNIQUE),c("dataSource","facebook"))
 
+          # 14/9/2017 - collect posts
+          posts <- data.table(
+              to            = tempDataTable$postID,
+              postType      = tempDataTable$postType,
+              postLink      = tempDataTable$postLink,
+              postMessage   = tempDataTable$postMessage,
+              postTimestamp = tempDataTable$postTimestamp
+          )
+          posts <- unique(posts)
+
           if (writeToFile=="TRUE" | writeToFile=="true" | writeToFile=="T" | writeToFile==TRUE) {
             #currTime <- format(Sys.time(), "%b_%d_%X_%Y_%Z")
-            write.csv(dataCombined,paste0(rangeFrom,"_to_",rangeTo,"_",pageName,"_FacebookData.csv"))
-            cat("Facebook data was written to current working directory, with filename:\n")
-            cat(paste0(rangeFrom,"_to_",rangeTo,"_",pageName,"_FacebookData.csv"))
+              
+            write.csv(dataCombined,paste0(rangeFrom,"_to_",rangeTo,"_",pageName,"_FacebookData_edges.csv"))
+            cat("\nFacebook edge (comment/like) data was written to current working directory, with filename:\n")
+            cat(paste0(rangeFrom,"_to_",rangeTo,"_",pageName,"_FacebookData_edges.csv"))
+
+            write.csv(posts,paste0(rangeFrom,"_to_",rangeTo,"_",pageName,"_FacebookData_posts.csv"))
+            cat("\nFacebook post data was written to current working directory, with filename:\n")
+            cat(paste0(rangeFrom,"_to_",rangeTo,"_",pageName,"_FacebookData_posts.csv"))              
+              
           }
 
           cat("\n")
