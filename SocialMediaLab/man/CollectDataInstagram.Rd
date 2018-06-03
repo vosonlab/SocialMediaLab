@@ -125,16 +125,15 @@ g_bimodal_instagram_brisbane <- CreateBimodalNetwork(myInstagramData,writeToFile
 g_bimodal_instagram_brisbane
 }
 }
-\author{
-Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
-<robert.ackland@anu.edu.au>
-}
 \seealso{
 \code{AuthenticateWithInstagramAPI} must be run first or no data
 can be collected through the API.
+}
+\author{
+Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
+<robert.ackland@anu.edu.au>
 }
 \keyword{SNA}
 \keyword{data}
 \keyword{instagram}
 \keyword{mining}
-

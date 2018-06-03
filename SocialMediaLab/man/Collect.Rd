@@ -21,6 +21,8 @@ dynamic
 
 \code{youtube}: videoIDs, verbose, writeToFile, maxComments
 
+\code{youtube2}: videoIDs, verbose, writeToFile, maxComments
+
 \code{twitter}: searchTerm, numTweets, verbose, writeToFile, language
 
 \code{instagram}: credential, tag, n, lat, lng, distance, folder, mindate,
@@ -59,11 +61,17 @@ my_apiKeyYoutube <- "314159265358979qwerty"
 videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 
 Authenticate("youtube",
-apiKey = my_apiKeyYoutube) \%>\% Collect(videoIDs = videoIDs) \%>\% Create('actor')
+  apiKey = my_apiKeyYoutube) \%>\% Collect(videoIDs = videoIDs) \%>\% Create('actor')
+
+## YouTube2 actor network example
+myOAuthClientID <- "1456-123abd78ef.apps.googleusercontent.com"
+myOAuthClientSecret <- "Abc1D2ef345-G678hI"
+videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
+
+Authenticate("youtube2",
+  oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret) \%>\%
+  Collect(videoIDs = videoIDs) \%>\% Create('actor')
 }
-}
-\author{
-Chung-hong Chan <chainsawtiney@gmail.com>
 }
 \seealso{
 \code{CollectDataFromFacebook},
@@ -71,4 +79,6 @@ Chung-hong Chan <chainsawtiney@gmail.com>
 \code{CollectDataFromYoutube}, \code{CollectDatFromTwitter},
 \code{CollectEgoInstagram}
 }
-
+\author{
+Chung-hong Chan <chainsawtiney@gmail.com>
+}

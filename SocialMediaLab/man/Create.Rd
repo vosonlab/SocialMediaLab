@@ -49,14 +49,22 @@ videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 
 Authenticate("youtube",
 apiKey = my_apiKeyYoutube) \%>\% Collect(videoIDs = videoIDs) \%>\% Create('actor')
+
+## YouTube2 actor network example
+myOAuthClientID <- "1456-123abd78ef.apps.googleusercontent.com"
+myOAuthClientSecret <- "Abc1D2ef345-G678hI"
+videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
+
+Authenticate("youtube2",
+  oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret) \%>\%
+Collect(videoIDs = videoIDs) \%>\% Create('actor')
 }
-}
-\author{
-Chung-hong Chan <chainsawtiney@gmail.com>
 }
 \seealso{
 \code{\link{CreateActorNetwork}},
 \code{\link{CreateBimodalNetwork}}, \code{\link{CreateDynamicNetwork}},
 \code{\link{CreateSemanticNetwork}}, \code{\link{CreateEgoNetworkFromData}}
 }
-
+\author{
+Chung-hong Chan <chainsawtiney@gmail.com>
+}

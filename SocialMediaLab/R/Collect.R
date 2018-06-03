@@ -6,7 +6,6 @@
 #' \code{Authenticate}, \code{Collect}, \code{Create} workflow. This function is
 #' a convenient UI wrapper to the core CollectDataFrom* family of functions.
 #'
-#'
 #' @param credential \code{credential} object generated from
 #' \code{Authenticate}
 #' @param ego logical, collecting ego network data. Currently only support
@@ -18,6 +17,8 @@
 #' dynamic
 #'
 #' \code{youtube}: videoIDs, verbose, writeToFile, maxComments
+#' 
+#' \code{youtube2}: videoIDs, verbose, writeToFile, maxComments
 #'
 #' \code{twitter}: searchTerm, numTweets, verbose, writeToFile, language
 #'
@@ -52,7 +53,16 @@
 #' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 #'
 #' Authenticate("youtube",
-#' apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
+#'   apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
+#' 
+#' ## YouTube2 actor network example
+#' myOAuthClientID <- "1456-123abd78ef.apps.googleusercontent.com"
+#' myOAuthClientSecret <- "Abc1D2ef345-G678hI"
+#' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
+#'
+#' Authenticate("youtube2",
+#'   oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret) %>%
+#'   Collect(videoIDs = videoIDs) %>% Create('actor')
 #' }
 #' @export
 Collect <- function(credential, ego = FALSE, ...) {
@@ -65,6 +75,7 @@ Collect <- function(credential, ego = FALSE, ...) {
         collector <- switch(credential$socialmedia,
                             facebook = facebookCollector,
                             youtube = youtubeCollector,
+                            youtube2 = youtubeCollector2,
                             twitter = twitterCollector,
                             instagram = instagramCollector,
                             stop("Unsupported socialmedia")
@@ -79,6 +90,12 @@ youtubeCollector <-
     function(credential, videoIDs, verbose, writeToFile, maxComments) {
         return(CollectDataYoutube(videoIDs, apiKeyYoutube = credential$auth, verbose, writeToFile, maxComments))
 }
+
+youtubeCollector2 <-
+  function(credential, videoIDs, verbose, writeToFile, maxComments) {
+    # credential or token is managed by tuber so not required
+    return(CollectDataYoutube2(credential, videoIDs, verbose, writeToFile, maxComments))
+  }
 
 facebookCollector <-
     function(credential,pageName,rangeFrom,rangeTo,verbose,n,writeToFile) {

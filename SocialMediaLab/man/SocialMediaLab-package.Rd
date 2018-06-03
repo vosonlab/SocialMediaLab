@@ -2,8 +2,8 @@
 % Please edit documentation in R/SocialMediaLab-package.R
 \docType{package}
 \name{SocialMediaLab-package}
-\alias{SocialMediaLab}
 \alias{SocialMediaLab-package}
+\alias{SocialMediaLab}
 \title{Collection and network analysis of social media data}
 \description{
 The goal of the SocialMediaLab package is to provide a suite of easy-to-use
@@ -35,4 +35,3 @@ Timothy Graham & Robert Ackland, with contribution from Chung-hong Chan
 
 Maintainer: Timothy Graham <timothy.graham3@uq.net.au>
 }
-

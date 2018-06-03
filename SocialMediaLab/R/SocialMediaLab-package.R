@@ -45,5 +45,6 @@
 #' @importFrom twitteR lookupUsers searchTwitter setup_twitter_oauth twListToDF
 #' @importFrom stringr str_extract str_replace_all str_match_all
 #' @importFrom stats 'na.omit'
-#' @importFrom utils "flush.console" head "install.packages" "read.table" "write.csv"
+#' @importFrom utils "flush.console" head "install.packages" "read.table" "write.csv" "write.table"
+## @importFrom tuber yt_oauth get_all_comments get_video_details
 NULL

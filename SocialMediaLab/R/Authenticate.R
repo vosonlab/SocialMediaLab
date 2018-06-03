@@ -11,8 +11,6 @@
 ## Therefore, unified variable names:
 ## appID, appSecret, apiKey, apiSecret, accessToken, accessTokenSecret, useCachedToken, extendedPermissions, createToken
 
-
-
 #' Create credential to access social media APIs
 #'
 #' \code{Authenticate} creates a \code{credential} object that enables R to
@@ -22,14 +20,15 @@
 #' \code{Authenticate} is the first step of the \code{Authenticate},
 #' \code{Collect}, \code{Create} workflow.
 #'
-#'
 #' @param socialmedia character string, social media API to authenticate,
-#' currently supports "facebook", "youtube", "twitter" and "instagram"
+#' currently supports "facebook", "youtube", "youtube2", "twitter" and "instagram"
 #' @param ... additional parameters for authentication
 #'
 #' \code{facebook}: appID, appSecret
 #'
 #' \code{youtube}: apiKey
+#' 
+#' \code{youtube2}: oauthClientID, oauthClientSecret
 #'
 #' \code{twitter}: apiKey, apiSecret, accessToken, accessTokenSecret
 #'
@@ -43,6 +42,7 @@
 #' @seealso \code{\link{AuthenticateWithFacebookAPI}},
 #' \code{\link{AuthenticateWithInstagramAPI}},
 #' \code{\link{AuthenticateWithYoutubeAPI}},
+#' \code{\link{AuthenticateWithYoutube2}},
 #' \code{\link{AuthenticateWithTwitterAPI}}, \code{\link{SaveCredential}},
 #' \code{\link{LoadCredential}}
 #' @examples
@@ -64,13 +64,23 @@
 #' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 #'
 #' Authenticate("youtube",
-#' apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
+#'   apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
+#' 
+#' ## YouTube2 actor network example
+#' myOAuthClientID <- "1456-123abd78ef.apps.googleusercontent.com"
+#' myOAuthClientSecret <- "Abc1D2ef345-G678hI"
+#' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
+#'
+#' Authenticate("youtube2",
+#'   oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret) %>%
+#'   Collect(videoIDs = videoIDs) %>% Create('actor')
 #' }
 #' @export
 Authenticate <- function(socialmedia, ...) {
     authenticator <- switch(tolower(socialmedia),
                             facebook = facebookAuthenticator,
                             youtube = youtubeAuthenticator,
+                            youtube2 = youtubeAuthenticator2,
                             twitter = twitterAuthenticator,
                             instagram = instagramAuthenticator,
                             stop("Unknown socialmedia")
@@ -140,6 +150,10 @@ LoadCredential <- function(filename = "credential.RDS") {
 
 youtubeAuthenticator <- function(apiKey) {
     return(AuthenticateWithYoutubeAPI(apiKey))
+}
+
+youtubeAuthenticator2 <- function(oauthClientID, oauthClientSecret, ...) {
+  return(AuthenticateWithYoutube2(oauth_client_ID=oauthClientID, oauth_client_secret=oauthClientSecret, ...))
 }
 
 ### Currently, this Authenticator will return nothing, only for its side effect

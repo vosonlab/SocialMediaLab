@@ -1,2 +1,8 @@
 .Rhistory
+.Rproj.user
+.Rbuildignore
+SocialMediaLab.Rproj
+SocialMediaLab.Rcheck
+*.gz
 cred.R
+.httr-oauth
