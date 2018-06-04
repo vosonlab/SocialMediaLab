@@ -30,9 +30,11 @@
 #' @return A data.frame object of class \code{dataSource.*} that can be used
 #' with \code{Create}.
 #' @author Chung-hong Chan <chainsawtiney@@gmail.com>
-#' @seealso \code{CollectDataFromFacebook},
-#' \code{CollectDataFromInstagram},
-#' \code{CollectDataFromYoutube}, \code{CollectDatFromTwitter},
+#' @seealso \code{CollectDataFacebook},
+#' \code{CollectDataInstagram},
+#' \code{CollectDataYoutube}, 
+#' \code{CollectDataYoutube2}
+#' \code{CollectDataTwitter},
 #' \code{CollectEgoInstagram}
 #' @examples
 #'
@@ -53,16 +55,16 @@
 #' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 #'
 #' Authenticate("youtube",
-#'   apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
+#' apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
 #' 
-#' ## YouTube2 actor network example
+#' ## YouTube2 collect video comments example (R tuber package)
 #' myOAuthClientID <- "1456-123abd78ef.apps.googleusercontent.com"
 #' myOAuthClientSecret <- "Abc1D2ef345-G678hI"
 #' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 #'
-#' Authenticate("youtube2",
-#'   oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret) %>%
-#'   Collect(videoIDs = videoIDs) %>% Create('actor')
+#' comment_data <- Authenticate("youtube2",
+#' oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret) %>%
+#' Collect(videoIDs = videoIDs)
 #' }
 #' @export
 Collect <- function(credential, ego = FALSE, ...) {
@@ -91,6 +93,7 @@ youtubeCollector <-
         return(CollectDataYoutube(videoIDs, apiKeyYoutube = credential$auth, verbose, writeToFile, maxComments))
 }
 
+# youtube video comments collector function (R tuber package)
 youtubeCollector2 <-
   function(credential, videoIDs, verbose, writeToFile, maxComments) {
     # credential or token is managed by tuber so not required

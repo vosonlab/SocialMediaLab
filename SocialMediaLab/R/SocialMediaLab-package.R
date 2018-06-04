@@ -38,13 +38,15 @@
 #' @import methods
 #' @import httr
 #' @importFrom Hmisc escapeRegex
-#' @importFrom igraph delete.vertices graph.data.frame simplify write.graph V 'V<-'
+#' @importFrom igraph delete.vertices graph.data.frame simplify write.graph V 'V<-' graph_from_data_frame E 'E<-' write_graph
 #' @importFrom Rfacebook fbOAuth getPost getPage getUsers
 #' @importFrom instaR getComments getLikes instaOAuth searchInstagram getUser getFollowers getFollows
-#' @importFrom plyr ldply
+#' @importFrom plyr ldply rename
 #' @importFrom twitteR lookupUsers searchTwitter setup_twitter_oauth twListToDF
 #' @importFrom stringr str_extract str_replace_all str_match_all
 #' @importFrom stats 'na.omit'
-#' @importFrom utils "flush.console" head "install.packages" "read.table" "write.csv" "write.table"
-## @importFrom tuber yt_oauth get_all_comments get_video_details
+#' @importFrom utils "flush.console" head "install.packages" "read.table" "write.csv" "write.table" "read.csv"
+#' @importFrom magrittr "%>%"
+#' @importFrom dplyr group_by distinct summarise ungroup 
+#' @importFrom tuber yt_oauth get_all_comments get_video_details
 NULL

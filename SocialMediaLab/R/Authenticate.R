@@ -64,16 +64,14 @@
 #' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 #'
 #' Authenticate("youtube",
-#'   apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
+#' apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
 #' 
-#' ## YouTube2 actor network example
+#' ## YouTube2 authentication example (R tuber package)
 #' myOAuthClientID <- "1456-123abd78ef.apps.googleusercontent.com"
 #' myOAuthClientSecret <- "Abc1D2ef345-G678hI"
-#' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 #'
-#' Authenticate("youtube2",
-#'   oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret) %>%
-#'   Collect(videoIDs = videoIDs) %>% Create('actor')
+#' google_token <- Authenticate("youtube2",
+#' oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret)
 #' }
 #' @export
 Authenticate <- function(socialmedia, ...) {
@@ -152,6 +150,8 @@ youtubeAuthenticator <- function(apiKey) {
     return(AuthenticateWithYoutubeAPI(apiKey))
 }
 
+# youtube authenticator function (R tuber package)
+# additional arguments passed to the tuber yt_oauth function
 youtubeAuthenticator2 <- function(oauthClientID, oauthClientSecret, ...) {
   return(AuthenticateWithYoutube2(oauth_client_ID=oauthClientID, oauth_client_secret=oauthClientSecret, ...))
 }

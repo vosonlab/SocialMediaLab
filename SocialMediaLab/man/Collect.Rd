@@ -61,22 +61,24 @@ my_apiKeyYoutube <- "314159265358979qwerty"
 videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 
 Authenticate("youtube",
-  apiKey = my_apiKeyYoutube) \%>\% Collect(videoIDs = videoIDs) \%>\% Create('actor')
+apiKey = my_apiKeyYoutube) \%>\% Collect(videoIDs = videoIDs) \%>\% Create('actor')
 
-## YouTube2 actor network example
+## YouTube2 collect video comments example (R tuber package)
 myOAuthClientID <- "1456-123abd78ef.apps.googleusercontent.com"
 myOAuthClientSecret <- "Abc1D2ef345-G678hI"
 videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 
-Authenticate("youtube2",
-  oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret) \%>\%
-  Collect(videoIDs = videoIDs) \%>\% Create('actor')
+comment_data <- Authenticate("youtube2",
+oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret) \%>\%
+Collect(videoIDs = videoIDs)
 }
 }
 \seealso{
-\code{CollectDataFromFacebook},
-\code{CollectDataFromInstagram},
-\code{CollectDataFromYoutube}, \code{CollectDatFromTwitter},
+\code{CollectDataFacebook},
+\code{CollectDataInstagram},
+\code{CollectDataYoutube}, 
+\code{CollectDataYoutube2}
+\code{CollectDataTwitter},
 \code{CollectEgoInstagram}
 }
 \author{

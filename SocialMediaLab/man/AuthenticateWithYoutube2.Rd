@@ -2,59 +2,38 @@
 % Please edit documentation in R/AuthenticateWithYoutube2.R
 \name{AuthenticateWithYoutube2}
 \alias{AuthenticateWithYoutube2}
-\title{YouTube2 Authentication}
+\title{Authenticate with YouTube API}
 \usage{
 AuthenticateWithYoutube2(oauth_client_ID, oauth_client_secret, ...)
 }
 \arguments{
-\item{oauth_client_ID}{character string specifying your Google Developer 
+\item{oauth_client_ID}{character string specifying your Google Developer
 OAuth Client ID}
 
 \item{oauth_client_secret}{character string specifying your Google Developer
 OAuth Client Secret}
+
+\item{\dots}{additional arguments passed to \code{yt_oauth}}
 }
 \value{
-character string containing option value for \code{google_token}
+character string containing value for \code{google_token}
 set by the tuber \code{yt_oauth} function
 }
 \description{
-OAuth based authentication with the Google API using the R tuber package:
-http://soodoku.github.io/tuber/
+YouTube API Authentication with R tuber package
+DO NOT CALL DIRECTLY - USE \code{Authenticate}
 }
 \details{
-In order to collect data from YouTube, the user must first authenticate with
-Google's Application Programming Interface (API). Users can obtain a Google
-Developer OAuth Client ID and Client Secret at:
-https://console.developers.google.com
+OAuth based authentication with the Google API via the tuber package:
+http://soodoku.github.io/tuber/reference/yt_oauth.html
 }
 \note{
-As per the tuber package documentation if using ubuntu the following 
+As per the tuber package documentation if using ubuntu the following
 R console command may need to be run first:
 \code{httr::set_config(config(ssl_verifypeer = 0L))}
-\code{token=.httr-oauth} optional argument to set the tuber oauth token cache file
-default file is \code{.httr-oauth} saved in working directory
-\code{remove_old_oauth=FALSE} optional boolean argument to remove tuber oauth
-cache file, the default value is \code{FALSE}
+Additional arguments may be passed to \code{yt_oauth}, such as:
+\code{token=.httr-oauth} optional argument to set the tuber oauth token
+cache file default file is \code{.httr-oauth} saved in working directory
+\code{remove_old_oauth=FALSE} optional boolean argument to remove tuber
+oauth cache file, the default value is \code{FALSE}
 }
-\examples{
-
-\dontrun{
-  # Replace with your Google Developer OAuth Client ID and Secret:
-  myOAuthClientID <- "1456-123abd78ef.apps.googleusercontent.com"
-  myOAuthClientSecret <- "Abc1D2ef345-G678hI"
-
-  oauthTokenYoutube <- AuthenticateWithYoutube2(
-                         oauth_client_ID = myOAuthClientID,
-                         oauth_client_secret = myOAuthClientSecret)
-}
-}
-\seealso{
-\code{AuthenticateWithFacebookAPI} and
-\code{AuthenticateWithTwitterAPI} for other ways to collect social media
-data.
-}
-\keyword{SNA}
-\keyword{media}
-\keyword{social}
-\keyword{tuber}
-\keyword{youtube}
