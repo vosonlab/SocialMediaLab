@@ -137,7 +137,7 @@ function(searchTerm, numTweets, verbose, writeToFile, language, since, until,
 
   if (missing(searchTerm)) {
     cat("Error. Argument `searchTerm` is missing.\nPlease specify a search term or hashtag to collect data from.\n")
-    break
+    return()
   }
 
   if (missing(since)) {

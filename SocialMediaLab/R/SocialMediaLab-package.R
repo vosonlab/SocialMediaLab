@@ -49,4 +49,5 @@
 #' @importFrom magrittr "%>%"
 #' @importFrom dplyr group_by distinct summarise ungroup 
 #' @importFrom tuber yt_oauth get_all_comments get_video_details
+#' @importFrom rlang .data
 NULL

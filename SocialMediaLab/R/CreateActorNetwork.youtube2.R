@@ -90,7 +90,7 @@ CreateActorNetwork.youtube2 <- function(commentsData, directIsolates=TRUE, write
   
   if (directIsolates) {
     # create a reference data frame for video id, video creator channel id and display name 
-    video_creators <- subset(commentsData, select=c("videoId"), stringsAsFactors=FALSE) %>% dplyr::distinct(videoId) # unique()
+    video_creators <- subset(commentsData, select=c("videoId"), stringsAsFactors=FALSE) %>% dplyr::distinct(rlang::.data$videoId) # unique()
     video_creators$authorChannelId.value <- NA
     video_creators$authorDisplayName <- NA
     
@@ -109,13 +109,13 @@ CreateActorNetwork.youtube2 <- function(commentsData, directIsolates=TRUE, write
   # includes number of comments for use as a vertex attribute
   video_comment_actors <- rbind(subset(commentsData, select=c("authorChannelId.value", "authorDisplayName"), stringsAsFactors=FALSE), 
                                subset(video_creators, select=c("authorChannelId.value", "authorDisplayName"), stringsAsFactors=FALSE)) %>%
-                               dplyr::group_by(authorChannelId.value, authorDisplayName) %>% 
-                               dplyr::summarise(comments = n()) %>% dplyr::ungroup()
+                               dplyr::group_by(rlang::.data$authorChannelId.value, rlang::.data$authorDisplayName) %>% 
+                               dplyr::summarise(comments = dplyr::n()) %>% dplyr::ungroup()
                                #distinct(authorChannelId.value, .keep_all=TRUE)
   
   # dataframe of weighted actor edges
   video_comment_actor_network_weighted <- CreateActorEdgeNetwork(commentsData, video_creators, video_comment_actors, directIsolates) %>%
-    dplyr::group_by(authorChannelId.value, commentToAuthorChannelId) %>% dplyr::summarise(weight = n()) %>% dplyr::ungroup()  # authorChannelId.value.x
+    dplyr::group_by(rlang::.data$authorChannelId.value, rlang::.data$commentToAuthorChannelId) %>% dplyr::summarise(weight = dplyr::n()) %>% dplyr::ungroup()  # authorChannelId.value.x
   
   # igraph
   

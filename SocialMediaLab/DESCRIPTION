@@ -9,7 +9,7 @@ Description: A suite of tools for collecting and constructing networks from
     different types of networks for analysis.
 Type: Package
 Imports:
-    tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook (>= 0.6.15),Hmisc,data.table,httpuv,instaR,methods,httr,magrittr,tuber,dplyr
+    tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook (>= 0.6.15),Hmisc,data.table,httpuv,instaR,methods,httr,magrittr,tuber,dplyr,rlang
 Suggests:
     testthat
 Author: Timothy Graham & Robert Ackland with contribution from Chung-hong Chan

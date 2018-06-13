@@ -148,7 +148,7 @@ GetYoutubeVideoAuthor <- function(videoID) {
             video_channel_id <- video_details[["items"]][[1]][["snippet"]][["channelId"]]
             video_channel_title <- video_details[["items"]][[1]][["snippet"]][["channelTitle"]]},
             error = function(e) {
-              cat(paste0("error in tuber get_video_details(\"", video_id,"\")\n"))
+              cat(paste0("error in tuber get_video_details(\"", videoID,"\")\n"))
               cat(paste0(e))
             })
   
