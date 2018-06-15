@@ -1,6 +1,6 @@
 Package: SocialMediaLab
 Version: 0.23.3
-Date: 2017-09-14
+Date: 2018-06-04
 Title: Tools for Collecting Social Media Data and Generating Networks for
     Analysis
 Description: A suite of tools for collecting and constructing networks from
@@ -9,11 +9,10 @@ Description: A suite of tools for collecting and constructing networks from
     different types of networks for analysis.
 Type: Package
 Imports:
-    tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook (>= 0.6.15),Hmisc,data.table,httpuv,instaR,methods,httr
+    tm,stringr,twitteR,RCurl,bitops,rjson,plyr,igraph,Rfacebook (>= 0.6.15),Hmisc,data.table,httpuv,instaR,methods,httr,magrittr,tuber,dplyr,rlang
 Suggests:
-    magrittr,
     testthat
 Author: Timothy Graham & Robert Ackland with contribution from Chung-hong Chan
 Maintainer: Timothy Graham <Timothy.Graham@anu.edu.au>
 License: GPL (>= 2)
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

@@ -100,16 +100,15 @@ edge ties based on 'likes' are excluded from dynamic Facebook data.
   Create("dynamic")
 }
 }
-\author{
-Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
-<robert.ackland@anu.edu.au>
-}
 \seealso{
 \code{Authenticate} must be run first or no data
 will be collected.
+}
+\author{
+Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
+<robert.ackland@anu.edu.au>
 }
 \keyword{SNA}
 \keyword{data}
 \keyword{facebook}
 \keyword{mining}
-

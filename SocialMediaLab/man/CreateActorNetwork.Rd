@@ -92,13 +92,13 @@ myTwitterData3)}.
 }
 
 }
-\author{
-Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
-<robert.ackland@anu.edu.au>
-}
 \seealso{
 See \code{CollectDataYoutube} and \code{CollectDataTwitter} to
 collect data sources for creating actor networks in SocialMediaLab.
+}
+\author{
+Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
+<robert.ackland@anu.edu.au>
 }
 \keyword{SNA}
 \keyword{igraph}
@@ -106,4 +106,3 @@ collect data sources for creating actor networks in SocialMediaLab.
 \keyword{network}
 \keyword{social}
 \keyword{unimodal}
-

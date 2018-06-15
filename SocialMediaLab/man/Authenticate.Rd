@@ -8,13 +8,15 @@ Authenticate(socialmedia, ...)
 }
 \arguments{
 \item{socialmedia}{character string, social media API to authenticate,
-currently supports "facebook", "youtube", "twitter" and "instagram"}
+currently supports "facebook", "youtube", "youtube2", "twitter" and "instagram"}
 
 \item{...}{additional parameters for authentication
 
 \code{facebook}: appID, appSecret
 
 \code{youtube}: apiKey
+
+\code{youtube2}: oauthClientID, oauthClientSecret
 
 \code{twitter}: apiKey, apiSecret, accessToken, accessTokenSecret
 
@@ -57,16 +59,23 @@ videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
 
 Authenticate("youtube",
 apiKey = my_apiKeyYoutube) \%>\% Collect(videoIDs = videoIDs) \%>\% Create('actor')
+
+## YouTube2 authentication example (R tuber package)
+myOAuthClientID <- "1456-123abd78ef.apps.googleusercontent.com"
+myOAuthClientSecret <- "Abc1D2ef345-G678hI"
+
+google_token <- Authenticate("youtube2",
+oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret)
 }
-}
-\author{
-Chung-hong Chan <chainsawtiney@gmail.com>
 }
 \seealso{
 \code{\link{AuthenticateWithFacebookAPI}},
 \code{\link{AuthenticateWithInstagramAPI}},
 \code{\link{AuthenticateWithYoutubeAPI}},
+\code{\link{AuthenticateWithYoutube2}},
 \code{\link{AuthenticateWithTwitterAPI}}, \code{\link{SaveCredential}},
 \code{\link{LoadCredential}}
 }
-
+\author{
+Chung-hong Chan <chainsawtiney@gmail.com>
+}

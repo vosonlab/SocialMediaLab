@@ -99,16 +99,15 @@ what they require.
   g_actor_youtube <- CreateActorNetwork(myYoutubeData)
 }
 }
-\author{
-Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
-<robert.ackland@anu.edu.au>
-}
 \seealso{
 \code{AuthenticateWithYoutubeAPI} must be run first or no data will
 be collected.
+}
+\author{
+Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
+<robert.ackland@anu.edu.au>
 }
 \keyword{SNA}
 \keyword{data}
 \keyword{mining}
 \keyword{youtube}
-

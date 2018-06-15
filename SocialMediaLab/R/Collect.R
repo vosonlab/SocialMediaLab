@@ -6,7 +6,6 @@
 #' \code{Authenticate}, \code{Collect}, \code{Create} workflow. This function is
 #' a convenient UI wrapper to the core CollectDataFrom* family of functions.
 #'
-#'
 #' @param credential \code{credential} object generated from
 #' \code{Authenticate}
 #' @param ego logical, collecting ego network data. Currently only support
@@ -18,6 +17,8 @@
 #' dynamic
 #'
 #' \code{youtube}: videoIDs, verbose, writeToFile, maxComments
+#' 
+#' \code{youtube2}: videoIDs, verbose, writeToFile, maxComments
 #'
 #' \code{twitter}: searchTerm, numTweets, verbose, writeToFile, language
 #'
@@ -29,9 +30,11 @@
 #' @return A data.frame object of class \code{dataSource.*} that can be used
 #' with \code{Create}.
 #' @author Chung-hong Chan <chainsawtiney@@gmail.com>
-#' @seealso \code{CollectDataFromFacebook},
-#' \code{CollectDataFromInstagram},
-#' \code{CollectDataFromYoutube}, \code{CollectDatFromTwitter},
+#' @seealso \code{CollectDataFacebook},
+#' \code{CollectDataInstagram},
+#' \code{CollectDataYoutube}, 
+#' \code{CollectDataYoutube2}
+#' \code{CollectDataTwitter},
 #' \code{CollectEgoInstagram}
 #' @examples
 #'
@@ -53,6 +56,15 @@
 #'
 #' Authenticate("youtube",
 #' apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
+#' 
+#' ## YouTube2 collect video comments example (R tuber package)
+#' myOAuthClientID <- "1456-123abd78ef.apps.googleusercontent.com"
+#' myOAuthClientSecret <- "Abc1D2ef345-G678hI"
+#' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
+#'
+#' comment_data <- Authenticate("youtube2",
+#' oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret) %>%
+#' Collect(videoIDs = videoIDs)
 #' }
 #' @export
 Collect <- function(credential, ego = FALSE, ...) {
@@ -65,6 +77,7 @@ Collect <- function(credential, ego = FALSE, ...) {
         collector <- switch(credential$socialmedia,
                             facebook = facebookCollector,
                             youtube = youtubeCollector,
+                            youtube2 = youtubeCollector2,
                             twitter = twitterCollector,
                             instagram = instagramCollector,
                             stop("Unsupported socialmedia")
@@ -79,6 +92,13 @@ youtubeCollector <-
     function(credential, videoIDs, verbose, writeToFile, maxComments) {
         return(CollectDataYoutube(videoIDs, apiKeyYoutube = credential$auth, verbose, writeToFile, maxComments))
 }
+
+# youtube video comments collector function (R tuber package)
+youtubeCollector2 <-
+  function(credential, videoIDs, verbose, writeToFile, maxComments) {
+    # credential or token is managed by tuber so not required
+    return(CollectDataYoutube2(credential, videoIDs, verbose, writeToFile, maxComments))
+  }
 
 facebookCollector <-
     function(credential,pageName,rangeFrom,rangeTo,verbose,n,writeToFile) {
