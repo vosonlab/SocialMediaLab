@@ -67,16 +67,17 @@ in the working directory. If the \code{useCachedToken} argument is set to
     extended_permissions=FALSE, useCachedToken=TRUE)
   }
 }
+\author{
+Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
+<robert.ackland@anu.edu.au>
+}
 \seealso{
 \code{AuthenticateWithTwitterAPI} and
 \code{AuthenticateWithYouTubeAPI} for other ways to collect social media
 data.
 }
-\author{
-Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
-<robert.ackland@anu.edu.au>
-}
 \keyword{SNA}
 \keyword{facebook}
 \keyword{media}
 \keyword{social}
+

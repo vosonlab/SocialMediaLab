@@ -44,9 +44,10 @@ myStarWarsData <- importData("2015-03-01_to_2015-03-02_StarWars_FacebookData.csv
 myNetwork <- myStarWarsData \%>\% Create("Bimodal")
 }
 }
-\seealso{
-\code{\link{Collect}}
-}
 \author{
 Timothy Graham <timothy.graham3@uq.net.au>
 }
+\seealso{
+\code{\link{Collect}}
+}
+

@@ -92,13 +92,13 @@ creating ego networks. Currently only Instagram is implemented.
 }
 
 }
-\seealso{
-See \code{CollectDataYoutube} and \code{CollectDataTwitter} to
-collect data sources for creating actor networks in SocialMediaLab.
-}
 \author{
 Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
 <robert.ackland@anu.edu.au>
+}
+\seealso{
+See \code{CollectDataYoutube} and \code{CollectDataTwitter} to
+collect data sources for creating actor networks in SocialMediaLab.
 }
 \keyword{SNA}
 \keyword{igraph}
@@ -107,3 +107,4 @@ Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
 \keyword{network}
 \keyword{social}
 \keyword{unimodal}
+

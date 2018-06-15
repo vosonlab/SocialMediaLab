@@ -125,7 +125,7 @@ function(pageName,rangeFrom,rangeTo,verbose,n,writeToFile,credential = NULL) {
 
       if (missing(pageName)) {
         cat("Error. Argument `pageName` is missing.\nPlease specify a Facebook page to collect data from.\n")
-        return()
+        break
       }
 
       # If date range has not been specified, or one of the range values is missing,
