@@ -96,10 +96,6 @@ networks for incompatible data sources.
 }
 
 }
-\author{
-Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
-<robert.ackland@anu.edu.au>
-}
 \references{
 Kolaczyk, E. D., Csardi, G. (2014). Statistical analysis of
 network data with R. New York: Springer, Chapter 10.
@@ -108,10 +104,13 @@ network data with R. New York: Springer, Chapter 10.
 See \code{CollectDataFacebook} to collect data for creating dynamic
 networks in SocialMediaLab.
 }
+\author{
+Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
+<robert.ackland@anu.edu.au>
+}
 \keyword{SNA}
 \keyword{dynamic}
 \keyword{igraph}
 \keyword{media}
 \keyword{network}
 \keyword{social}
-

@@ -116,13 +116,13 @@ myTwitterData3)}.
 }
 
 }
-\author{
-Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
-<robert.ackland@anu.edu.au>
-}
 \seealso{
 See \code{CollectDataTwitter} to collect data for creating semantic
 networks in SocialMediaLab.
+}
+\author{
+Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
+<robert.ackland@anu.edu.au>
 }
 \keyword{SNA}
 \keyword{igraph}
@@ -130,4 +130,3 @@ networks in SocialMediaLab.
 \keyword{network}
 \keyword{semantic}
 \keyword{social}
-

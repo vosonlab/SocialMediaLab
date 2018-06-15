@@ -54,14 +54,13 @@ computation.
   myYoutubeData <- CollectDataYoutube(videoIDs,apiKeyYoutube,writeToFile=FALSE)
 }
 }
+\seealso{
+Use \code{CollectDataYoutube} for collecting YouTube comments data.
+}
 \author{
 Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
 <robert.ackland@anu.edu.au>
 }
-\seealso{
-Use \code{CollectDataYoutube} for collecting YouTube comments data.
-}
 \keyword{SocialMediaLab}
 \keyword{scraping}
 \keyword{youtube}
-

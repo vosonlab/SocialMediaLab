@@ -59,9 +59,6 @@ Authenticate("youtube",
 apiKey = my_apiKeyYoutube) \%>\% Collect(videoIDs = videoIDs) \%>\% Create('actor')
 }
 }
-\author{
-Chung-hong Chan <chainsawtiney@gmail.com>
-}
 \seealso{
 \code{\link{AuthenticateWithFacebookAPI}},
 \code{\link{AuthenticateWithInstagramAPI}},
@@ -69,4 +66,6 @@ Chung-hong Chan <chainsawtiney@gmail.com>
 \code{\link{AuthenticateWithTwitterAPI}}, \code{\link{SaveCredential}},
 \code{\link{LoadCredential}}
 }
-
+\author{
+Chung-hong Chan <chainsawtiney@gmail.com>
+}

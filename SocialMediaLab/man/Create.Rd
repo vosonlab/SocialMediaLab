@@ -51,12 +51,11 @@ Authenticate("youtube",
 apiKey = my_apiKeyYoutube) \%>\% Collect(videoIDs = videoIDs) \%>\% Create('actor')
 }
 }
-\author{
-Chung-hong Chan <chainsawtiney@gmail.com>
-}
 \seealso{
 \code{\link{CreateActorNetwork}},
 \code{\link{CreateBimodalNetwork}}, \code{\link{CreateDynamicNetwork}},
 \code{\link{CreateSemanticNetwork}}, \code{\link{CreateEgoNetworkFromData}}
 }
-
+\author{
+Chung-hong Chan <chainsawtiney@gmail.com>
+}

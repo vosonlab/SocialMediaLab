@@ -62,13 +62,12 @@ Authenticate("youtube",
 apiKey = my_apiKeyYoutube) \%>\% Collect(videoIDs = videoIDs) \%>\% Create('actor')
 }
 }
-\author{
-Chung-hong Chan <chainsawtiney@gmail.com>
-}
 \seealso{
 \code{CollectDataFromFacebook},
 \code{CollectDataFromInstagram},
 \code{CollectDataFromYoutube}, \code{CollectDatFromTwitter},
 \code{CollectEgoInstagram}
 }
-
+\author{
+Chung-hong Chan <chainsawtiney@gmail.com>
+}
