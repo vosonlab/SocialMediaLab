@@ -57,17 +57,16 @@ in the working directory. If the \code{useCachedToken} argument is set to
     appSecret=app_secret, useCachedToken=FALSE)
   }
 }
-\author{
-Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
-<robert.ackland@anu.edu.au>
-}
 \seealso{
 \code{AuthenticateWithTwitterAPI} and
 \code{AuthenticateWithYouTubeAPI} and \code{AuthenticateWithFacebookAPI} for
 other ways to collect social media data.
 }
+\author{
+Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
+<robert.ackland@anu.edu.au>
+}
 \keyword{Instagram}
 \keyword{SNA}
 \keyword{media}
 \keyword{social}
-

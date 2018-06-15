@@ -114,14 +114,14 @@ function(videoIDs, apiKeyYoutube, verbose, writeToFile, maxComments) {
 
   if (missing(apiKeyYoutube)) {
     cat("Error. Argument `apiKeyYoutube` is missing. Please specify a valid API key to collect data (i.e. your Google Developer API Key).\n")
-    break
+    return(NA)
   }
 
   # Ensure that argument `pageName` has been specified by user.
 
   if (missing(videoIDs)) {
     cat("Error. Argument `videoIDs` is missing.\nPlease specify a vector of video IDs to collect data from.\n Hint: to do this you can use the `GetYoutubeVideoIDs` function in this package.")
-    break
+    return(NA)
   }
 
   apiKey <- apiKeyYoutube # to play nice with existing code

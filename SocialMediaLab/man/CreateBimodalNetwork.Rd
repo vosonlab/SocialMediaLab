@@ -97,13 +97,13 @@ myTwitterData3)}.
 }
 
 }
-\author{
-Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
-<robert.ackland@anu.edu.au>
-}
 \seealso{
 See \code{CollectDataFacebook} and \code{CollectDataTwitter} to
 collect data for creating bimodal networks in SocialMediaLab.
+}
+\author{
+Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
+<robert.ackland@anu.edu.au>
 }
 \keyword{SNA}
 \keyword{bimodal}
@@ -111,4 +111,3 @@ collect data for creating bimodal networks in SocialMediaLab.
 \keyword{media}
 \keyword{network}
 \keyword{social}
-

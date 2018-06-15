@@ -28,11 +28,10 @@ myTwitterNetwork_userInfo <- PopulateUserInfo(myTwitterNetwork)
 
 }
 }
+\seealso{
+\code{\link{Collect}}, \code{\link{Create}}
+}
 \author{
 Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
 <robert.ackland@anu.edu.au>
 }
-\seealso{
-\code{\link{Collect}}, \code{\link{Create}}
-}
-
