@@ -126,15 +126,16 @@ SocialMediaLab package. This will be implemented in a future release.
   g_semantic_twitter <- CreateSemanticNetwork(myTwitterData)
   }
 }
-\seealso{
-\code{AuthenticateWithTwitterAPI} must be run first or no data will
-be collected.
-}
 \author{
 Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
 <robert.ackland@anu.edu.au>
+}
+\seealso{
+\code{AuthenticateWithTwitterAPI} must be run first or no data will
+be collected.
 }
 \keyword{SNA}
 \keyword{data}
 \keyword{mining}
 \keyword{twitter}
+

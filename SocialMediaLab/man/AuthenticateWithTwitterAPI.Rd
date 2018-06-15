@@ -52,16 +52,17 @@ http://thinktostart.com/twitter-authentification-with-r/
     access_token=my_access_token, access_token_secret=my_access_token_secret)
 }
 }
+\author{
+Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
+<robert.ackland@anu.edu.au>
+}
 \seealso{
 \code{AuthenticateWithFacebookAPI} and
 \code{AuthenticateWithYouTubeAPI} for other ways to collect social media
 data.
 }
-\author{
-Timothy Graham <timothy.graham3@uq.net.au> & Robert Ackland
-<robert.ackland@anu.edu.au>
-}
 \keyword{SNA}
 \keyword{media}
 \keyword{social}
 \keyword{twitter}
+

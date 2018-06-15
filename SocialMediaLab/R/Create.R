@@ -39,15 +39,6 @@
 #'
 #' Authenticate("youtube",
 #' apiKey = my_apiKeyYoutube) %>% Collect(videoIDs = videoIDs) %>% Create('actor')
-#' 
-#' ## YouTube2 video comments actor network example (R tuber package)
-#' myOAuthClientID <- "1456-123abd78ef.apps.googleusercontent.com"
-#' myOAuthClientSecret <- "Abc1D2ef345-G678hI"
-#' videoIDs <- c("W2GZFeYGU3s","mL27TAJGlWc")
-#'
-#' actor_network <- Authenticate("youtube2",
-#' oauthClientID=myOAuthClientID, oauthClientSecret=myOAuthClientSecret) %>%
-#' Collect(videoIDs = videoIDs) %>% Create('actor')
 #' }
 #' @export
 Create <- function(dataSource, type = "Actor", ...) {

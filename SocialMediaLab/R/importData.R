@@ -56,9 +56,6 @@ importData <- function(file,dataSource) {
          youtube={
            class(df) <- c("data.table","data.frame","dataSource","youtube")
          },
-         youtube2={
-           class(df) <- c("data.table","data.frame","dataSource","youtube2")
-         },         
          instagram={
            class(df) <- c("data.table","data.frame","dataSource","instagram")
          },
