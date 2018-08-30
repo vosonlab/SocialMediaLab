@@ -1,5 +1,7 @@
 # SocialMediaLab [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/SocialMediaLab)](https://CRAN.R-project.org/package=SocialMediaLab) ![Downloads](https://cranlogs.r-pkg.org/badges/SocialMediaLab) ![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/SocialMediaLab) [![Rdoc](http://www.rdocumentation.org/badges/version/SocialMediaLab)](http://www.rdocumentation.org/packages/SocialMediaLab)
 
+Please note that the `SocialMediaLab` package has been renamed `vosonSML`. The `SocialMediaLab` package is no longer in active development. Please see [vosonSML on CRAN](https://cran.r-project.org/web/packages/vosonSML/index.html), and [vosonSML on github](https://github.com/vosonlab/vosonSML).
+
 ## What does this package do?
 
 `SocialMediaLab` is an R package that provides a suite of tools for collecting and constructing networks from social media data. It provides easy-to-use functions for collecting data across popular platforms (Instagram, Facebook, Twitter, and YouTube) and generating different types of networks for analysis.
